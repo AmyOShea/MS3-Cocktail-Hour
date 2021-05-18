@@ -19,8 +19,10 @@ It is a community based experience that allows causal, one-time users to browse 
   + [Current Features](#current-features)
   + [Possible Future Features](#possible-future-features)
 + [Technologies Used](#technologies-used)
-  + [Languages Used](#languages-used)
-  + [Frameworks Libraries & Programmes Used](#frameworks-libraries-and-programmes-used)
+  + [Languages](#languages)
+  + [Frameworks](#frameworks)
+  + [Libraries](#libraries)
+  + [Programmes and Ext Resources](#programmes-and-ext-resources)
 + [Testing](#testing)
   + [Validator Testing](#validator-testing) 
   + [Lighthouse Testing](#lighthouse-testing)
@@ -88,14 +90,25 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 ---
 ---
 # Technologies Used
-## Languages Used
+## Languages
++ [HTML5](https://en.wikipedia.org/wiki/HTML5)
++ [CSS3](https://en.wikipedia.org/wiki/CSS)
++ [Python3](https://www.python.org/)
 
-## Frameworks Libraries and Programmes Used
+## Frameworks 
++ [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+
+## Libraries 
+
+## Programmes and Ext Resources
 + [Procreate](https://procreate.art/) used to design initial mock ups, tilable background, logo and other design accents. 
 + [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to cut and re-frame site images. 
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
 + [GitHub](https://github.com/) used to host repository.
 + [GitPod](https://www.gitpod.io/) used to develop project and organise version control.
++ [MongoDB](https://www.mongodb.com/) used to host database information.
++ [Pip3](https://pip.pypa.io/en/stable/) used to add packages to Python.
++ [RandomKeygen](https://randomkeygen.com/) used to create a strong password for required  `<SECRET_KEY>`.
 ---
 ---
 # Testing
