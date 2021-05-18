@@ -1,59 +1,127 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Cocktail Hour
+Cocktail Hour is a virtual recipe collection speifically designed for coctail recipes. 
 
-Welcome USER_NAME,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+It is a community based experience that allows causal, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes. 
 
 ---
+---
+# Contents
++ [User Experience](#user-experience)
+  + [User Stories](#user-stories)
+  + [Design](#design)
+    + [Overall Feel](#overall-feel)
+    + [Colour Scheme](#colour-scheme)
+    + [Typography](#typography)
+  + [Wireframes and Initial Design](#wireframes-and-initial-design)
+    + [Wireframes](#wireframes)
+    + [Design Mock Up](#design-mock-up)
++ [Features](#features)
+  + [Current Features](#current-features)
+  + [Possible Future Features](#possible-future-features)
++ [Technologies Used](#technologies-used)
+  + [Languages Used](#languages-used)
+  + [Frameworks Libraries & Programmes Used](#frameworks-libraries-and-programmes-used)
++ [Testing](#testing)
+  + [Validator Testing](#validator-testing) 
+  + [Lighthouse Testing](#lighthouse-testing)
+  + [PowerMapper Compatibility](#powerMapper-compatibility)
+  + [Other Testing](#other-testing)
++ [Deployment](#deployment)
+  + [Deployment through GitHub Pages](#deployment-through-gitHub-pages)
+  + [Forking the Repository](#forking-the-repository)
+  + [Cloning Project](#cloning-project)
++ [Credits](#credits)
+  + [Content](#content)
+  + [Media](#media)
+  + [Acknowledgements](#acknowledgements)
+---
+---
+# User Experience
+## User Stories
+### As a casual user: 
++ I want to be able to view recipes without having to register and account. 
++ I want to be able to search for specific recipes. 
++ I want to be able to search for recipes that have a specific ingredient.
++ I want to have a varied range of cocktails.
++ I want to have a some cocktail suggestions when I'm not sure what to look for.
++ I want to have the option to register and account if I want to come back at a later date. 
+### As a returning user: 
++ I want be able to upload a recipe. 
++ I want be able to add a recipe to the pre-determined collections.
++ I want have ease of access to any recipes that I have already uploaded.
++ I want be able to edit or delete any recipes that I have already uploaded.
+## Design
+### Overall Feel
 
-Happy coding!
+For this poroject I wanted to have a dark feel to emulate a night-time setting. While there are some family-friendly recipes to choose from, the majority of the content will be more adult-themed so I feel that the bar-type setting was the way to go. 
+In keeping with the bar theme, I dewcided to have a neon effect following throughout all pages. 
+
+### Colour Scheme
+
+Because the overall theme is dark, I wanted to go with accent colours that would pop in comparison. I found the perfect colour scheme that would work with my idea, just with a couple of changes for contrast reasons.  
+
+### Typography
+
+There were two fonts that I was interested in for the site. 
+
+[Neon Tubes](https://befonts.com/neon-tubes-neon-light-font-free.html) by [guxjohn](https://befonts.com/author/guxjohn) fit perfectly with the neon light theme but is something to be used sparingly - I want to keep this just just headings and accents. I think too much of this would become tacky very quickly. 
+
+[Raleway](https://fonts.google.com/specimen/Raleway?preview.text_type=custom&preview.text=Collections&query=Raleway) is the chosen font for the majority of the text. In comparrison to Noeon Tubes, it is quite simple ansd offers a contrasting elegance. 
+
+## Wireframes and Initial Design
+### Wireframes
+All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
++ All wireframes [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/assets/pre-work/README/MS3-initial-wireframes.pdf)
+
+### Design Mock Up
++ All designs [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/assets/pre-work/README/MS3-initial-design.pdf)
+
+---
+---
+# Features
+## Current Features
+
+
+## Possible Future Features
+
+
+---
+---
+# Technologies Used
+## Languages Used
+
+## Frameworks Libraries and Programmes Used
++ [Procreate](https://procreate.art/) used to design initial mock ups, tilable background, logo and other design accents. 
++ [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to cut and re-frame site images. 
++ [Balsamiq](https://balsamiq.com/) used to create wireframes.
++ [GitHub](https://github.com/) used to host repository.
++ [GitPod](https://www.gitpod.io/) used to develop project and organise version control.
+---
+---
+# Testing
+## Validator Testing
+
+## Lighthouse Testing
+
+### Lighthouse Desktop
+
+### Lighthouse Mobile
+
+## PowerMapper Compatibility
+
+## Other Testing
+
+---
+---
+# Deployment
+
+---
+---
+# Credits
+## Code
+
+## Content
+
+## Media
+
+## Acknowledgements
