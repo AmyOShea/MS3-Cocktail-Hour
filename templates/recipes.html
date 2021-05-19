@@ -1,4 +1,4 @@
-{% extends "base.html"}
+{% extends "base.html" %}
 {% block content %}
 
     {% for recipe in recipes %}
@@ -6,6 +6,7 @@
         {{ recipe.cocktail_name }}<br>
         {{ recipe.cocktail_url }}<br>
         {{ recipe.ingredients }}<br>
+        {{ recipe.method }}<br>
     {% endfor %}
     
-{% end block %}
+{% endblock %}
