@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Coctail Hour</title>
 </head>
 <body>
+
+    <header>
+        <nav>
+            <!-- Main navbar -->
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo">Cocktail Hour</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Log Out</a></li>
+              </ul>
+            </div>
+          </nav>
+        <!-- Side navbar -->
+          <ul class="sidenav" id="mobile-demo">
+            <h3>Cocktail Hour</h3>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+    </header>
     
     {% block content %}
     {% endblock %}
