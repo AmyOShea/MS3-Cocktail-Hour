@@ -111,6 +111,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + [Pip3](https://pip.pypa.io/en/stable/) used to add packages to Python.
 + [RandomKeygen](https://randomkeygen.com/) used to create a strong password for required  `<SECRET_KEY>`.
 + [dnspython](https://www.dnspython.org/)
++ [Heroku](https://www.heroku.com/)
 ---
 ---
 # Testing
