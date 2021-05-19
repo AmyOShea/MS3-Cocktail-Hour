@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Register</h1>
+
+    <div>
+        <form method="POST" action="{{ url_for('register') }}">
+            <div>
+                <div class="input-field">
+                    <i class="fas fa-user-plus prefix"></i>
+                    <input id="username" name="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-user-lock prefix"></i>
+                <input id="password" name="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+            <div>
+                <button class="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}
