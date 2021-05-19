@@ -39,6 +39,19 @@
             <li><a href="#">Log Out</a></li>
           </ul>
     </header>
+
+    <section>
+      <!-- flash messages -->
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div">
+                      <h4>{{ message }}</h4>
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+  </section>
     
     {% block content %}
     {% endblock %}
