@@ -3,12 +3,15 @@
 
     <h1>Account Page</h1>
 
+
     <div>
-        <div>
-            <h3>
-                {{ username }}
-            </h3>
-        </div>
+        <h3>
+            {{ username }}
+        </h3>
     </div>
+    <div>
+        <a href="{{ url_for('add_recipe') }}">Upload Recipe</a>
+    </div>
+
     
 {% endblock %}

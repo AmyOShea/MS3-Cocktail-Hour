@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Add Recipe</h1>
+
+    <div>
+        <form>
+            <div>
+                <div class="input-field">
+                    <i class="fas fa-cocktail prefix"></i>
+                    <input id="cocktail-name" type="text" class="validate">
+                    <label for="cocktail-name">Cocktail Name</label>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-wine-bottle prefix"></i>
+                    <input id="ingredients" type="text" class="validate">
+                    <label for="ingredients">Ingredients</label>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-list prefix"></i>
+                    <input id="method" type="text" class="validate">
+                    <label for="method">Method</label>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-image prefix"></i>
+                    <input id="image-url" type="text" class="validate">
+                    <label for="image-url">Image URL</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}
