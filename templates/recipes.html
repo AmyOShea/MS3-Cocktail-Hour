@@ -1,25 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-    
+{% for recipe in recipes %}
     <div class="card">
-        {% for recipe in recipes %}
         <div class="main-content">
-            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=986&q=80" alt="cocktail image">
+            <img src="{{ recipe.image_url }}" alt="cocktail image">
         </div>
         <div class="overlay-content">
             <div class="card-cocktail-name">
                 {{ recipe.cocktail_name }}
             </div>
             <div class="card-cocktail-ing">
-                {{ recipe.ingredients }}
+                {{ recipe.main_ingredient }}
             </div>
             <div>
                 <a href="#" class="card-recipe-btn">Full Recipe</a>
             </div>
         </div>
-        {% endfor %}
     </div>
+{% endfor %}
 
 
 

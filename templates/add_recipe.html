@@ -4,7 +4,7 @@
 <h1>Add Recipe</h1>
 
 <div>
-    <form>
+    <form method="POST" action="{{ url_for('add_recipe') }}">
         <div>
             <div class="input-field col s12">
                 <i class="fas fa-glass-cheers prefix"></i>
@@ -22,6 +22,11 @@
                 <label for="cocktail_name">Cocktail Name</label>
             </div>
             <div class="input-field">
+                <i class="fas fa-star prefix"></i>
+                <input id="main_ingredient" name="main_ingredient" type="text" class="validate" required>
+                <label for="main_ingredient">Main Ingredient</label>
+            </div>
+            <div class="input-field">
                 <i class="fas fa-wine-bottle prefix"></i>
                 <input id="ingredients" name="ingredients" type="text" class="validate" required>
                 <label for="ingredients">Ingredients</label>
@@ -36,6 +41,9 @@
                 <input id="image_url" name="image_url" type="text" class="validate" required>
                 <label for="image_url">Image URL</label>
                 <a class="btn tooltipped far fa-question-circle" data-position="left" data-tooltip="URL info"></a>
+            </div>
+            <div class="input-field">
+                <button type="submit">Add recipe!</button>
             </div>
         </div>
     </form>
