@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Edit Recipe</h1>
+
+<div>
+    <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <div>
+            <div class="input-field col s12">
+                <i class="fas fa-glass-cheers prefix"></i>
+                <select id="category_name" name="category_name" class="validate">
+                    <option value="" disabled selected>Choose Collection</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Cocktail Collection</label>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-cocktail prefix"></i>
+                <input id="cocktail_name" name="cocktail_name" type="text" maxlength="30" class="validate" required>
+                <label for="cocktail_name">Cocktail Name</label>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-star prefix"></i>
+                <input id="main_ingredient" name="main_ingredient" type="text" class="validate" required>
+                <label for="main_ingredient">Main Ingredient</label>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-wine-bottle prefix"></i>
+                <input id="ingredients" name="ingredients" type="text" class="validate" required>
+                <label for="ingredients">Ingredients</label>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-list prefix"></i>
+                <input id="method" name="method" type="text" class="validate" required>
+                <label for="method">Method</label>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-image prefix"></i>
+                <input id="image_url" name="image_url" type="text" class="validate" required>
+                <label for="image_url">Image URL</label>
+                <a class="btn tooltipped far fa-question-circle" data-position="left" data-tooltip="URL info"></a>
+            </div>
+            <div class="input-field">
+                <button type="submit">Edit recipe!</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

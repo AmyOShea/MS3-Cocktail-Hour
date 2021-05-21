@@ -86,7 +86,8 @@ def account(username):
     # get session username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("account.html", username=username)
+    recipes = mongo.db.recipes.find()
+    return render_template("account.html", username=username, recipes=recipes)
 
 
 @app.route("/logout")
@@ -99,7 +100,7 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        task = {
+        recipe = {
             "category_name": request.form.get("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
             "main_ingredient": request.form.get("main_ingredient"),
@@ -108,12 +109,20 @@ def add_recipe():
             "image_url": request.form.get("image_url"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.insert_one(task)
+        mongo.db.recipes.insert_one(recipe)
         flash("Recipe Uploaded!")
         return redirect(url_for("account", username=session["user"]))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":
