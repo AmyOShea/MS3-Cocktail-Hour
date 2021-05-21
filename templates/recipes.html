@@ -1,7 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3>All recipes</h3>
+
+<div>
+    <form action="{{ url_for('search') }}" method="post">
+        <div>
+            <input type="text" name="query" id="query" class="validate" required>
+            <label for="query">Search</label>
+        </div>
+        <div>
+            <a href="{{ url_for('get_recipes') }}">Clear</a>
+            <button type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+
+
+{% if recipes|length > 0 %}
 {% for recipe in recipes %}
+
+    
+
     <div class="card">
         <div class="main-content">
             <img src="{{ recipe.image_url }}" alt="cocktail image">
@@ -19,7 +40,9 @@
         </div>
     </div>
 {% endfor %}
-
+{% else %}
+    <h3>No results found</h3>
+{% endif %}
 
 
 
