@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Full recipe</h3>
+
+
+
+
+            <img src="{{ recipe.image_url }}" alt="cocktail image">
+            <div>
+                {{ recipe.cocktail_name }}
+            </div>
+            <div>
+                {{ recipe.main_ingredient }}
+            </div>
+            <div>
+                {{ recipe.ingredients }}
+            </div>
+            <div>
+                {{ recipe.method }}
+            </div>
+
+
+
+
+
+
+{% endblock %}

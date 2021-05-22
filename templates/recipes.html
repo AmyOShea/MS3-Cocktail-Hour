@@ -35,7 +35,7 @@
                 {{ recipe.main_ingredient }}
             </div>
             <div>
-                <a href="#" class="card-recipe-btn">Full Recipe</a>
+                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
             </div>
         </div>
     </div>
