@@ -12,6 +12,7 @@
 
 
     {% for recipe in recipes %}
+    {% if session.user|lower == recipe.created_by|lower %}
     <div class="card">
         <div class="main-content">
             <img src="{{ recipe.image_url }}" alt="cocktail image">
@@ -30,6 +31,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
 
 

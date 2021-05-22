@@ -97,10 +97,17 @@ def login():
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
     # get session username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    recipes = mongo.db.recipes.find()
-    return render_template("account.html", username=username, recipes=recipes)
+    recipes = list(mongo.db.recipes.find())
+    if session["user"]:
+        for recipe in recipes:
+            try:
+                recipe["created_by"] = mongo.db.users.find_one({"_id": recipe["created_by"]})["username"]
+            except Exception:
+                pass
+        return render_template(
+            "account.html", username=username, recipes=recipes)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
