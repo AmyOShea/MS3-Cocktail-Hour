@@ -29,7 +29,9 @@
             <div class="input-field">
                 <i class="fas fa-wine-bottle prefix"></i>
                 <input id="ingredients" name="ingredients" type="text" class="validate" required>
+                <div id="new-ingredient"></div>
                 <label for="ingredients">Ingredients</label>
+                <button id="add-ingredient" onclick="extraIngredient">Add Another Ingredient</button>
             </div>
             <div class="input-field">
                 <i class="fas fa-list prefix"></i>
@@ -40,7 +42,6 @@
                 <i class="fas fa-image prefix"></i>
                 <input id="image_url" name="image_url" type="text" class="validate" required>
                 <label for="image_url">Image URL</label>
-                <a class="btn tooltipped far fa-question-circle" data-position="left" data-tooltip="URL info"></a>
             </div>
             <div>
                 <button type="submit">Add recipe!</button>
