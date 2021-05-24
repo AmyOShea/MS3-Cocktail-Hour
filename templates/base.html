@@ -42,10 +42,24 @@
             </div>
           </nav>
         <!-- Side navbar -->
-          <ul class="sidenav" id="mobile-demo">
+
+          <ul class="sidenav collapsible" id="mobile-demo">
             <h3>Cocktail Hour</h3>
             <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-            <li><a href="#">Collections</a></li>
+            <li>
+              <div class="collapsible-header">Collections<i class="fas fa-chevron-down"></i></div>
+              <div class="collapsible-body">
+                  <ul>
+                      <li><a href="#!">Classic</a></li>
+                      <li><a href="#!">Elegant</a></li>
+                      <li><a href="#!">Fruity</a></li>
+                      <li><a href="#!">Hot Drinks</a></li>
+                      <li><a href="#!">Mocktails</a></li>
+                      <li><a href="#!">Pitchers</a></li>
+                      <li><a href="#!">Shots</a></li>
+                    </ul>
+              </div>
+            </li>  
             {% if session.user %}
                 <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
