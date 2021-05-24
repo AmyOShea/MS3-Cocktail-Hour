@@ -8,8 +8,8 @@
         <div>
             <div class="input-field col s12">
                 <i class="fas fa-glass-cheers prefix"></i>
-                <select id="category_name" name="category_name" class="validate">
-                    <option value="" disabled selected>Choose Collection</option>
+                <select multiple id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled>Choose Collection</option>
                     {% for category in categories %}
                         <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endfor %}
