@@ -125,8 +125,8 @@ def add_recipe():
             "category_name": request.form.get("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
             "main_ingredient": request.form.get("main_ingredient"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
             "image_url": request.form.get("image_url"),
             "created_by": ObjectId(user["_id"])
         }
