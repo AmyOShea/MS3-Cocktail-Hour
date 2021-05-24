@@ -30,6 +30,7 @@
                 <input id="main_ingredient" name="main_ingredient" type="text" value="{{ recipe.main_ingredient }}" class="validate" required>
                 <label for="main_ingredient">Main Ingredient</label>
             </div>
+            
             {% for ingredient in recipe.ingredients %}
                 <div class="input-field">
                     <i class="fas fa-wine-bottle prefix"></i>
@@ -37,11 +38,15 @@
                     <label for="ingredients">Ingredients</label>
                 </div>
             {% endfor %}
-            <div class="input-field">
-                <i class="fas fa-list prefix"></i>
-                <input id="method" name="method" type="text" value="{{ recipe.method }}" class="validate" required>
-                <label for="method">Method</label>
-            </div>
+
+            {% for step in recipe.method %}
+                <div class="input-field">
+                    <i class="fas fa-list prefix"></i>
+                    <input id="method" name="method" type="text" value="{{ step }}" class="validate" required>
+                    <label for="method">Method</label>
+                </div>
+            {% endfor %}
+
             <div class="input-field">
                 <i class="fas fa-image prefix"></i>
                 <input id="image_url" name="image_url" type="text" value="{{ recipe.image_url }}" class="validate" required>
