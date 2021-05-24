@@ -14,5 +14,8 @@ $(document).ready(function(){
     $('#add-step').on('click', function () {
       const addStep = '<div class="input-field"><i class="fas fa-list prefix"></i><input id="method" name="method" type="text" class="validate" required><label for="method">Method</label></div>'
       $('#new-step').append(addStep);
-  });
+    });
+    $('.modal').modal({
+        dismissible: true
+    });
 });
