@@ -191,6 +191,12 @@ def fruity():
     return render_template("fruity.html", recipes=recipes)
 
 
+@app.route("/hot_drinks")
+def hot_drinks():
+    recipes = mongo.db.recipes.find({"category_name": 'Hot Drink'})
+    return render_template("hot_drinks.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Hot Drinks</h1>
+
+    {% for recipe in recipes %}
+
+        <div class="card">
+            <div class="main-content">
+                <img src="{{ recipe.image_url }}" alt="cocktail image">
+            </div>
+            <div class="overlay-content">
+                <div class="card-cocktail-name">
+                    {{ recipe.cocktail_name }}
+                </div>
+                <div class="card-cocktail-ing">
+                    {{ recipe.main_ingredient }}
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+    
+{% endblock %}
