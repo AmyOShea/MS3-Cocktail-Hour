@@ -30,11 +30,13 @@
                 <input id="main_ingredient" name="main_ingredient" type="text" value="{{ recipe.main_ingredient }}" class="validate" required>
                 <label for="main_ingredient">Main Ingredient</label>
             </div>
-            <div class="input-field">
-                <i class="fas fa-wine-bottle prefix"></i>
-                <input id="ingredients" name="ingredients" type="text" value="{{ recipe.ingredients }}" class="validate" required>
-                <label for="ingredients">Ingredients</label>
-            </div>
+            {% for ingredient in recipe.ingredients %}
+                <div class="input-field">
+                    <i class="fas fa-wine-bottle prefix"></i>
+                    <input id="ingredients" name="ingredients" type="text" value="{{ ingredient }}" class="validate" required>
+                    <label for="ingredients">Ingredients</label>
+                </div>
+            {% endfor %}
             <div class="input-field">
                 <i class="fas fa-list prefix"></i>
                 <input id="method" name="method" type="text" value="{{ recipe.method }}" class="validate" required>
