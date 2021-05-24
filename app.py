@@ -179,6 +179,12 @@ def classics():
     return render_template("classics.html", recipes=recipes)
 
 
+@app.route("/elegant")
+def elegant():
+    recipes = mongo.db.recipes.find({"category_name": 'Elegant'})
+    return render_template("elegant.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
