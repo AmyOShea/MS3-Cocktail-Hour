@@ -173,6 +173,12 @@ def mocktails():
     return render_template("mocktails.html", recipes=recipes)
 
 
+@app.route("/classics")
+def classics():
+    recipes = mongo.db.recipes.find({"category_name": 'Classic'})
+    return render_template("classics.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

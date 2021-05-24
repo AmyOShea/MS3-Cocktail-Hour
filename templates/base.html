@@ -19,7 +19,7 @@
               <a href="{{ url_for('home') }}" class="brand-logo">Cocktail Hour</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
               <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">Classic</a></li>
+                <li><a href="{{ url_for('classics') }}">Classics</a></li>
                 <li><a href="#!">Elegant</a></li>
                 <li><a href="#!">Fruity</a></li>
                 <li><a href="#!">Hot Drinks</a></li>
@@ -50,7 +50,7 @@
               <div class="collapsible-header">Collections<i class="fas fa-chevron-down"></i></div>
               <div class="collapsible-body">
                   <ul>
-                      <li><a href="#!">Classic</a></li>
+                      <li><a href="{{ url_for('classics') }}">Classics</a></li>
                       <li><a href="#!">Elegant</a></li>
                       <li><a href="#!">Fruity</a></li>
                       <li><a href="#!">Hot Drinks</a></li>
