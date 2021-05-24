@@ -166,6 +166,13 @@ def delete_recipe(recipe_id):
     return redirect(url_for("account", username=session["user"]))
 
 
+@app.route("/mocktails")
+def mocktails():
+    # https://docs.mongodb.com/guides/server/read_queries/
+    recipes = mongo.db.recipes.find({"category_name": 'Mocktails'})
+    return render_template("mocktails.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
