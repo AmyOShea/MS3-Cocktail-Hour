@@ -122,7 +122,7 @@ def add_recipe():
     if request.method == "POST":
         user = mongo.db.users.find_one({"username": session["user"]})
         recipe = {
-            "category_name": request.form.get("category_name"),
+            "category_name": request.form.getlist("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
             "main_ingredient": request.form.get("main_ingredient"),
             "ingredients": request.form.getlist("ingredients"),
@@ -142,7 +142,7 @@ def add_recipe():
 def edit_recipe(recipe_id):
     if request.method == "POST":
         update = {
-            "category_name": request.form.get("category_name"),
+            "category_name": request.form.getlist("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
             "main_ingredient": request.form.get("main_ingredient"),
             "ingredients": request.form.getlist("ingredients"),
@@ -199,7 +199,7 @@ def hot_drinks():
 
 @app.route("/pitchers")
 def pitchers():
-    recipes = mongo.db.recipes.find({"category_name": 'Pitchers'})
+    recipes = mongo.db.recipes.find({"category_name": 'Pitcher'})
     return render_template("pitchers.html", recipes=recipes)
 
 
