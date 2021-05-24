@@ -197,6 +197,12 @@ def hot_drinks():
     return render_template("hot_drinks.html", recipes=recipes)
 
 
+@app.route("/pitchers")
+def pitchers():
+    recipes = mongo.db.recipes.find({"category_name": 'Pitchers'})
+    return render_template("pitchers.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
