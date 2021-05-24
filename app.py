@@ -185,6 +185,12 @@ def elegant():
     return render_template("elegant.html", recipes=recipes)
 
 
+@app.route("/fruity")
+def fruity():
+    recipes = mongo.db.recipes.find({"category_name": 'Fruity'})
+    return render_template("fruity.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
