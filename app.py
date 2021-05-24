@@ -203,6 +203,12 @@ def pitchers():
     return render_template("pitchers.html", recipes=recipes)
 
 
+@app.route("/shots")
+def shots():
+    recipes = mongo.db.recipes.find({"category_name": 'Shot'})
+    return render_template("shots.html", recipes=recipes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
