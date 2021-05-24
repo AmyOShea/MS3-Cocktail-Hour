@@ -1,8 +1,7 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('select').formSelect();
-    $(".dropdown-trigger").dropdown({ 
-        hover: true,
+    $(".dropdown-trigger").dropdown({
         inDuration: 300,
         outDuration: 300
     });
