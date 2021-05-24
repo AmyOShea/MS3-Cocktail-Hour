@@ -56,3 +56,9 @@ body {
 .card-recipe-btn {
     
 }
+
+/* https://stackoverflow.com/questions/50394358/materializecss-vertically-offset-dropdown-menu-content/50395102 */
+
+.dropdown-content {
+    top: 100% !important;
+  }
