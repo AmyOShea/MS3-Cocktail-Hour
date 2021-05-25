@@ -15,7 +15,7 @@
     {% if session.user|lower == recipe.created_by|lower %}
     <div class="card">
         <div class="main-content">
-            <img src="{{ recipe.image_url }}" alt="cocktail image">
+            <img src="{{ recipe.image_url}}" alt="cocktail image">
         </div>
         <div class="overlay-content">
             <div class="card-cocktail-name">
@@ -25,7 +25,7 @@
                 {{ recipe.main_ingredient }}
             </div>
             <div>
-                <a href="#" class="card-recipe-btn">Full Recipe</a>
+                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn edit-btn">Edit</a>
                 <a class="modal-trigger" href="#modal1">Delete</a>
             </div>
