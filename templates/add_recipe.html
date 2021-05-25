@@ -6,6 +6,8 @@
 <div>
     <form method="POST" action="{{ url_for('add_recipe') }}">
         <div>
+
+
             <div class="input-field col s12">
                 <i class="fas fa-glass-cheers prefix"></i>
                 <select multiple id="category_name" name="category_name" class="validate" required>
@@ -15,6 +17,10 @@
                     {% endfor %}
                 </select>
                 <label for="category_name">Cocktail Collection</label>
+            </div>
+
+
+
             </div>
             <div class="input-field">
                 <i class="fas fa-cocktail prefix"></i>
