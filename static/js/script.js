@@ -17,4 +17,16 @@ $(document).ready(function(){
     $('.modal').modal({
         dismissible: true
     });
+    $('.carousel').carousel({
+        fullWidth: false,
+        indicators: true
+    });
+    // https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
+    autoplay();
+    function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 3500);
+    }
+
 });
+
