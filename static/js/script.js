@@ -7,20 +7,6 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.collapsible').collapsible();
 
-    // Add another ingredient
-
-    $('#add-ingredient').on('click', function () {
-        const addIngredient = '<div class="input-field"><i class="fas fa-wine-bottle prefix"></i><input id="ingredients" name="ingredients" type="text" class="validate" required><label for="ingredients">Ingredients</label></div>'
-        $('#new-ingredient').append(addIngredient);
-    });
-
-    // Add another method step
-
-    $('#add-step').on('click', function () {
-      const addStep = '<div class="input-field"><i class="fas fa-list prefix"></i><input id="method" name="method" type="text" class="validate" required><label for="method">Method</label></div>'
-      $('#new-step').append(addStep);
-    });
-
     // Delete recipe modal
     $('.modal').modal();
 
@@ -36,6 +22,18 @@ $(document).ready(function(){
     $('.carousel').carousel('next');
     setTimeout(autoplay, 3500);
     }
+    
 
 });
 
+function addIngredient(newIng) {
+
+    let addIng = document.createElement('div');
+    addIng.innerHTML = '<div id="ingredientholder" class="input-field"><i class="fas fa-wine-bottle prefix"></i><input id="ingredients" type="text" name="ingredients" class="validate"><label for="ingredients" placeholder="Ingredient">Ingredient</label><a onClick="deleteIngredient(this)">Remove</a></div>'
+    document.getElementById(newIng).appendChild(addIng);
+    counter++;
+};
+
+function deleteIngredient(element) {
+ document.getElementById("ingredientholder").remove();
+}
