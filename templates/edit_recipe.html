@@ -38,6 +38,8 @@
                     <label for="ingredients">Ingredients</label>
                 </div>
             {% endfor %}
+            <div id="newIngredient"></div>
+            <a onClick="addIngredient('newIngredient')">Add Another Ingredient</a>
 
             {% for step in recipe.method %}
                 <div class="input-field">
@@ -46,12 +48,13 @@
                     <label for="method">Method</label>
                 </div>
             {% endfor %}
+            <div id="newStep"></div>
+            <a onclick="addSteps('newStep')">Add Another Method Step<a>
 
             <div class="input-field">
                 <i class="fas fa-image prefix"></i>
                 <input id="image_url" name="image_url" type="text" value="{{ recipe.image_url }}" class="validate" required>
                 <label for="image_url">Image URL</label>
-                <a class="btn tooltipped far fa-question-circle" data-position="left" data-tooltip="URL info"></a>
             </div>
             <div>
                 <button type="submit">Update</button>
