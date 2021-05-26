@@ -3,26 +3,28 @@
 
     <h1>Shots</h1>
 
-    {% for recipe in recipes %}
-
-        <div class="card">
-            <div class="main-content">
-                <img src="{{ recipe.image_url }}" alt="cocktail image">
+    <div class="row">
+        {% for recipe in recipes %}
+            <div class="card-container col s12 m6 l3">
+                <div class="card">
+                    <div class="main-content">
+                        <img src="{{ recipe.image_url }}" alt="cocktail image">
+                    </div>
+                    <div class="overlay-content">
+                        <div class="card-cocktail-name">
+                            {{ recipe.cocktail_name }}
+                        </div>
+                        <div class="card-cocktail-ing">
+                            {{ recipe.main_ingredient }}
+                        </div>
+                        <div>
+                            <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="overlay-content">
-                <div class="card-cocktail-name">
-                    {{ recipe.cocktail_name }}
-                </div>
-                <div class="card-cocktail-ing">
-                    {{ recipe.main_ingredient }}
-                </div>
-                <div>
-                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
-                </div>
-            </div>
-        </div>
-
-    {% endfor %}
+        {% endfor %}
+    </div>
 
     
 {% endblock %}

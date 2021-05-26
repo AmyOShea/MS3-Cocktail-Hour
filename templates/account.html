@@ -10,41 +10,44 @@
         </h3>
     </div>
 
-
+<div class="row">
     {% for recipe in recipes %}
     {% if session.user|lower == recipe.created_by|lower %}
-    <div class="card">
-        <div class="main-content">
-            <img src="{{ recipe.image_url}}" alt="cocktail image">
-        </div>
-        <div class="overlay-content">
-            <div class="card-cocktail-name">
-                {{ recipe.cocktail_name }}
+        <div class="card-container col s12 m6 l3">
+            <div class="card">
+                <div class="main-content">
+                    <img src="{{ recipe.image_url}}" alt="cocktail image">
+                </div>
+                <div class="overlay-content">
+                    <div class="card-cocktail-name">
+                        {{ recipe.cocktail_name }}
+                    </div>
+                    <div class="card-cocktail-ing">
+                        {{ recipe.main_ingredient }}
+                    </div>
+                    <div>
+                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn edit-btn">Edit</a>
+                        <a class="modal-trigger" href="#delete_recipe{{recipe._id}}">Delete</a>
+                    </div>
+                </div>
             </div>
-            <div class="card-cocktail-ing">
-                {{ recipe.main_ingredient }}
+        </div>
+            <div class="modal" id="delete_recipe{{recipe._id}}">
+                <div class="modal-content">
+                <p>You are about to pemanantly delete this recipe</p>
+                <p>Once you have deleted it, you cannot get it back</p>
+                <p>Are you sure that you wish to delete?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="card-recipe-btn modal-close ">Cancel</button>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn delete-btn">Delete</a>
+                </div>
             </div>
-            <div>
-                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn edit-btn">Edit</a>
-                <a class="modal-trigger" href="#delete_recipe{{recipe._id}}">Delete</a>
-            </div>
-        </div>
-    </div>
-    <div class="modal" id="delete_recipe{{recipe._id}}">
-        <div class="modal-content">
-          <p>You are about to pemanantly delete this recipe</p>
-          <p>Once you have deleted it, you cannot get it back</p>
-          <p>Are you sure that you wish to delete?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="card-recipe-btn modal-close ">Cancel</button>
-            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn delete-btn">Delete</a>
-        </div>
-    </div>
+
     {% endif %}
     {% endfor %}
-
+</div>
 
     <div>
         <a href="{{ url_for('add_recipe') }}">Upload Recipe</a>
