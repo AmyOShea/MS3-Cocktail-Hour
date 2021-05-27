@@ -36,7 +36,7 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("recipes.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -52,8 +52,15 @@ def full_recipe(recipe_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find({"$text": {"$search": query}}).count()
     recipes = mongo.db.recipes.find({"$text": {"$search": query}})
-    return render_template("recipes.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='materializecss')
+    return render_template("recipes.html", recipes=recipes_paginated,
+                           page=page, per_page=per_page, pagination=pagination)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -190,7 +197,7 @@ def mocktails():
     recipes = mongo.db.recipes.find({"category_name": 'Mocktails'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("mocktails.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -208,7 +215,7 @@ def classics():
     recipes = mongo.db.recipes.find({"category_name": 'Classic'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("classics.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -226,7 +233,7 @@ def elegant():
     recipes = mongo.db.recipes.find({"category_name": 'Elegant'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("elegant.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -244,7 +251,7 @@ def fruity():
     recipes = mongo.db.recipes.find({"category_name": 'Fruity'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("fruity.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -262,7 +269,7 @@ def hot_drinks():
     recipes = mongo.db.recipes.find({"category_name": 'Hot Drink'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("hot_drinks.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -280,7 +287,7 @@ def pitchers():
     recipes = mongo.db.recipes.find({"category_name": 'Pitcher'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("pitchers.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
@@ -298,7 +305,7 @@ def shots():
     recipes = mongo.db.recipes.find({"category_name": 'Shot'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
-                            total=total)
+                            total=total, css_framework='materializecss')
     return render_template("shots.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
