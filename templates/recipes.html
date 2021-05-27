@@ -41,13 +41,14 @@
     {% else %}
         <h3>No results found</h3>
     {% endif %}
-</div>
-<div>
+
     <!-- pagination  -->
-{% if recipes.count() >= 1 %}
-    {{ pagination.links }}
-    {% endif %}
+
 </div>
 
+{% if recipes.count() >= 1 %}
+{{ pagination.links }}
+{{ pagination.info }}
+{% endif %}
 
 {% endblock %}
