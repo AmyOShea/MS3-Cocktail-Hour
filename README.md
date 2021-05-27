@@ -24,10 +24,6 @@ It is a community based experience that allows causal, one-time users to browse 
   + [Libraries](#libraries)
   + [Programmes and Ext Resources](#programmes-and-ext-resources)
 + [Testing](#testing)
-  + [Validator Testing](#validator-testing) 
-  + [Lighthouse Testing](#lighthouse-testing)
-  + [PowerMapper Compatibility](#powerMapper-compatibility)
-  + [Other Testing](#other-testing)
 + [Deployment](#deployment)
   + [Deployment through GitHub Pages](#deployment-through-gitHub-pages)
   + [Forking the Repository](#forking-the-repository)
@@ -82,9 +78,25 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 ---
 # Features
 ## Current Features
++ Navigation menu displayed across all pages.
++ Carousel displayed on home page for browsing the various 'Collections'. 
++ All recipes accessible to users who don't want to make an account.
++ Users can search for recipes based on either key words or ingredients.
++ Users can create an account.
++ Users can log into/sign out of their account.
++ Registered users can upload their own recipes.
++ Registered users add their own recipes to one or more 'Collections'.
++ Registered users can view their own added recipes.
++ Registered users can edit recipes that they have already added. 
 
 
 ## Possible Future Features
++ A rating system that allows users to rate each others recipes. 
+  + This could lead to sorting buy top-rated recipes.
++ Ability to 'save' recipes to a users own account to refer back to.
++ Users ability to update username. 
++ Users ability to delete their account. 
+  + This could allow the user to either leave their recipes on the site or delete them along with the account 
 
 
 ---
@@ -115,17 +127,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 ---
 ---
 # Testing
-## Validator Testing
-
-## Lighthouse Testing
-
-### Lighthouse Desktop
-
-### Lighthouse Mobile
-
-## PowerMapper Compatibility
-
-## Other Testing
+Due to the size of the testing section, I have created a separate document for it. You can find  it [here](https://github.com/AmyOShea/MS-3-Cocktail-Hour/blob/master/TESTING.md). 
 
 ---
 ---
