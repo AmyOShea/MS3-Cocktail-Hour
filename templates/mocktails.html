@@ -25,6 +25,10 @@
             </div>
         {% endfor %}
     </div>
-
+    <div>
+        {% if recipes.count() >= 1 %}
+        {{ pagination.links }}
+        {% endif %}
+    </div>
     
 {% endblock %}

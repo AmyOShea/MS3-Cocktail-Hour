@@ -181,44 +181,128 @@ def delete_recipe(recipe_id):
 
 @app.route("/mocktails")
 def mocktails():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Mocktails'})
-    return render_template("classics.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("mocktails.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/classics")
 def classics():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Classic'})
-    return render_template("classics.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("classics.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/elegant")
 def elegant():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Elegant'})
-    return render_template("elegant.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("elegant.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/fruity")
 def fruity():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Fruity'})
-    return render_template("fruity.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("fruity.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/hot_drinks")
 def hot_drinks():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Hot Drink'})
-    return render_template("hot_drinks.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("hot_drinks.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/pitchers")
 def pitchers():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Pitcher'})
-    return render_template("pitchers.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("pitchers.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/shots")
 def shots():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     recipes = mongo.db.recipes.find({"category_name": 'Shot'})
-    return render_template("shots.html", recipes=recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total)
+    return render_template("shots.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 if __name__ == "__main__":
