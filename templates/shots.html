@@ -4,31 +4,37 @@
     <h1>Shots</h1>
 
     <div class="row">
-        {% for recipe in recipes %}
-            <div class="card-container col s12 m6 l3">
-                <div class="card">
-                    <div class="main-content">
-                        <img src="{{ recipe.image_url }}" alt="cocktail image">
+        <div class="col s12 m8 offset-m2">
+            <div class="row">
+                {% for recipe in recipes %}
+                    <div class="card-container col s12 m6 l3">
+                        <div class="card">
+                            <div class="main-content">
+                                <img src="{{ recipe.image_url }}" alt="cocktail image">
+                            </div>
+                            <div class="overlay-content">
+                                <div class="card-cocktail-name">
+                                    {{ recipe.cocktail_name }}
+                                </div>
+                                <div class="card-cocktail-ing">
+                                    {{ recipe.main_ingredient }}
+                                </div>
+                                <div>
+                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="overlay-content">
-                        <div class="card-cocktail-name">
-                            {{ recipe.cocktail_name }}
-                        </div>
-                        <div class="card-cocktail-ing">
-                            {{ recipe.main_ingredient }}
-                        </div>
-                        <div>
-                            <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-    </div>
-    <div>
-        {% if recipes.count() >= 1 %}
-        {{ pagination.links }}
-        {% endif %}
+            <div class="pagination-container">
+                <!-- Pagination -->
+                {% if recipes.count() >= 1 %}
+                {{ pagination.links }}
+                {{ pagination.info }}
+                {% endif %}
+            </div>
+        </div>
     </div>
 
     

@@ -7,8 +7,8 @@ body {
 }
 
 .card {
-    height: 350px;
-    width: 350px;
+    height: 200px;
+    width: 200px;
     position: relative;
     overflow: hidden;
 }
@@ -20,8 +20,8 @@ body {
 
 .card .main-content img {
     object-fit: cover;
-    width:350px;
-    height:350px;
+    width: 200px;
+    height: 200px;
 }
 
 .card .overlay-content {
@@ -31,7 +31,7 @@ body {
     color: aliceblue;
     overflow: hidden;
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 0;
     z-index: 1;
     backdrop-filter: blur(6px);
@@ -44,9 +44,10 @@ body {
 }
 
 .card-cocktail-name {
-    margin: 14px;
-    font-size: 1.8em;
+    margin: 8px;
+    font-size: 1.4em;
     font-weight: 600;
+    line-height: 1.1em;
 }
 
 .card-cocktail-ing {
@@ -73,4 +74,9 @@ body {
 .card-container {
     display: flex;
     justify-content: center;
+}
+
+.pagination-container {
+    text-align: center;
+
 }
