@@ -52,7 +52,14 @@
             <div>
                 <a href="{{ url_for('add_recipe') }}">Upload Recipe</a>
             </div>
+            <div class="pagination-container">
+                <!-- Pagination -->
+                {% if recipes|length >= 1 %}
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+                {% endif %}
+            </div>
         </div>
     </div>
-    
+
 {% endblock %}
