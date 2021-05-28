@@ -86,6 +86,8 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + Users can log into/sign out of their account.
 + Registered users can upload their own recipes.
 + Registered users add their own recipes to one or more 'Collections'.
++ Registered users can add an image their own recipes via URL.
++ Registered users who don't want to search for an image can use the default image URL.
 + Registered users can view their own added recipes.
 + Registered users can edit recipes that they have already added. 
 
@@ -94,6 +96,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + A rating system that allows users to rate each others recipes. 
   + This could lead to sorting buy top-rated recipes.
 + Ability to 'save' recipes to a users own account to refer back to.
++ Ability to upload a saved image to their recipe rather than relying on a URL.
 + Users ability to update username. 
 + Users ability to delete their account. 
   + This could allow the user to either leave their recipes on the site or delete them along with the account 
@@ -127,7 +130,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 ---
 ---
 # Testing
-Due to the size of the testing section, I have created a separate document for it. You can find  it [here](https://github.com/AmyOShea/MS-3-Cocktail-Hour/blob/master/TESTING.md). 
+Due to the size of the testing section, I have created a separate document for it. You can find  it [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md). 
 
 ---
 ---
