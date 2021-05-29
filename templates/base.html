@@ -1,94 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
-    <title>Coctail Hour</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+    crossorigin="anonymous" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+  <title>Coctail Hour</title>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <!-- Main navbar -->
-            <div class="nav-wrapper">
-              <a href="{{ url_for('home') }}" class="brand-logo">Cocktail Hour</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-              <ul id="dropdown1" class="dropdown-content">
-                <li><a href="{{ url_for('classics') }}">Classics</a></li>
-                <li><a href="{{ url_for('elegant') }}">Elegant</a></li>
-                <li><a href="{{ url_for('fruity') }}">Fruity</a></li>
-                <li><a href="{{ url_for('hot_drinks') }}">Hot Drinks</a></li>
-                <li><a href="{{ url_for('mocktails') }}">Mocktails</a></li>
-                <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
-                <li><a href="{{ url_for('shots') }}">Shots</a></li>
-              </ul>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-                <li><a class="dropdown-trigger" data-target="dropdown1">Collections<i class="fas fa-chevron-down"></i></a></li>
-                {% if session.user %}
-                  <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-                  <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                {% else %}
-                  <li><a href="{{ url_for('register') }}">Register</a></li>
-                  <li><a href="{{ url_for('login') }}">Log In</a></li>
-                {% endif %}
-                
-              </ul>
-            </div>
-          </nav>
-        <!-- Side navbar -->
-
-          <ul class="sidenav collapsible" id="mobile-demo">
-            <h3>Cocktail Hour</h3>
-            <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-            <li>
-              <div class="collapsible-header">Collections<i class="fas fa-chevron-down"></i></div>
-              <div class="collapsible-body">
-                  <ul>
-                      <li><a href="{{ url_for('classics') }}">Classics</a></li>
-                      <li><a href="{{ url_for('elegant') }}">Elegant</a></li>
-                      <li><a href="{{ url_for('fruity') }}">Fruity</a></li>
-                      <li><a href="{{ url_for('hot_drinks') }}">Hot Drinks</a></li>
-                      <li><a href="{{ url_for('mocktails') }}">Mocktails</a></li>
-                      <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
-                      <li><a href="{{ url_for('shots') }}">Shots</a></li>
-                    </ul>
-              </div>
-            </li>  
-            {% if session.user %}
-                <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-              {% else %}
-                <li><a href="{{ url_for('register') }}">Register</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-              {% endif %}
-          </ul>
-    </header>
-
-    <section>
-      <!-- flash messages -->
-      {% with messages = get_flashed_messages() %}
-          {% if messages %}
-              {% for message in messages %}
-                  <div">
-                      <h4>{{ message }}</h4>
-                  </div>
-              {% endfor %}
+  <header>
+    <nav>
+      <!-- Main navbar -->
+      <div class="nav-wrapper">
+        <a href="{{ url_for('home') }}" class="brand-logo">Cocktail Hour</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="{{ url_for('classics') }}">Classics</a></li>
+          <li><a href="{{ url_for('elegant') }}">Elegant</a></li>
+          <li><a href="{{ url_for('fruity') }}">Fruity</a></li>
+          <li><a href="{{ url_for('hot_drinks') }}">Hot Drinks</a></li>
+          <li><a href="{{ url_for('mocktails') }}">Mocktails</a></li>
+          <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
+          <li><a href="{{ url_for('shots') }}">Shots</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+          <li><a class="dropdown-trigger" data-target="dropdown1">Collections<i class="fas fa-chevron-down"></i></a>
+          </li>
+          {% if session.user %}
+          <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          {% else %}
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
           {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+    <!-- Side navbar -->
+
+    <ul class="sidenav collapsible" id="mobile-demo">
+      <h3>Cocktail Hour</h3>
+      <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+      <li>
+        <div class="collapsible-header">Collections<i class="fas fa-chevron-down"></i></div>
+        <div class="collapsible-body">
+          <ul>
+            <li><a href="{{ url_for('classics') }}">Classics</a></li>
+            <li><a href="{{ url_for('elegant') }}">Elegant</a></li>
+            <li><a href="{{ url_for('fruity') }}">Fruity</a></li>
+            <li><a href="{{ url_for('hot_drinks') }}">Hot Drinks</a></li>
+            <li><a href="{{ url_for('mocktails') }}">Mocktails</a></li>
+            <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
+            <li><a href="{{ url_for('shots') }}">Shots</a></li>
+          </ul>
+        </div>
+      </li>
+      {% if session.user %}
+      <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% else %}
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      <li><a href="{{ url_for('login') }}">Log In</a></li>
+      {% endif %}
+    </ul>
+  </header>
+
+  <section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div">
+      <h4>{{ message }}</h4>
+      </div>
+      {% endfor %}
+      {% endif %}
       {% endwith %}
   </section>
-    
-    {% block content %}
-    {% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block content %}
+  {% endblock %}
+
+  <footer class="page-footer">
+      <div class="container footer-container">
+          <div class="row footer-row">
+              <h4>FOLLOW US</h4>
+              <div class="col s12 footer-stuff">
+                  <ul class="footer-links">
+                      <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

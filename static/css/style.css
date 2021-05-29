@@ -54,10 +54,6 @@ body {
     font-weight: 500;
 }
 
-.card-recipe-btn {
-    
-}
-
 /* https://stackoverflow.com/questions/50394358/materializecss-vertically-offset-dropdown-menu-content/50395102 */
 
 .dropdown-content {
@@ -123,3 +119,16 @@ body {
     position: relative;
   }
   
+.footer-container {
+    text-align: center;
+}
+
+.footer-links li {
+    display: inline-block;
+    font-size: 1.8em;
+    letter-spacing: 1em;
+}
+
+.footer-row {
+    margin: 0;
+}
