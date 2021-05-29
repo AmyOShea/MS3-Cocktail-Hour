@@ -29,20 +29,20 @@ $(document).ready(function(){
 // Add another ingredient input
 function addIngredient(newIng) {
     let addIng = document.createElement('div');
-    addIng.innerHTML = '<div id="ingredientholder" class="input-field"><i class="fas fa-wine-bottle prefix"></i><input id="ingredients" type="text" name="ingredients" class="validate"><label for="ingredients" placeholder="Ingredient">Ingredient</label><a onClick="deleteIngredient(this)">Remove</a></div>'
+    addIng.innerHTML = '<div id="ingredientInput" class="input-field"><i class="fas fa-wine-bottle prefix"></i><input id="ingredients" type="text" name="ingredients" class="validate"><label for="ingredients" placeholder="Ingredient">Ingredient</label><a onClick="deleteIngredient(this)">Remove</a></div>'
     document.getElementById(newIng).appendChild(addIng);
 };
 
 //Delete added ingredient input
 function deleteIngredient(element) {
- document.getElementById("ingredientholder").remove();
+ document.getElementById("ingredientInput").remove();
 }
 
 
 // Add another method input
 function addSteps(newStep) {
     let addStep = document.createElement('div');
-    addStep.innerHTML = '<div id="methodholder" class="input-field"><i class="fas fa-list prefix"></i><input id="method" type="text" name="method" class="validate"><label for="method" placeholder="Method">Method</label><a onClick="deleteStep(this)">Remove</a></div>'
+    addStep.innerHTML = '<div id="methodholder" class="input-field"><i class="fas fa-list prefix"></i><input id="method" type="text" name="method" class="validate"><label for="method">Method</label><a onClick="deleteStep(this)">Remove</a></div>'
     document.getElementById(newStep).appendChild(addStep);
 };
 
