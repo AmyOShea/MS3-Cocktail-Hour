@@ -114,7 +114,6 @@ def login():
     return render_template("login.html")
 
 
-''''
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
 
@@ -128,26 +127,6 @@ def account(username):
         return render_template(
             "account.html", username=username, recipes=recipes)
 
-    return redirect(url_for("login"))
-'''
-
-
-@app.route("/account/<username>", methods=["GET", "POST"])
-def account(username):
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
-    per_page = 12
-    offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
-    recipes = list(mongo.db.recipes.find())
-    recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='materializecss')
-    if session["user"]:
-        for recipe in recipes:
-            try:
-                recipe["created_by"] = mongo.db.users.find_one({"_id": recipe["created_by"]})["username"]
-            except Exception:
-                pass
-        return render_template("account.html", recipes=recipes_paginated, page=page, per_page=per_page, pagination=pagination)
     return redirect(url_for("login"))
 
 
