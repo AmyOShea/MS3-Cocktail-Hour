@@ -80,3 +80,46 @@ body {
     text-align: center;
 
 }
+
+.collection-container {
+    height: 40vh;
+}
+
+.classics-image {
+    background-image: url(../images/site-images/classic-banner.jpg);
+}
+
+.elegance-image {
+    background-image: url(../images/site-images/elegance-banner.jpg);
+}
+
+.fruity-image {
+    background-image: url(../images/site-images/fruity-banner.jpg);
+}
+
+.hot-drinks-image {
+    background-image: url(../images/site-images/hot-drinks-banner.jpg);
+}
+
+.mocktails-image {
+    background-image: url(../images/site-images/mocktails-banner.jpg);
+}
+
+.pitchers-image {
+    background-image: url(../images/site-images/pitchers-banner.jpg);
+}
+
+.shots-image {
+    background-image: url(../images/site-images/shots-banner.jpg);
+}
+
+
+
+.collection-banner-image {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
