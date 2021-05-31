@@ -7,12 +7,14 @@
     font-weight: normal;
     font-style: normal;
 }
-static/css/fonts/NeonTubes2-Regular.woff
+
 
 body {
     margin: 0 !important;
     padding: 0 !important;
     font-family: 'Raleway', sans-serif;
+    background-image: url(../images/site-images/site-bg-image.jpg);
+    background-repeat: repeat;
 }
 
 .card {
@@ -133,7 +135,7 @@ body {
 .page-footer {
     padding-top: .6em;
     margin: 0;
-    background-color: #1e1e1e;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .page-footer h4 {
