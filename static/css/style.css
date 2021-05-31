@@ -228,3 +228,29 @@ nav {
     background-color: rgba(0, 0, 0, 0.7);
     text-shadow: 0 0 3px #fff;
 }
+
+.sidenav {
+    color: #fff;
+    background-color:  rgba(0, 0, 0, 0.9);
+}
+
+.sidenav li a {
+    color: #fff;
+}
+
+.sidenav .collapsible-header {
+    padding: 0 32px;
+    font-weight: 500;
+}
+
+.sidenav .collapsible-body {
+    background-color: transparent;
+}
+
+.collapsible-body li a{
+    font-weight: 300;
+}
+
+.collapsible-header i {
+    font-size: .8em;
+}
