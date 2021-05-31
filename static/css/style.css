@@ -126,8 +126,23 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-  }
-  
+}
+
+/* ------------- FOOTER */
+
+.page-footer {
+    padding-top: .6em;
+    margin: 0;
+    background-color: #1e1e1e;
+}
+
+.page-footer h4 {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 10px;
+    font-weight: 200;
+}
+
 .footer-container {
     text-align: center;
 }
@@ -135,12 +150,24 @@ body {
 .footer-links li {
     display: inline-block;
     font-size: 1.8em;
-    letter-spacing: 1em;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+.footer-links li a {
+    color: #fff;
+}
+
+.footer-links li a:hover {
+    text-shadow: 0 0 4px #fff;
 }
 
 .footer-row {
     margin: 0;
 }
+
+/* ------------- Hero Area */
 
 .welcome-container {
     height: 100vh;
