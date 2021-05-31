@@ -123,7 +123,7 @@ def account(username):
             try:
                 recipe["created_by"] = mongo.db.users.find_one({"_id": recipe["created_by"]})["username"]
             except Exception:
-                pass
+                print("issue")
         return render_template(
             "account.html", username=username, recipes=recipes)
 
@@ -161,6 +161,7 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
+        user = mongo.db.users.find_one({"username": session["user"]})
         update = {
             "category_name": request.form.getlist("category_name"),
             "cocktail_name": request.form.get("cocktail_name"),
@@ -168,7 +169,7 @@ def edit_recipe(recipe_id):
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
             "image_url": request.form.get("image_url"),
-            "created_by": session["user"]
+            "created_by": ObjectId(user["_id"])
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update)
         flash("Recipe Edited!")
@@ -193,7 +194,7 @@ def mocktails():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Mocktails'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Mocktails'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
@@ -211,7 +212,7 @@ def classics():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Classic'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Classic'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
@@ -229,7 +230,7 @@ def elegant():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Elegant'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Elegant'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
@@ -247,7 +248,7 @@ def fruity():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Fruity'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Fruity'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
@@ -265,7 +266,7 @@ def hot_drinks():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Hot Drink'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Hot Drink'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
@@ -283,7 +284,7 @@ def pitchers():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Pitcher'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Pitcher'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
@@ -301,7 +302,7 @@ def shots():
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    total = mongo.db.recipes.find({"category_name": 'Shot'}).count()
     recipes = mongo.db.recipes.find({"category_name": 'Shot'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
