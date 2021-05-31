@@ -255,7 +255,7 @@ nav {
 
 .dropdown-content {
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000;
 }
 
 .dropdown-content li a{
@@ -292,3 +292,50 @@ nav {
 .collapsible-header i {
     font-size: .8em;
 }
+/* ----------- Upoad/Edit recipe */
+
+.edit-upload-header {
+    font-family: 'NeonTubes2';
+    color: #fff;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.edit-upload-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 50px 0;
+
+}
+
+form {
+    color: #fff;
+    padding: 20px;
+}
+
+input {
+    color: #fff;
+}
+
+.input-field {
+    margin-top: 48px;
+}
+
+.btn {
+    color: #fff;
+    background-color: #1e1e1e;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-left: 45px;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #1e1e1e;
+    border: 1px solid #fff;
+    box-shadow: 0 0 7px #fff;
+    border-radius: 5px;
+    margin-left: 45px;
+}
+

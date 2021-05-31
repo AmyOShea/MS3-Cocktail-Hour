@@ -1,67 +1,71 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Edit Recipe</h1>
+    <div class="edit-upload-header">
+        <h1>Edit Recipe</h1>
+    </div>
 
-<div>
-    <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-        <div>
-            <div class="input-field col s12">
-                <i class="fas fa-glass-cheers prefix"></i>
-                <select multiple id="category_name" name="category_name" class="validate">
-                    <option value="" disabled>Choose Collection</option>
-                    {% for category in categories %}
-                        {% if category.category_name == recipe.category_name %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                        {% else %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endif %}
+    <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3 edit-upload-container">
+            <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                <div>
+                    <div class="input-field">
+                        <i class="fas fa-glass-cheers prefix"></i>
+                        <select multiple id="category_name" name="category_name" class="validate">
+                            <option value="" disabled>Choose Collection</option>
+                            {% for category in categories %}
+                                {% if category.category_name == recipe.category_name %}
+                                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                {% else %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <label for="category_name">Cocktail Collection</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-cocktail prefix"></i>
+                        <input id="cocktail_name" name="cocktail_name" type="text" maxlength="30" value="{{ recipe.cocktail_name }}" class="validate"class="validate" value="https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" required>
+                        <label for="cocktail_name">Cocktail Name</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-star prefix"></i>
+                        <input id="main_ingredient" name="main_ingredient" type="text" value="{{ recipe.main_ingredient }}" class="validate" required>
+                        <label for="main_ingredient">Main Ingredient</label>
+                    </div>
+                    
+                    {% for ingredient in recipe.ingredients %}
+                        <div class="input-field">
+                            <i class="fas fa-wine-bottle prefix"></i>
+                            <input id="ingredients" name="ingredients" type="text" value="{{ ingredient }}" class="validate" required>
+                            <label for="ingredients">Ingredients</label>
+                        </div>
                     {% endfor %}
-                </select>
-                <label for="category_name">Cocktail Collection</label>
-            </div>
-            <div class="input-field">
-                <i class="fas fa-cocktail prefix"></i>
-                <input id="cocktail_name" name="cocktail_name" type="text" maxlength="30" value="{{ recipe.cocktail_name }}" class="validate"class="validate" value="https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" required>
-                <label for="cocktail_name">Cocktail Name</label>
-            </div>
-            <div class="input-field">
-                <i class="fas fa-star prefix"></i>
-                <input id="main_ingredient" name="main_ingredient" type="text" value="{{ recipe.main_ingredient }}" class="validate" required>
-                <label for="main_ingredient">Main Ingredient</label>
-            </div>
-            
-            {% for ingredient in recipe.ingredients %}
-                <div class="input-field">
-                    <i class="fas fa-wine-bottle prefix"></i>
-                    <input id="ingredients" name="ingredients" type="text" value="{{ ingredient }}" class="validate" required>
-                    <label for="ingredients">Ingredients</label>
-                </div>
-            {% endfor %}
-            <div id="newIngredient"></div>
-            <a onClick="addIngredient('newIngredient')">Add Another Ingredient</a>
+                    <div id="newIngredient"></div>
+                    <a class="btn" onClick="addIngredient('newIngredient')">Add Another Ingredient</a>
 
-            {% for step in recipe.method %}
-                <div class="input-field">
-                    <i class="fas fa-list prefix"></i>
-                    <input id="method" name="method" type="text" value="{{ step }}" class="validate" required>
-                    <label for="method">Method</label>
-                </div>
-            {% endfor %}
-            <div id="newStep"></div>
-            <a onclick="addSteps('newStep')">Add Another Method Step<a>
+                    {% for step in recipe.method %}
+                        <div class="input-field">
+                            <i class="fas fa-list prefix"></i>
+                            <input id="method" name="method" type="text" value="{{ step }}" class="validate" required>
+                            <label for="method">Method</label>
+                        </div>
+                    {% endfor %}
+                    <div id="newStep"></div>
+                    <a class="btn" onclick="addSteps('newStep')">Add Another Method Step<a>
 
-            <div class="input-field">
-                <i class="fas fa-image prefix"></i>
-                <input id="image_url" name="image_url" type="text" value="{{ recipe.image_url }}" class="validate" required>
-                <label for="image_url">Image URL</label>
-            </div>
-            <div>
-                <button type="submit">Update</button>
-                <a href="{{ url_for('account', username=session['user']) }}">Cancel</a>
-            </div>
+                    <div class="input-field">
+                        <i class="fas fa-image prefix"></i>
+                        <input id="image_url" name="image_url" type="text" value="{{ recipe.image_url }}" class="validate" required>
+                        <label for="image_url">Image URL</label>
+                    </div>
+                    <div>
+                        <button class="btn" type="submit">Update</button>
+                        <a class="btn" href="{{ url_for('account', username=session['user']) }}">Cancel</a>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
+    </div>
 
 {% endblock %}
