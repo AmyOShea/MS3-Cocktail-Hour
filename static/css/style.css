@@ -194,3 +194,37 @@ body {
     right: 0;
 }
 
+/* ---------- Navbar */
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#nav-main-text {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+#nav-main-text:hover {
+    font-size: 2em;
+    font-weight: 600;
+    text-shadow: 0 0 3px #fff;
+}
+
+#nav-down-btn {
+    font-size: 1em;
+}
+
+.dropdown-content {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content li a{
+    color: #fff;
+}
+
+.dropdown-content li:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 3px #fff;
+}

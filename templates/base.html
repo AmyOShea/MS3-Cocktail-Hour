@@ -21,7 +21,7 @@
     <nav>
       <!-- Main navbar -->
       <div class="nav-wrapper">
-        <a href="{{ url_for('home') }}" class="brand-logo">Cocktail Hour</a>
+        <a id="nav-main-text" href="{{ url_for('home') }}">Cocktail Hour</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
         <ul id="dropdown1" class="dropdown-content">
           <li><a href="{{ url_for('classics') }}">Classics</a></li>
@@ -32,9 +32,9 @@
           <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
           <li><a href="{{ url_for('shots') }}">Shots</a></li>
         </ul>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right hide-on-med-and-down top-nav">
           <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-          <li><a class="dropdown-trigger" data-target="dropdown1">Collections<i class="fas fa-chevron-down"></i></a>
+          <li><a class="dropdown-trigger" data-target="dropdown1">Collections <i id="nav-down-btn" class="fas fa-chevron-down"></i></a>
           </li>
           {% if session.user %}
           <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
