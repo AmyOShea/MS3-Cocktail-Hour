@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+    font-family: NeonTubes2;
+    src: url(../css/fonts/NeonTubes2-Regular.woff2) format("woff2"),
+        url(../css/fonts/NeonTubes2-Regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+static/css/fonts/NeonTubes2-Regular.woff
+
 body {
     margin: 0 !important;
     padding: 0 !important;
@@ -132,3 +141,56 @@ body {
 .footer-row {
     margin: 0;
 }
+
+.welcome-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: url('../images/site-images/wall.jpg');
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    z-index: -3;
+
+}
+
+.welcome-text-container {
+    width: 100vw;
+    justify-content: center;
+}
+
+.welcome-text {
+
+    width: 100vw;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#header-text {
+    color: aliceblue;
+    font-family: 'NeonTubes2';
+    font-size: 6em;
+    position: absolute;
+    text-shadow: 0px 0px 20px #fe53ba ;
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+/* https://www.youtube.com/watch?v=0ltdZ8CrqG8 */
+#header-text:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    color: #fe53ba;
+    filter: blur(15px);
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
