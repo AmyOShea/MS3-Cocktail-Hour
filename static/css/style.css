@@ -248,9 +248,9 @@ body {
   }
 
 @media only screen and (max-width: 374px) {
-#hero-logo {
-    margin-top: 500px
-}
+    #hero-logo {
+        margin-top: 500px
+    }
 }
 
 /* ---------- Navbar */
@@ -314,21 +314,20 @@ nav {
 .collapsible-header i {
     font-size: .8em;
 }
-/* ----------- Upoad/Edit recipe */
+/* ----------- Form & Input Pages */
 
-.edit-upload-header {
+.glass-container-header {
     font-family: 'NeonTubes2', sans-serif;
     color: #fff;
     text-align: center;
     margin-top: 60px;
 }
 
-.edit-upload-container {
+.glass-container {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     margin: 50px 0;
-
 }
 
 form {
