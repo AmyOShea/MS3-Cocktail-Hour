@@ -414,3 +414,23 @@ input {
     color: white;
     text-shadow: 0 0 3px #fff;;
 }
+
+.account-sub-heading {
+    color: #fff;
+    font-size: 2.5em;
+    margin: 50px 0;
+}
+
+#upload-btn {
+    margin: 0;
+    padding: 0 3px 5px 3px;
+    font-size: 2em;
+}
+
+.btn i {
+    font-size: .9em;
+}
+
+.upload-btn-container {
+    margin: 50px;
+}

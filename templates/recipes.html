@@ -1,60 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>All recipes</h3>
+    <h3>All recipes</h3>
 
-<div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="search-container">
-            <form action="{{ url_for('search') }}" method="post">
-                <div class="input-field">
-                    <i class="fas fa-search prefix"></i>
-                    <input type="text" name="query" id="query" class="validate" required>
-                    <label for="query">Search</label>
-                </div>
-                <div class="center-align">
-                    <a class="btn" id="search-btn" href="{{ url_for('get_recipes') }}">Clear</a>
-                    <button class="btn" id="search-btn" type="submit">Search</button>
-                </div>
-            </form>
-        </div>
-        <div class="row">
-            {% if recipes.count() > 0 %}
-            {% for recipe in recipes %}
-                <div class="card-container col s12 m6 l4 xl3">
-                    <div class="card">
-                        <div class="main-content">
-                            <img src="{{ recipe.image_url }}" alt="cocktail image">
-                        </div>
-                        <div class="overlay-content">
-                            <div class="valign-wrapper name-wrapper">
-                                <div class="card-cocktail-name">
-                                    {{ recipe.cocktail_name }}
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="search-container">
+                <form action="{{ url_for('search') }}" method="post">
+                    <div class="input-field">
+                        <i class="fas fa-search prefix"></i>
+                        <input type="text" name="query" id="query" class="validate" required>
+                        <label for="query">Search</label>
+                    </div>
+                    <div class="center-align">
+                        <a class="btn" id="search-btn" href="{{ url_for('get_recipes') }}">Clear</a>
+                        <button class="btn" id="search-btn" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                {% if recipes.count() > 0 %}
+                {% for recipe in recipes %}
+                    <div class="card-container col s12 m6 l4 xl3">
+                        <div class="card">
+                            <div class="main-content">
+                                <img src="{{ recipe.image_url }}" alt="cocktail image">
+                            </div>
+                            <div class="overlay-content">
+                                <div class="valign-wrapper name-wrapper">
+                                    <div class="card-cocktail-name">
+                                        {{ recipe.cocktail_name }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-cocktail-ing">
-                                {{ recipe.main_ingredient }}
-                            </div>
-                            <div class="card-btn-container">
-                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                <div class="card-cocktail-ing">
+                                    {{ recipe.main_ingredient }}
+                                </div>
+                                <div class="card-btn-container">
+                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-            {% else %}
-                <h3>No results found</h3>
-            {% endif %}
-        </div>
-        <div class="pagination-container">
-        <!-- pagination  -->
-        {% if recipes.count() >= 1 %}
-        {{ pagination.links }}
-        {{ pagination.info }}
-        {% endif %}
-        
+                {% endfor %}
+                {% else %}
+                    <h3>No results found</h3>
+                {% endif %}
+            </div>
+            <div class="pagination-container">
+                <!-- pagination  -->
+                {% if recipes.count() >= 1 %}
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
