@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="welcome-container">
-
-            <div class="welcome-text">
-                <h1 id="header-text" data-text="SHAKE UP SOME FUN">SHAKE UP SOME FUN</h1>
-            </div>
-
+    <div class="welcome-container row">
+        <div class="welcome-text">
+            <h1 id="header-text" data-text="SHAKE UP SOME FUN">SHAKE UP SOME FUN</h1>
+        </div>
+        <div class="col s12 l8 offset-l2">
+            <img id="hero-logo" src="{{url_for ('static', filename='images/site-images/hero-logo.png')}}" alt="collection of glasses">
+        </div>
     </div>
 
     <div class="carousel">

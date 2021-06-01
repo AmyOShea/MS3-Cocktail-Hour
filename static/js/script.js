@@ -17,12 +17,12 @@ $(document).ready(function(){
     });
     // https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
     // Auto-play for carousel
+
     autoplay();
     function autoplay() {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 3500);
     }
-    
 
 });
 
