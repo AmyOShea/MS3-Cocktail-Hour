@@ -15,6 +15,13 @@ body {
     font-family: 'Raleway', sans-serif;
     background-image: url(../images/site-images/site-bg-image.jpg);
     background-repeat: repeat;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
 }
 
 .card {
