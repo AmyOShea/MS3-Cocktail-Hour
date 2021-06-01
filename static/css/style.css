@@ -339,3 +339,21 @@ input {
     margin-left: 45px;
 }
 
+.pagination-page-info {
+    color: #fff;
+}
+
+
+.pagination li a{
+    color: #fff;
+}
+
+.pagination li.active{
+    font-weight: 500;
+    background-color: transparent;
+    text-shadow: 0 0 3px #fff;
+}
+
+.pagination li:hover{
+    text-shadow: 0 0 3px #fff;
+}
