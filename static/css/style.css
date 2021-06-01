@@ -405,3 +405,12 @@ input {
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 7px #fff;;
 }
+
+#search-btn {
+    margin: 0 10px 0 0;
+}
+
+.input-field .prefix.active {
+    color: white;
+    text-shadow: 0 0 3px #fff;;
+}
