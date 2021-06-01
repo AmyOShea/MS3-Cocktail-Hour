@@ -21,16 +21,18 @@
                                 <img src="{{ recipe.image_url}}" alt="cocktail image">
                             </div>
                             <div class="overlay-content">
-                                <div class="card-cocktail-name">
-                                    {{ recipe.cocktail_name }}
+                                <div class="valign-wrapper name-wrapper">
+                                    <div class="card-cocktail-name">
+                                        {{ recipe.cocktail_name }}
+                                    </div>
                                 </div>
                                 <div class="card-cocktail-ing">
                                     {{ recipe.main_ingredient }}
                                 </div>
-                                <div>
-                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
-                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn edit-btn">Edit</a>
-                                    <a class="modal-trigger" href="#delete_recipe{{recipe._id}}">Delete</a>
+                                <div class="card-btn-container">
+                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn edit-btn card-btn">Edit</a>
+                                    <a class="modal-trigger card-btn" href="#delete_recipe{{recipe._id}}">Delete</a>
                                 </div>
                             </div>
                         </div>

@@ -54,6 +54,11 @@ body {
     top: 0;
 }
 
+.name-wrapper {
+    height: 60px;
+    justify-content: center;
+}
+
 .card-cocktail-name {
     margin: 8px;
     font-size: 1.4em;
@@ -76,10 +81,9 @@ body {
 }
 
 .carousel .carousel-item {
-    height: 350px;
-    width: 350px;
+    max-height: 350px;
+    max-width: 350px;
 }
-
 
 .card-container {
     display: flex;
@@ -380,4 +384,24 @@ input {
 
 .pagination li:hover{
     text-shadow: 0 0 3px #fff;
+}
+
+.card-btn-container {
+    max-width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.card-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    display: block;
+    margin-top: 10px;
+}
+
+.card-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 7px #fff;;
 }

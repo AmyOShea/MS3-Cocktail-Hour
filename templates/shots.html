@@ -18,14 +18,16 @@
                                 <img src="{{ recipe.image_url }}" alt="cocktail image">
                             </div>
                             <div class="overlay-content">
-                                <div class="card-cocktail-name">
-                                    {{ recipe.cocktail_name }}
+                                <div class="valign-wrapper name-wrapper">
+                                    <div class="card-cocktail-name">
+                                        {{ recipe.cocktail_name }}
+                                    </div>
                                 </div>
                                 <div class="card-cocktail-ing">
                                     {{ recipe.main_ingredient }}
                                 </div>
-                                <div>
-                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn">Full Recipe</a>
+                                <div class="card-btn-container">
+                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
                                 </div>
                             </div>
                         </div>
