@@ -591,3 +591,18 @@ input {
 .delete-btn, .modal-close {
     margin: 0 20px 0px 20px !important;
 }
+
+.log-reg-text {
+    color: #fff;
+    font-size: 1.4em;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.log-reg-text a {
+    color: #fff;
+}
+
+.log-reg-text a:hover {
+    text-shadow: 0 0 3px #fff;
+}
