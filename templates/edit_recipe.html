@@ -16,8 +16,8 @@
                             <select multiple id="category_name" name="category_name" class="validate">
                                 <option value="" disabled>Choose Collection</option>
                                 {% for category in categories %}
-                                    {% if category.category_name == recipe.category_name %}
-                                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                    {% if category.category_name in recipe.category_name %}
+                                        <option value="{{ category.category_name }}" selected="selected">{{ category.category_name }}</option>
                                     {% else %}
                                         <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                                     {% endif %}
