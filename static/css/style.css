@@ -57,8 +57,48 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
         0 0 92px #09fbd3;
 }
 
+.green-neon-border {
+    border: solid 5px #fff;
+    border-radius: 6px;
+    box-shadow:
+        0 0 7px #09fbd3,
+        0 0 10px #09fbd3,
+        0 0 21px #09fbd3;
+}
+
+.purple-neon-border {
+    border: solid 5px #fff;
+    border-radius: 6px;
+    box-shadow:
+        0 0 7px #cc30ff,
+        0 0 10px #cc30ff,
+        0 0 21px #cc30ff;
+}
+
+.orange-neon-border {
+    border: solid 5px #fff;
+    border-radius: 6px;
+    box-shadow:
+        0 0 7px #fd9d00,
+        0 0 10px #fd9d00,
+        0 0 21px #fd9d00;
+}
+
+.blue-neon-border {
+    border: solid 5px #fff;
+    border-radius: 6px;
+    box-shadow:
+        0 0 7px #1e9efb,
+        0 0 10px #1e9efb,
+        0 0 21px #1e9efb;
+}
+
 .content {
     flex: 1 0 auto;
+}
+
+.flash-msg {
+    color: #fff;
 }
 
 .card {
@@ -143,6 +183,7 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
 .card-container {
     display: flex;
     justify-content: center;
+    margin: 20px 0;
 }
 
 .pagination-container {
