@@ -237,6 +237,20 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
     position: relative;
 }
 
+.coll-intro {
+    color: #fff;
+}
+
+.coll-intro hr{
+    border: 2px solid #fff;
+    margin: 20px 0;
+}
+
+.coll-intro p{
+    font-size: 1.5em;
+    text-align: justify;
+}
+
 /* ------------- FOOTER */
 
 .page-footer {
