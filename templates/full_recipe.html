@@ -1,29 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Full recipe</h3>
-
-            <img src="{{ recipe.image_url }}" alt="cocktail image">
-            <div>
-                {{ recipe.cocktail_name }}
+            
+    <div class="row">
+        <div class="col s12 center-align">
+            <h1 class="blue-neon-text full-recipe-name">{{ recipe.cocktail_name }}</h1>
+        </div>
+    </div>
+    <div class="row full-recipe">
+        <div class="col s12 l4">
+            <div class="full-recipe-img-container">
+                <img class="full-recipe-img responsive-img" src="{{ recipe.image_url }}" alt="cocktail image">
             </div>
-            {% for ingredient in recipe.ingredients %}
-                <div>
-                    <ul>
-                        <li>
-                            {{ ingredient }}
-                        </li>
-                    </ul>
-                </div>
-            {% endfor %}
-            {% for step in recipe.method %}
-                <div>
-                    <ul>
-                        <li>
-                            {{ step }}
-                        </li>
-                    </ul>
-                </div>
-            {% endfor %}
+        </div>
+        <div class="col s12 l4">
+            <div class="small-glass-container">
+                <h2 class="center-align">Ingredients</h2>
+                {% for ingredient in recipe.ingredients %}
+                    <div>
+                        <ul>
+                            <li>
+                                {{ ingredient }}
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col s12 l4 center-align">
+            <div class="small-glass-container">
+                <h2 class="center-align">Method</h2>
+                {% for step in recipe.method %}
+                    <div>
+                        <ul>
+                            <li>
+                                {{ step }}
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
