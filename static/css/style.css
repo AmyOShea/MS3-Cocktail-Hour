@@ -579,3 +579,15 @@ input {
     font-size: 1.8em;
     font-weight: 600;
 }
+
+.modal, .modal-footer {
+    background-color: #1e1e1e !important;
+    color: #fff;
+    text-align: center !important;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
+
+.delete-btn, .modal-close {
+    margin: 0 20px 0px 20px !important;
+}

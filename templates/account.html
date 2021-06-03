@@ -32,17 +32,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal" id="delete_recipe{{recipe._id}}">
+
+                        <div class="modal green-neon-border" id="delete_recipe{{recipe._id}}">
                             <div class="modal-content">
                             <p>You are about to pemanantly delete this recipe</p>
                             <p>Once you have deleted it, you cannot get it back</p>
                             <p>Are you sure that you wish to delete?</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="#" class="card-recipe-btn modal-close ">Cancel</button>
-                                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn delete-btn">Delete</a>
+                                <a href="#" class="btn modal-close ">Cancel</button>
+                                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn delete-btn">Delete</a>
                             </div>
                         </div>
+
                     {% endif %}
                 {% endfor %}
             </div>
