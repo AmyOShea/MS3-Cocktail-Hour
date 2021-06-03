@@ -8,6 +8,9 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+   }
 
 body {
     margin: 0 !important;
@@ -18,6 +21,40 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+}
+
+/* Neon Effects 
+https://css-tricks.com/how-to-create-neon-text-with-css/
+*/
+
+.purple-neon-text {
+    text-shadow:
+        0 0 7px #cc30ff,
+        0 0 10px #cc30ff,
+        0 0 21px #cc30ff,
+        0 0 42px #cc30ff,
+        0 0 82px #cc30ff,
+        0 0 92px #cc30ff;
+}
+
+.blue-neon-text {
+    text-shadow:
+        0 0 7px #1e9efb,
+        0 0 10px #1e9efb,
+        0 0 21px #1e9efb,
+        0 0 42px #1e9efb,
+        0 0 82px #1e9efb,
+        0 0 92px #1e9efb;
+}
+
+.green-neon-text {
+    text-shadow:
+        0 0 7px #09fbd3,
+        0 0 10px #09fbd3,
+        0 0 21px #09fbd3,
+        0 0 42px #09fbd3,
+        0 0 82px #09fbd3,
+        0 0 92px #09fbd3;
 }
 
 .content {
@@ -46,7 +83,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .6);
-    color: aliceblue;
+    color: #fff;
     overflow: hidden;
     position: absolute;
     top: 70%;
@@ -88,8 +125,19 @@ body {
 }
 
 .carousel .carousel-item {
-    max-height: 350px;
-    max-width: 350px;
+    height: 350px;
+    width: 350px;
+}
+
+@media only screen and (max-width: 767px) {
+    .carousel {
+        max-width: 100vw;
+    }
+        
+    .carousel .carousel-item {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 .card-container {
@@ -99,14 +147,11 @@ body {
 
 .pagination-container {
     text-align: center;
-
 }
 
 .collection-container {
     height: 40vh;
 }
-
-
 
 .classics-image {
     background-image: url(../images/site-images/classic-banner.jpg);
@@ -143,8 +188,6 @@ body {
     margin: 50px 0 40px 0;
 }
 
-
-
 .collection-banner-image {
     height: 100%;
     background-position: center;
@@ -157,7 +200,7 @@ body {
 
 .page-footer {
     padding-top: .6em;
-    margin: 0;
+    margin: 50px 0 0 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -177,7 +220,6 @@ body {
     font-size: 1.8em;
     margin: 0 auto;
     padding: 0 20px;
-
 }
 
 .footer-links li a {
@@ -192,36 +234,84 @@ body {
     margin: 0;
 }
 
-/* ------------- Hero Area */
+/* ------------- HOME PAGE */
+/* --------- Hero Area */
 
 .welcome-container {
     height: 100vh;
     width: 100vw;
-    position: relative;
     background: url('../images/site-images/wall.jpg');
     background-size: cover;
     justify-content: center;
     text-align: center;
     z-index: -3;
-
 }
 
 .welcome-text-container {
     width: 100vw;
     justify-content: center;
-
 }
 
 .welcome-text {
     width: 100vw;
     justify-content: center;
     text-align: center;
-
-
+    padding-top: 80px;
 }
 
-#header-text {
-    color: aliceblue;
+.welcome-text h1 {
+    margin: 0;
+    font-family: "NeonTubes2", sans-serif;
+    color: #fff;
+    font-size: 6em;
+}
+
+#hero-logo {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 879px) {
+    #hero-logo {
+        margin-top: 350px
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    #hero-logo {
+        margin-top: 500px
+    }
+}
+
+.scroll-to-btn {
+    position: relative;
+    top: -20vh;
+}
+
+.scroll-to-btn a {
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 0 0 10px #fe53ba;
+}
+/* --------- Home text areas */
+
+.home-section-intro {
+    color:#fff;
+    margin: 0 20px 20px 20px;
+    padding-top: 20px;
+}
+
+.home-section-heading {
+    font-family: "NeonTubes2", sans-serif;
+}
+
+.home-section-text {
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+/*
+#pink-highlight {
+    color: #fff;
     font-family: 'NeonTubes2', sans-serif;
     font-size: 6em;
     position: absolute;
@@ -232,8 +322,8 @@ body {
     left: 0;
     right: 0;
 }
-/* https://www.youtube.com/watch?v=0ltdZ8CrqG8 */
-#header-text:after {
+ https://www.youtube.com/watch?v=0ltdZ8CrqG8 
+#pink-highlight:after {
     content: attr(data-text);
     position: absolute;
     top: 0;
@@ -246,23 +336,8 @@ body {
     left: 0;
     right: 0;
 }
+*/
 
-#hero-logo {
-    max-width: 100%;
-    margin-top: 250px
-}
-
-@media only screen and (max-width: 879px) {
-    #hero-logo {
-        margin-top: 350px
-    }
-  }
-
-@media only screen and (max-width: 374px) {
-    #hero-logo {
-        margin-top: 500px
-    }
-}
 
 /* ---------- Navbar */
 
@@ -371,13 +446,11 @@ input {
     margin-left: 45px;
 }
 
-
 /*--------------- Pagination information */
 
 .pagination-page-info {
     color: #fff;
 }
-
 
 .pagination li a{
     color: #fff;

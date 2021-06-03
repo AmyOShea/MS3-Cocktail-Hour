@@ -1,15 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="welcome-container row">
-        <div class="welcome-text">
-            <h1 id="header-text" data-text="SHAKE UP SOME FUN">SHAKE UP SOME FUN</h1>
+    <div>
+        <div class="welcome-container row">
+            <div class="welcome-text">
+                <h1 class="purple-neon-text" data-text="SHAKE UP SOME FUN">SHAKE UP SOME FUN</h1>
+            </div>
+            <div class="col s12 l8 offset-l2">
+                <img id="hero-logo" class="hide-on-small-only" src="{{url_for ('static', filename='images/site-images/hero-logo.png')}}" alt="collection of glasses">
+            </div>
         </div>
-        <div class="col s12 l8 offset-l2">
-            <img id="hero-logo" src="{{url_for ('static', filename='images/site-images/hero-logo.png')}}" alt="collection of glasses">
+        <div class="center-align scroll-to-btn hide-on-large-only">    
+            <a href="#scroll-to"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </div>     
+        
+        
+    <div id="scroll-to" class="row home-section-intro center-align">
+        <h2 class="blue-neon-text home-section-heading">TRY SOMETHING NEW</h2>
+        <div class="home-section-text col s12 m8 l6 offset-m2 offset-l3">
+            <p>Never tried cocktails before? Or are you just looking for something new? Browse our collections below to find the perfect fit for you.</p>
+            <p>Whether you're looking for a fun night in with friends, a way to unwind at the end of the day, or somthing for the whole family, we'll have something for you to try!</p>
         </div>
     </div>
-
+    
     <div class="carousel">
         <a class="carousel-item" href="{{ url_for('classics') }}"><img src="{{url_for ('static', filename='images/site-images/classics-carousel.jpg')}}">Mocktail Collection</a>
         <a class="carousel-item" href="{{ url_for('elegant') }}"><img src="{{url_for ('static', filename='images/site-images/elegance-carousel.jpg')}}"></a>
@@ -18,6 +32,15 @@
         <a class="carousel-item" href="{{ url_for('mocktails') }}"><img src="{{url_for ('static', filename='images/site-images/mocktails-carousel.jpg')}}"></a>
         <a class="carousel-item" href="{{ url_for('pitchers') }}"><img src="{{url_for ('static', filename='images/site-images/pitchers-carousel.jpg')}}"></a>
         <a class="carousel-item" href="{{ url_for('shots') }}"><img src="{{url_for ('static', filename='images/site-images/shots-carousel.jpg')}}"></a>
+    </div>
+
+    <div class="row home-section-intro center-align">
+        <h2 class="green-neon-text home-section-heading">WE NEED  YOU</h2>
+        <div class="home-section-text col s12 m8 l6 offset-m2 offset-l3">
+            <p>What we love is people coming together and sharing ideas. And we'd love for you to share some of your all time favourite cocktails with the community!</p>
+            <p>Already a member? Sign in and show us what you've got!</p>
+            <p>Haven't joined us yet? WHAT ARE YOU WAITING FOR!?! Make and account, share some recipes and help us grow our collection!</p>
+        </div>
     </div>
         
 
