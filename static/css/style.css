@@ -446,6 +446,9 @@ input {
     margin-left: 45px;
 }
 
+.btn:focus {
+    background-color: #1e1e1e;
+}
 /*--------------- Pagination information */
 
 .pagination-page-info {

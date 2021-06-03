@@ -2,53 +2,72 @@
 {% block content %}
 
     <div class="glass-container-header">
-        <h1>Upload Recipe</h1>
+        <h1 class="green-neon-text">Upload Recipe</h1>
     </div>
 
     <div class="row">
         <div class="col s12 m8 offset-m2 l6 offset-l3 glass-container">
             <form method="POST" action="{{ url_for('add_recipe') }}">
                 <div>
-                    <div class="input-field">
-                        <i class="fas fa-glass-cheers prefix"></i>
-                        <select multiple id="category_name" name="category_name" class="validate" required>
-                            <option value="" disabled>Choose Collection</option>
-                            {% for category in categories %}
-                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                            {% endfor %}
-                        </select>
-                        
-                        <label for="category_name">Cocktail Collection</label>
-
+                    <!-- Select collection -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-glass-cheers prefix"></i>
+                            <select multiple id="category_name" name="category_name" class="validate" required>
+                                <option value="" disabled>Choose Collection</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="category_name">Cocktail Collection</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <i class="fas fa-cocktail prefix"></i>
-                        <input id="cocktail_name" name="cocktail_name" type="text" maxlength="30" class="validate" required>
-                        <label for="cocktail_name">Cocktail Name</label>
+                    <!-- Add Cocktail Name -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-cocktail prefix"></i>
+                            <input id="cocktail_name" name="cocktail_name" type="text" maxlength="30" class="validate" required>
+                            <label for="cocktail_name">Cocktail Name</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <i class="fas fa-star prefix"></i>
-                        <input id="main_ingredient" name="main_ingredient" type="text" class="validate" required>
-                        <label for="main_ingredient">Main Ingredient</label>
+                    <!-- Add Main Ingredient -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-star prefix"></i>
+                            <input id="main_ingredient" name="main_ingredient" type="text" class="validate" required>
+                            <label for="main_ingredient">Main Ingredient</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <i class="fas fa-wine-bottle prefix"></i>
-                        <input id="ingredients" name="ingredients" type="text" class="validate" required>
-                        <div id="newIngredient"></div>
-                        <label for="ingredients">Ingredients</label>
-                        <a class="btn" onClick="addIngredient('newIngredient')">Add Ingredient</a>
+                    <!-- Add Ingredients -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-wine-bottle prefix"></i>
+                            <input id="ingredients" name="ingredients" type="text" class="validate" required>
+                            <label for="ingredients">Ingredient</label>
+                            <!-- New ingredient input added here -->
+                            <div class="new-ing"></div>
+                            <button type="button" class="btn add-ingredient">Add Ingredient</button>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <i class="fas fa-list prefix"></i>
-                        <input id="method" name="method" type="text" class="validate" required>
-                        <div id="newStep"></div>
-                        <label for="method">Method</label>
-                        <a class="btn" onclick="addSteps('newStep')">Add Step<a>
+                    <!-- Add Method -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-list prefix"></i>
+                            <input id="method" name="method" type="text" class="validate" required>
+                            <label for="method">Method</label>
+                            <!-- New method step added here -->
+                            <div class="new-step"></div>
+                            <button type="button" class="btn add-step">Add Step</button>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <i class="fas fa-image prefix"></i>
-                        <input id="image_url" name="image_url" type="text" class="validate" value="https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" required>
-                        <label for="image_url">Image URL</label>
+                    <!-- Add Image URL -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-image prefix"></i>
+                            <!-- Defulat value added for users who don't want to or can't add their own URL -->
+                            <input id="image_url" name="image_url" type="text" class="validate" value="https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" required>
+                            <label for="image_url">Image URL</label>
+                        </div>
                     </div>
                     <div>
                         <button class="btn" type="submit">Add recipe!</button>
@@ -57,5 +76,5 @@
             </form>
         </div>
     </div>
- 
+
 {% endblock %}
