@@ -6,6 +6,7 @@
             <h1 class="glass-container-header green-neon-text">
                 {{ username }}
             </h1>
+            
             <h2 class="account-sub-heading center-align">My Recipes</h2>
             <div class="row">
                 {% for recipe in recipes %}
@@ -44,7 +45,6 @@
                                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn delete-btn">Delete</a>
                             </div>
                         </div>
-
                     {% endif %}
                 {% endfor %}
             </div>

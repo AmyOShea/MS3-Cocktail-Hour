@@ -242,6 +242,11 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
     margin: 50px 0 40px 0;
 }
 
+.all-cocktails-image {
+    background-image: url(../images/site-images/all-cocktails-banner.jpg);
+    margin: 50px 0 40px 0;
+}
+
 .collection-banner-image {
     height: 100%;
     background-position: center;
