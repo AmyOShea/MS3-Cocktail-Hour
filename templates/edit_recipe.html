@@ -25,6 +25,9 @@
                             </select>
                             <label for="category_name">Cocktail Collection</label>
                         </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="You can add your recipe to one or more of our collections!<br>Just use the dropdown to select which collection(s) your recipe belongs in">?</a>
+                        </div>
                     </div>
                     <!-- Edit Cocktail Name -->
                     <div class="row">
@@ -41,6 +44,9 @@
                             <input id="main_ingredient" name="main_ingredient" type="text" value="{{ recipe.main_ingredient }}" class="validate" required>
                             <label for="main_ingredient">Main Ingredient</label>
                         </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="This is a judgement call!<br>It will be the first thing people see when they select your recipe">?</a>
+                        </div>
                     </div>
                     <!-- Edit Ingredients -->
                     <div class="row">
@@ -53,6 +59,9 @@
                             <!-- New ingredient input added here -->
                             <div class="new-ing"></div>
                             <button type="button" class="btn add-ingredient">Add Ingredient</button>
+                        </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="You can add as many ingredients as you need to<br>Be sure to include the main ingredient (stated above) and measurements!">?</a>
                         </div>
                     </div>
                     <!-- Edit Method -->
@@ -67,6 +76,9 @@
                             <div class="new-step"></div>
                             <button type="button" class="btn add-step">Add Step</button>
                         </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="You can add as many steps as it takes to make youre drink!<br>Be through and clear">?</a>
+                        </div>
                     </div>
                     <!-- Edit Image URL -->
                     <div class="row">
@@ -74,6 +86,9 @@
                             <i class="fas fa-image prefix"></i>
                             <input id="image_url" name="image_url" type="text" value="{{ recipe.image_url }}" class="validate" required>
                             <label for="image_url">Image URL</label>
+                        </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="You can include an image with your recipe<br>Find the image online, right click and hit 'Copy image address' (or some variation of this!) and paste it in the bar above <br> We know that this isn't possible on all devices so if you want, you can just use the pre-filled url">?</a>
                         </div>
                     </div>
                     <div>

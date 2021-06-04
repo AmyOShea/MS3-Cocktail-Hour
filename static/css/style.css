@@ -472,6 +472,24 @@ form {
     text-shadow: 0 0 3px #fff;;
 }
 
+.tooltip-container {
+    text-align: right;
+    margin-right: 12px;
+}
+
+.tooltipped {
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 600;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 3px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-content {
+    line-height: 150%;
+}
 
 /* PAGINATION*/
 

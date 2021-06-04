@@ -24,6 +24,10 @@ $(document).ready(function(){
         setTimeout(autoplay, 3500);
     }
 
+    $(document).ready(function(){
+        $('.tooltipped').tooltip();
+      });
+
     // Dynamically adding more ingredient inputs
     let ing = 1;
 
