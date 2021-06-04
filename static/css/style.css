@@ -57,6 +57,19 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
         0 0 92px #09fbd3;
 }
 
+.orange-neon-text {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fd9d00,
+        0 0 10px #000,
+        0 0 21px #fd9d00,
+        0 0 42px #fd9d00,
+        0 0 82px #fd9d00,
+        0 0 92px #fd9d00;
+    line-height: 70% !important;
+    margin: 60px 0 0 20px;
+}
+
 .green-neon-border {
     border: solid 5px #fff;
     border-radius: 6px;
@@ -237,6 +250,12 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
     position: relative;
 }
 
+.orange-neon-text > span {
+    font-size: .5em;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
 .coll-intro {
     color: #fff;
 }
@@ -327,19 +346,26 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
 
 @media only screen and (max-width: 879px) {
     #hero-logo {
-        margin-top: 350px
+        margin-top: 250px
     }
 }
 
-@media only screen and (max-width: 374px) {
+@media only screen and (max-width: 767px) {
     #hero-logo {
-        margin-top: 500px
+        display: none;
     }
 }
 
 .scroll-to-btn {
     position: relative;
     top: -20vh;
+}
+
+@media only screen and (max-width: 500px){
+    .scroll-to-btn {
+        position: relative;
+        top: -25vh;
+    }
 }
 
 .scroll-to-btn a {
@@ -531,17 +557,13 @@ input {
 
 #upload-btn {
     margin: 0;
-    padding: 0 3px 5px 3px;
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 .btn i {
     font-size: .9em;
 }
 
-.upload-btn-container {
-    margin: 50px;
-}
 
 /* Full recipe */
 
