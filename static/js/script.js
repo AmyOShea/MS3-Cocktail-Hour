@@ -14,8 +14,7 @@ $(document).ready(function(){
 
     // Home page carousel
     $('.carousel').carousel({
-        fullWidth: false,
-        indicators: true
+        fullWidth: false
     });
     // https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
     // Auto-play for carousel
