@@ -18,7 +18,6 @@ $(document).ready(function(){
     });
     // https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
     // Auto-play for carousel
-
     autoplay();
     function autoplay() {
         $('.carousel').carousel('next');
@@ -59,7 +58,6 @@ $(document).ready(function(){
             <label for="method${step}">Method</label>
             <button type="button" class="btn deleteStep">Delete</button></div>`);
     });
-
     // Dynamically removing added method steps inputs
     $("body").on('click', ".deleteStep", function () {
         $(this).parent('div').remove();

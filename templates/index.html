@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+    <!-- Hero area -->
     <div>
         <div class="welcome-container row">
             <div class="welcome-text">
@@ -13,9 +15,9 @@
         <div class="center-align scroll-to-btn">    
             <a href="#scroll-to"><i class="fas fa-chevron-down"></i></a>
         </div>
-    </div>     
-        
-        
+    </div>
+    
+    <!-- Home intorduction -->
     <div id="scroll-to" class="row home-section-intro center-align">
         <h2 class="blue-neon-text home-section-heading">TRY SOMETHING NEW</h2>
         <div class="home-section-text col s12 m8 l6 offset-m2 offset-l3">
@@ -23,52 +25,54 @@
             <p>Whether you're looking for a fun night in with friends, a way to unwind at the end of the day, or somthing for the whole family, we'll have something for you to try!</p>
         </div>
     </div>
-    
+
+    <!-- Carousel -->
     <div class="carousel">
         <a class="carousel-item" href="{{ url_for('classics') }}">
             <div>
-                <img class=" orange-neon-border" src="{{url_for ('static', filename='images/site-images/classics-carousel.jpg')}}">
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/classics-carousel.jpg')}}">
                 <p class="orange-neon-text">Classics<br>Collection</p>
             </div>
         </a>
-        <a class="carousel-item orange-neon-border" href="{{ url_for('elegant') }}">
+        <a class="carousel-item" href="{{ url_for('elegant') }}">
             <div>
-                <img src="{{url_for ('static', filename='images/site-images/elegance-carousel.jpg')}}">
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/elegance-carousel.jpg')}}">
                 <p class="orange-neon-text">Elegance<br>Collection</p>
             </div>
         </a>
-        <a class="carousel-item orange-neon-border" href="{{ url_for('fruity') }}">
+        <a class="carousel-item" href="{{ url_for('fruity') }}">
             <div>
-            <img src="{{url_for ('static', filename='images/site-images/fruity-carousel.jpg')}}">
-            <p class="orange-neon-text">Fruity<br>Collection</p>
-        </div>
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/fruity-carousel.jpg')}}">
+                <p class="orange-neon-text">Fruity<br>Collection</p>
+            </div>
         </a>
-        <a class="carousel-item orange-neon-border" href="{{ url_for('hot_drinks') }}">
+        <a class="carousel-item" href="{{ url_for('hot_drinks') }}">
             <div>
-                <img src="{{url_for ('static', filename='images/site-images/hot-drinks-carousel.jpg')}}">
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/hot-drinks-carousel.jpg')}}">
                 <p class="orange-neon-text">Hot Drinks<br>Collection</p>
             </div>
         </a>
-        <a class="carousel-item orange-neon-border" href="{{ url_for('mocktails') }}">
+        <a class="carousel-item" href="{{ url_for('mocktails') }}">
             <div>
-                <img src="{{url_for ('static', filename='images/site-images/mocktails-carousel.jpg')}}">
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/mocktails-carousel.jpg')}}">
                 <p class="orange-neon-text">Mocktails<br>Collection</p>
             </div>
         </a>
-        <a class="carousel-item orange-neon-border" href="{{ url_for('pitchers') }}">
+        <a class="carousel-item" href="{{ url_for('pitchers') }}">
             <div>
-                <img src="{{url_for ('static', filename='images/site-images/pitchers-carousel.jpg')}}">
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/pitchers-carousel.jpg')}}">
                 <p class="orange-neon-text">Pitchers<br>Collection</p>
             </div>
         </a>
-        <a class="carousel-item orange-neon-border" href="{{ url_for('shots') }}">
+        <a class="carousel-item" href="{{ url_for('shots') }}">
             <div>
-                <img src="{{url_for ('static', filename='images/site-images/shots-carousel.jpg')}}">
+                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/shots-carousel.jpg')}}">
                 <p class="orange-neon-text">Shots<br>Collection</p>
             </div>
         </a>
     </div>
 
+    <!-- Community section -->
     <div class="row home-section-intro center-align">
         <h2 class="green-neon-text home-section-heading">WE NEED  YOU</h2>
         <div class="home-section-text col s12 m8 l6 offset-m2 offset-l3">
@@ -76,8 +80,5 @@
             <p>Already a member? Sign in and show us what you've got!</p>
             <p>Haven't joined us yet? WHAT ARE YOU WAITING FOR!?! Make and account, share some recipes and help us grow our collection!</p>
         </div>
-    </div>
-        
-
-    
+    </div>    
 {% endblock %}

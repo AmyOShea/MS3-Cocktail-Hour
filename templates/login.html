@@ -4,10 +4,10 @@
     <div>
         <h1 class="glass-container-header blue-neon-text">Log In</h1>
     </div>
-
     <div class="row">
         <div class="col s12 m8 offset-m2 l6 offset-l3 glass-container blue-neon-border">
             <form method="POST" action="{{ url_for('login') }}">
+                <!-- Username -->
                 <div>
                     <div class="input-field">
                         <i class="fas fa-user prefix"></i>
@@ -15,15 +15,18 @@
                         <label for="username">Username</label>
                     </div>
                 </div>
+                <!-- Password -->
                 <div class="input-field">
                     <i class="fas fa-lock prefix"></i>
                     <input id="password" name="password" type="password" class="validate" required>
                     <label for="password">Password</label>
                 </div>
+                <!-- Login btn -->
                 <div>
                     <button class="btn submit">Submit</button>
                 </div>
             </form>
+            <!-- Register page link -->
             <div class="log-reg-text">
                 <p class="center-align">Don't have an account?</p>
                 <a class="center-align" href="{{ url_for('register') }}">Register here</a></p>

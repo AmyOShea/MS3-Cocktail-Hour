@@ -8,24 +8,31 @@
             </div>
         </div>
     </div>
+
+    <!-- Search Bar  -->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="search-container">
                 <form action="{{ url_for('search') }}" method="post">
+                    <p class="white-text center-align">Search our recipes by ingredient or keyword</p>
                     <div class="input-field">
                         <i class="fas fa-search prefix"></i>
                         <input type="text" name="query" id="query" class="validate" required>
                         <label for="query">Search</label>
                     </div>
+                    <!-- Search Buttons  -->
                     <div class="center-align">
                         <a class="btn" id="search-btn" href="{{ url_for('get_recipes') }}">Clear</a>
                         <button class="btn" id="search-btn" type="submit">Search</button>
                     </div>
                 </form>
             </div>
+
+            <!-- Recipes display  -->
             <div class="row">
                 {% if recipes.count() > 0 %}
                 {% for recipe in recipes %}
+                    <!-- Recipe card  -->
                     <div class="card-container col s12 m6 l4 xl3">
                         <div class="card purple-neon-border">
                             <div class="main-content">
@@ -47,12 +54,14 @@
                         </div>
                     </div>
                 {% endfor %}
+                <!-- If no results found  -->
                 {% else %}
                     <h3>No results found</h3>
                 {% endif %}
             </div>
+
+            <!-- pagination  -->
             <div class="pagination-container">
-                <!-- pagination  -->
                 {% if recipes.count() >= 1 %}
                     {{ pagination.links }}
                     {{ pagination.info }}
