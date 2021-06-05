@@ -73,7 +73,7 @@ When using the Materialize navigaiton bar dropdown, the side nav dropdown on mob
 ![Dropdown bug](static/images/README/bugs/bug-03.PNG)
 
 I believe this is expected behaviour but from a UX standpoint, I wasn't happy with this on mobile.
-As a result, I decided that it would be a better idea to use a Materialize collapsible on the side-nav instead. This allows the sub-menu to repositiono all of the other elements rathen than them being covered. 
+As a result, I decided that it would be a better idea to use a Materialize collapsible on the side-nav instead. This allows the sub-menu to reposition all of the other elements rathen than them being covered. 
 
 ---
 ### **Hover on Mobile**

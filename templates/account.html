@@ -48,6 +48,15 @@
                     {% endif %}
                 {% endfor %}
             </div>
+            <div class="pagination-container">
+                <!-- Pagination -->
+                {% if recipes|length > 0 %}
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+                {% else %}
+                    <p class="none-found">You haven't uploaded any recipes yet<br>Use the button below to add something!</p>
+                {% endif %}
+            </div>
             <div class="center-align">
                 <a id="upload-btn" class="btn center-align" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus upload-icon prefix"></i> Upload Recipe</a>
             </div>

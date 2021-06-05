@@ -116,17 +116,21 @@ def login():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
-
-    recipes = list(mongo.db.recipes.find())
+    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    user = mongo.db.users.find_one({"username": session["user"]})
+    recipes = list(mongo.db.recipes.find({"created_by": ObjectId(user["_id"])}))
+    total = len(recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='materializecss')
     if session["user"]:
         for recipe in recipes:
             try:
                 recipe["created_by"] = mongo.db.users.find_one({"_id": recipe["created_by"]})["username"]
             except Exception:
-                print("issue")
-        return render_template(
-            "account.html", username=username, recipes=recipes)
-
+                pass
+        return render_template("account.html", username=username, recipes=recipes_paginated, page=page, per_page=per_page, pagination=pagination)
     return redirect(url_for("login"))
 
 
