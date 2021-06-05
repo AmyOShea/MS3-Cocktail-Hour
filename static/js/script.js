@@ -16,6 +16,8 @@ $(document).ready(function(){
     $('.carousel').carousel({
         fullWidth: false
     });
+
+    // The below code was taken DIRECTLY from the below source
     // https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
     // Auto-play for carousel
     autoplay();
@@ -23,6 +25,7 @@ $(document).ready(function(){
         $('.carousel').carousel('next');
         setTimeout(autoplay, 3500);
     }
+    // End of sourced code
 
     $(document).ready(function(){
         $('.tooltipped').tooltip();

@@ -3,6 +3,8 @@ Cocktail Hour is a virtual recipe collection speifically designed for coctail re
 
 It is a community based experience that allows causal, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes. 
 
+You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
+
 ---
 ---
 # Contents
@@ -101,7 +103,6 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + Users ability to delete their account. 
   + This could allow the user to either leave their recipes on the site or delete them along with the account 
 
-
 ---
 ---
 # Technologies Used
@@ -109,24 +110,33 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + [HTML5](https://en.wikipedia.org/wiki/HTML5)
 + [CSS3](https://en.wikipedia.org/wiki/CSS)
 + [Python3](https://www.python.org/)
-
-## Frameworks 
 + [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-
-## Libraries 
 + [Flask-PyMongo](https://pypi.org/project/Flask-PyMongo/)
-
-## Programmes and Ext Resources
++ [Pip3](https://pip.pypa.io/en/stable/)
++ [dnspython](https://www.dnspython.org/)
++ [jQuery](https://jquery.com/)
++ [Flask Paginate](https://pythonhosted.org/Flask-paginate/)
++ [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
++ [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
++ [GitHub](https://github.com/) used to host repository.
++ [GitPod](https://www.gitpod.io/) used to develop project and organise version control.
++ [Heroku](https://www.heroku.com/) used to deploy live site
++ [MongoDB](https://www.mongodb.com/) used to host database information.
++ [favicon.io](https://favicon.io/) used to create a site favicon.
++ [Google Fonts](https://fonts.google.com/) 
++ [Autoprefixer](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
++ [Transfonter](https://transfonter.org/) used to convert font from .tff to .woff and .woff2.
++ [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance review.
++ [PowerMapper](https://www.powermapper.com/) used to check compatibility with older browsers.
++ [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
++ [Materialize](https://materializecss.com/) for front end styling.
++ [FontAwesome](https://fontawesome.com/)
 + [Procreate](https://procreate.art/) used to design initial mock ups, tilable background, logo and other design accents. 
 + [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to cut and re-frame site images. 
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
-+ [GitHub](https://github.com/) used to host repository.
-+ [GitPod](https://www.gitpod.io/) used to develop project and organise version control.
-+ [MongoDB](https://www.mongodb.com/) used to host database information.
-+ [Pip3](https://pip.pypa.io/en/stable/) used to add packages to Python.
 + [RandomKeygen](https://randomkeygen.com/) used to create a strong password for required  `<SECRET_KEY>`.
-+ [dnspython](https://www.dnspython.org/)
-+ [Heroku](https://www.heroku.com/)
+
+
 ---
 ---
 # Testing
@@ -136,13 +146,89 @@ Due to the size of the testing section, I have created a separate document for i
 ---
 # Deployment
 
+## Heroku Deployment
+This project was deployed through Heroku using the following steps:
+
+### Requirements and Procfile
+Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod: 
++ In the GitPod terminal, type ```pip3 freeze --local > requirements.txt``` to create your requirements file.
++ In the GitPod terminal, type ```echo web: python run.py > Procfile``` to create your procfile.
++ Push these files to your repository.
+
+### Creating Heroku App
++ Log into Heroku
++ Select 'Create New App' from your dashboard
++ Choose an app name (if there has been an app made with that name, you will be informed and will need to choose an alternative)
++ Select the appropiate region based on your location
++ Click 'Create App'
+### Connecting to GitHub
++ From the dashboard, click the 'Deploy' tab towards the top of the screen
++ From here, locate 'Deployment Method' and choose 'GitHub'
++ From the search bar newly appeared, locate your respository by name
++ When you have located the correct repository, click 'Connect'
++ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuation. We'll come back to this
++ Click the 'Settings' tab towards the top of the page
++ Locate the 'Config Vars' and click 'Reveal Config Vars'
++ Use the following keys and values which must match the key/value pairs in your env.py file:
+
+| Key           | Value               |
+| ------------- |:--------------------|
+| IP            | 0.0.0.0             |
+| PORT          | 5000                |
+| SECRET_KEY    |*Secure secret key*  |
+| MONGO_URI     |mongodb+srv://root:*PASSWORD*@myfirstcluster.dr4g1.mongodb.net/cocktail_hour?retryWrites=true&w=majority |
+| MONGO_DBNAME  |cocktail_hour        |
+|               |                     |
+
++ Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
++ Underneath, locate 'Manual Deploy'; choose the master branch and click 'Deploy Branch'
++ Once the app is built (it may take a few mminutes), click 'Open App' from the top of the page
+
+
+## Forking the Repository
++ Log in to GitHub and locate the GitHub Repository
++ At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
++ You will have a copy of the original repository in your GitHub account.
++ You will now be able to make changes to the new version and keep the original safe. 
+## Making a Local Clone
++ Log into GitHub.
++ Locate the repository.
++ Click the 'Code' dropdown above the file list.
++ Copy the URL for the repository.
++ Open Git Bash on your device.
++ Change the current working directory to the location where you want the cloned directory.
++ Type ```git clone``` in the CLI and then paste the URL you copied earlier. This is what it should look like:
+  + ```$ git clone https://github.com/AmyOShea/MS3-Cocktail-Hour```
++ Press Enter to create your local clone.
+
 ---
 ---
 # Credits
 ## Code
 
++ This code for [materialze slider autoplay](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) was taken directly (also credited in in js file)
+
++ My own neon text css classes taken from [this article](https://css-tricks.com/how-to-create-neon-text-with-css/) and re-worked for my neon boxes (also credited in in css file)
+
++ [This demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) was used to understand how to incorperate flask pagination into my pre existing code
+
++ [This Stack Overflow post](https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616) helped me gain more of an understanding of pagination offset
+
+
 ## Content
 
-## Media
+### Images
++ Collections: 
+    + Classics Banner and Carousel [image](https://images.unsplash.com/photo-1601084638773-a25993f38fda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=966&q=80)
+    + Elegance Banner and Carousel [image](https://images.unsplash.com/photo-1524083615948-77168224375a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
+    + Fruity Banner and Carousel [image](https://images.pexels.com/photos/5947121/pexels-photo-5947121.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+    + Hot Drinks Banner and Carousel [image](https://images.unsplash.com/photo-1521022969448-49639904ed7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
+    + Mocktails Banner and Carousel [image](https://images.unsplash.com/photo-1548016193-b9381233058c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80)
+    + Pitchers Banner and Carousel [image](https://theviewfromgreatisland.com/wp-content/uploads/2018/07/summer-pticher-cocktails-2.png)
+    + Shots Banner and Carousel [image](https://mk0foodfornetcoviwv0.kinstacdn.com/wp-content/uploads/Three-shots-of-vodka-on-a-black-slate-800x530.jpg)
+
++ All Cocktails banner [image](https://images.unsplash.com/photo-1605270012917-bf157c5a9541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80)
++ Home Page wall background [image](https://images.unsplash.com/photo-1549930160-31d20fbcac9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80)
++ Default recipe URL [image](https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
 
 ## Acknowledgements
