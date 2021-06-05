@@ -31,38 +31,37 @@
             <!-- Recipes display  -->
             <div class="row">
                 {% if recipes.count() > 0 %}
-                {% for recipe in recipes %}
-                    <!-- Recipe card  -->
-                    <div class="card-container col s12 m6 l4 xl3">
-                        <div class="card purple-neon-border">
-                            <div class="main-content">
-                                <img src="{{ recipe.image_url }}" alt="cocktail image">
-                            </div>
-                            <div class="overlay-content">
-                                <div class="valign-wrapper name-wrapper">
-                                    <div class="card-cocktail-name">
-                                        {{ recipe.cocktail_name }}
+                    {% for recipe in recipes %}
+                        <!-- Recipe card  -->
+                        <div class="card-container col s12 m6 l4 xl3">
+                            <div class="card purple-neon-border">
+                                <div class="main-content">
+                                    <img src="{{ recipe.image_url }}" alt="cocktail image">
+                                </div>
+                                <div class="overlay-content">
+                                    <div class="valign-wrapper name-wrapper">
+                                        <div class="card-cocktail-name">
+                                            {{ recipe.cocktail_name }}
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-cocktail-ing">
-                                    {{ recipe.main_ingredient }}
-                                </div>
-                                <div class="card-btn-container">
-                                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                    <div class="card-cocktail-ing">
+                                        {{ recipe.main_ingredient }}
+                                    </div>
+                                    <div class="card-btn-container">
+                                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
                 <!-- If no results found  -->
                 {% else %}
-                    <h3>No results found</h3>
+                    <p class="none-found center-align">No Results Found<br>Feel free to <strong><a href=" url_for('login') }}">log in to your account</a></strong> and add to the database!<br>And if you don't have an account, you can <strong><a href="{{ url_for('register') }}">register for one here!</a></strong></p>
                 {% endif %}
             </div>
-
             <!-- pagination  -->
             <div class="pagination-container">
-                {% if recipes.count() >= 1 %}
+                {% if recipes.count() > 0 %}
                     {{ pagination.links }}
                     {{ pagination.info }}
                 {% endif %}

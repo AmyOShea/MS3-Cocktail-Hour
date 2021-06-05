@@ -139,7 +139,7 @@ nav {
     top: 100% !important;
 }
 
-.dropdown-content li a, .sidenav li a, .flash-msg, .footer-links li a, .coll-intro, .pagination-page-info, .pagination li a, input, .log-reg-text a {
+.dropdown-content li a, .sidenav li a, .flash-msg, .footer-links li a, .coll-intro, .pagination-page-info, .pagination li a, input, .log-reg-text a, .none-found a {
     color: #fff;
 }
 
@@ -634,7 +634,7 @@ form {
     text-align: center;
 }
 
-.log-reg-text a:hover {
+.log-reg-text a:hover, .none-found a:hover {
     text-shadow: 0 0 3px #fff;
 }
 /* ACCOUNT PAGE */
