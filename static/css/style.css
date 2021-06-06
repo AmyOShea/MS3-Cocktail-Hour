@@ -16,7 +16,7 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     font-family: 'Raleway', sans-serif;
-    background-image: url(../images/site-images/site-bg-image.jpg);
+    background-image: url(../images/site-images/site-bg-image.webp);
     background-repeat: repeat;
     display: flex;
     min-height: 100vh;
@@ -316,42 +316,42 @@ nav {
 }
 
 .classics-image {
-    background-image: url(../images/site-images/classic-banner.jpg);
+    background-image: url(../images/site-images/classic-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .elegance-image {
-    background-image: url(../images/site-images/elegance-banner.jpg);
+    background-image: url(../images/site-images/elegance-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .fruity-image {
-    background-image: url(../images/site-images/fruity-banner.jpg);
+    background-image: url(../images/site-images/fruity-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .hot-drinks-image {
-    background-image: url(../images/site-images/hot-drinks-banner.jpg);
+    background-image: url(../images/site-images/hot-drinks-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .mocktails-image {
-    background-image: url(../images/site-images/mocktails-banner.jpg);
+    background-image: url(../images/site-images/mocktails-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .pitchers-image {
-    background-image: url(../images/site-images/pitchers-banner.jpg);
+    background-image: url(../images/site-images/pitchers-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .shots-image {
-    background-image: url(../images/site-images/shots-banner.jpg);
+    background-image: url(../images/site-images/shots-banner.webp);
     margin: 50px 0 40px 0;
 }
 
 .all-cocktails-image {
-    background-image: url(../images/site-images/all-cocktails-banner.jpg);
+    background-image: url(../images/site-images/all-cocktails-banner.webp);
     margin: 50px 0 40px 0;
 }
 
@@ -384,7 +384,7 @@ nav {
 .welcome-container {
     height: 100vh;
     width: 100vw;
-    background: url('../images/site-images/wall.jpg');
+    background: url('../images/site-images/wall.webp');
     background-size: cover;
     justify-content: center;
     text-align: center;

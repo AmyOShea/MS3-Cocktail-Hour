@@ -135,6 +135,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to cut and re-frame site images. 
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
 + [RandomKeygen](https://randomkeygen.com/) used to create a strong password for required  `<SECRET_KEY>`.
++ [CloudConvert](https://cloudconvert.com/) to convert all images to .webp format.
 
 
 ---
