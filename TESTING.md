@@ -16,6 +16,10 @@
 ---
 ## Lighthouse Testing
 
+### **Accesibility**
+
+Footer h4 changed to h1
+
 ---
 ---
 ## PowerMapper Compatibility
