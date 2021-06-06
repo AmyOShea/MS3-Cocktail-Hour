@@ -116,7 +116,8 @@ def login():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    page, per_page, offset = get_page_args(page_sparameter='page', per_page_parameter='per_page', offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     user = mongo.db.users.find_one({"username": session["user"]})
@@ -338,4 +339,4 @@ def internal_server_error(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
