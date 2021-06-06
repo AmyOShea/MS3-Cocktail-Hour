@@ -19,6 +19,9 @@
 ### **Accesibility**
 
 Footer h4 changed to h1
+Add alt tags to all images
+Add title to all links
+Place side nav header into li
 
 ---
 ---
