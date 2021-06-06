@@ -29,7 +29,10 @@ def home():
 def get_recipes():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find().count()
@@ -52,13 +55,18 @@ def full_recipe(recipe_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"$text": {"$search": query}}).count()
     recipes = mongo.db.recipes.find({"$text": {"$search": query}})
     recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='materializecss')
+    pagination = Pagination(
+        page=page, per_page=per_page,
+        total=total, css_framework='materializecss')
     return render_template("recipes.html", recipes=recipes_paginated,
                            page=page, per_page=per_page, pagination=pagination)
 
@@ -116,22 +124,33 @@ def login():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    page, per_page, offset = get_page_args(page_sparameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    username = mongo.db.users.find_one(
+        # pylint: disable=unbalanced-tuple-unpacking
+        {"username": session["user"]})["username"]
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_sparameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     user = mongo.db.users.find_one({"username": session["user"]})
-    recipes = list(mongo.db.recipes.find({"created_by": ObjectId(user["_id"])}))
+    recipes = list(mongo.db.recipes.find(
+        {"created_by": ObjectId(user["_id"])}))
     total = len(recipes)
     recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework='materializecss')
+    pagination = Pagination(
+        page=page, per_page=per_page, total=total,
+        css_framework='materializecss')
     if session["user"]:
         for recipe in recipes:
             try:
-                recipe["created_by"] = mongo.db.users.find_one({"_id": recipe["created_by"]})["username"]
+                recipe["created_by"] = mongo.db.users.find_one(
+                    {"_id": recipe["created_by"]})["username"]
             except Exception:
                 pass
-        return render_template("account.html", username=username, recipes=recipes_paginated, page=page, per_page=per_page, pagination=pagination)
+        return render_template("account.html", username=username,
+                               recipes=recipes_paginated, page=page,
+                               per_page=per_page, pagination=pagination)
     return redirect(url_for("login"))
 
 
@@ -182,7 +201,8 @@ def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+    return render_template("edit_recipe.html", recipe=recipe,
+                           categories=categories)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -196,7 +216,10 @@ def delete_recipe(recipe_id):
 def mocktails():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Mocktails'}).count()
@@ -214,7 +237,10 @@ def mocktails():
 def classics():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Classic'}).count()
@@ -232,7 +258,10 @@ def classics():
 def elegant():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Elegant'}).count()
@@ -250,7 +279,10 @@ def elegant():
 def fruity():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Fruity'}).count()
@@ -268,7 +300,10 @@ def fruity():
 def hot_drinks():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Hot Drink'}).count()
@@ -286,7 +321,10 @@ def hot_drinks():
 def pitchers():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Pitcher'}).count()
@@ -304,7 +342,10 @@ def pitchers():
 def shots():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page', offset_parameter='offset')
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
     total = mongo.db.recipes.find({"category_name": 'Shot'}).count()

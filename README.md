@@ -215,6 +215,8 @@ Heroku needs to know which technologies are being used and any requirements, so 
 
 + [This Stack Overflow post](https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616) helped me gain more of an understanding of pagination offset
 
++ [This Stack Overflow post](https://stackoverflow.com/questions/27980121/pylint-warning-possible-unbalanced-tuple-unpacking-with-sequence) helped with the Pylint warning that I was getting.
+
 
 ## Content
 
