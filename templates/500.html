@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Something went wrong</h1>
+    <div class="error-container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l6 offset-l3">
+                <h1 class="glass-container-header purple-neon-text">Oops!</h1>
+                <p>It looks like something went wrong</p>
+                <p>But don't worry, you can either use the button below to find your way back home or the links above to find what you're looking for!</p>
+                <a class="btn" href="{{ url_for('home')}}">Home</a>
+            </div>
+        </div>
+        <div>
+            <img src="{{url_for ('static', filename='images/site-images/glass.png')}}" alt="">
+        </div>
+    </div>
+    
 {% endblock %}

@@ -645,7 +645,22 @@ form {
     margin: 50px 0;
 }
 
-.none-found {
+.none-found, .error-container p {
     color: #fff;
     font-size: 1.6em;
+}
+
+/* ERROR PAGES */
+
+.error-container {
+    color:#fff;
+    text-align: center;
+}
+
+.error-container img {
+    height: 20vh;
+}
+
+.error-container .btn {
+    margin: 0;
 }

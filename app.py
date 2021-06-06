@@ -317,9 +317,16 @@ def shots():
                            pagination=pagination)
 
 
+# https://flask.palletsprojects.com/en/2.0.x/errorhandling/
+
+
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template('403.html'), 403
+
+
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
     return render_template('404.html'), 404
 
 
