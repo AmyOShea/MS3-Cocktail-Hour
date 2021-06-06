@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
@@ -18,13 +25,20 @@ body {
     font-family: 'Raleway', sans-serif;
     background-image: url(../images/site-images/site-bg-image.webp);
     background-repeat: repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .content {
-    flex: 1 0 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
 }
 
 /* Neon Effects 
@@ -77,7 +91,11 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
 .green-neon-border {
     border: solid 5px #fff;
     border-radius: 6px;
-    box-shadow:
+    -webkit-box-shadow:
+        0 0 7px #09fbd3,
+        0 0 10px #09fbd3,
+        0 0 21px #09fbd3;
+            box-shadow:
         0 0 7px #09fbd3,
         0 0 10px #09fbd3,
         0 0 21px #09fbd3;
@@ -86,7 +104,11 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
 .purple-neon-border {
     border: solid 5px #fff;
     border-radius: 6px;
-    box-shadow:
+    -webkit-box-shadow:
+        0 0 7px #cc30ff,
+        0 0 10px #cc30ff,
+        0 0 21px #cc30ff;
+            box-shadow:
         0 0 7px #cc30ff,
         0 0 10px #cc30ff,
         0 0 21px #cc30ff;
@@ -95,7 +117,11 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
 .orange-neon-border {
     border: solid 5px #fff;
     border-radius: 6px;
-    box-shadow:
+    -webkit-box-shadow:
+        0 0 7px #fd9d00,
+        0 0 10px #fd9d00,
+        0 0 21px #fd9d00;
+            box-shadow:
         0 0 7px #fd9d00,
         0 0 10px #fd9d00,
         0 0 21px #fd9d00;
@@ -104,7 +130,11 @@ https://css-tricks.com/how-to-create-neon-text-with-css/
 .blue-neon-border {
     border: solid 5px #fff;
     border-radius: 6px;
-    box-shadow:
+    -webkit-box-shadow:
+        0 0 7px #1e9efb,
+        0 0 10px #1e9efb,
+        0 0 21px #1e9efb;
+            box-shadow:
         0 0 7px #1e9efb,
         0 0 10px #1e9efb,
         0 0 21px #1e9efb;
@@ -220,7 +250,8 @@ nav {
 }
 
 .card .main-content img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 200px;
     height: 200px;
 }
@@ -235,7 +266,10 @@ nav {
     top: 70%;
     left: 0;
     z-index: 1;
-    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    -webkit-transition: 0.7s ease;
+    -o-transition: 0.7s ease;
     transition: 0.7s ease;
     text-align: center;
 }
@@ -246,7 +280,9 @@ nav {
 
 .name-wrapper {
     height: 60px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .card-cocktail-name {
@@ -261,8 +297,12 @@ nav {
 }
 
 .card-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 20px 0;
 }
 
@@ -283,7 +323,9 @@ nav {
 }
 
 .carousel-item p {
-    transform: translate(20px, -150px);
+    -webkit-transform: translate(20px, -150px);
+        -ms-transform: translate(20px, -150px);
+            transform: translate(20px, -150px);
     color: #fff;
     font-size: 1.5em;
     line-height: 120% !important;
@@ -305,7 +347,9 @@ nav {
     }
 
     .carousel-item p {
-        transform: translateY(-130px);
+        -webkit-transform: translateY(-130px);
+            -ms-transform: translateY(-130px);
+                transform: translateY(-130px);
     }
 }
 
@@ -386,19 +430,25 @@ nav {
     width: 100vw;
     background: url('../images/site-images/wall.webp');
     background-size: cover;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     z-index: -3;
 }
 
 .welcome-text-container {
     width: 100vw;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .welcome-text {
     width: 100vw;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     padding-top: 80px;
 }
@@ -454,7 +504,8 @@ nav {
 
 .glass-container {
     background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     border-radius: 10px;
     margin: 50px 0;
 }
@@ -526,7 +577,8 @@ form {
 
 .card-btn:hover {
     background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 7px #fff;;
+    -webkit-box-shadow: 0 0 7px #fff;
+            box-shadow: 0 0 7px #fff;;
 }
 
 #search-btn {
@@ -554,7 +606,8 @@ form {
     color: #fff;
     background-color: #1e1e1e;
     border: 1px solid #fff;
-    box-shadow: 0 0 7px #fff;
+    -webkit-box-shadow: 0 0 7px #fff;
+            box-shadow: 0 0 7px #fff;
     border-radius: 5px;
     margin-left: 45px;
 }
@@ -585,8 +638,12 @@ form {
 
 .full-recipe {
     color: #fff;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
 }
 
@@ -604,7 +661,8 @@ form {
 
 .small-glass-container {
     background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 30px;
     width: 90%;
@@ -664,4 +722,3 @@ form {
 
 .error-container .btn {
     margin: 0;
-}

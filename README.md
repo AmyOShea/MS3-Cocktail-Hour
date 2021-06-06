@@ -136,7 +136,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
 + [RandomKeygen](https://randomkeygen.com/) used to create a strong password for required  `<SECRET_KEY>`.
 + [CloudConvert](https://cloudconvert.com/) to convert all images to .webp format.
-
++ [Autoprefixer CSS](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
 
 ---
 ---
