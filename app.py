@@ -244,8 +244,8 @@ def classics():
         offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"category_name": 'Classic'}).count()
-    recipes = mongo.db.recipes.find({"category_name": 'Classic'})
+    total = mongo.db.recipes.find({"category_name": 'Classics'}).count()
+    recipes = mongo.db.recipes.find({"category_name": 'Classics'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
@@ -255,8 +255,8 @@ def classics():
                            pagination=pagination)
 
 
-@app.route("/elegant")
-def elegant():
+@app.route("/elegance")
+def elegance():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
     # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
     # pylint: disable=unbalanced-tuple-unpacking
@@ -265,12 +265,12 @@ def elegant():
         offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"category_name": 'Elegant'}).count()
-    recipes = mongo.db.recipes.find({"category_name": 'Elegant'})
+    total = mongo.db.recipes.find({"category_name": 'Elegance'}).count()
+    recipes = mongo.db.recipes.find({"category_name": 'Elegance'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
-    return render_template("elegant.html", recipes=recipes_paginated,
+    return render_template("elegance.html", recipes=recipes_paginated,
                            page=page,
                            per_page=per_page,
                            pagination=pagination)
@@ -307,8 +307,8 @@ def hot_drinks():
         offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"category_name": 'Hot Drink'}).count()
-    recipes = mongo.db.recipes.find({"category_name": 'Hot Drink'})
+    total = mongo.db.recipes.find({"category_name": 'Hot Drinks'}).count()
+    recipes = mongo.db.recipes.find({"category_name": 'Hot Drinks'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
@@ -328,8 +328,8 @@ def pitchers():
         offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"category_name": 'Pitcher'}).count()
-    recipes = mongo.db.recipes.find({"category_name": 'Pitcher'})
+    total = mongo.db.recipes.find({"category_name": 'Pitchers'}).count()
+    recipes = mongo.db.recipes.find({"category_name": 'Pitchers'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
@@ -349,8 +349,8 @@ def shots():
         offset_parameter='offset')
     per_page = 12
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"category_name": 'Shot'}).count()
-    recipes = mongo.db.recipes.find({"category_name": 'Shot'})
+    total = mongo.db.recipes.find({"category_name": 'Shots'}).count()
+    recipes = mongo.db.recipes.find({"category_name": 'Shots'})
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')

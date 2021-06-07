@@ -385,7 +385,7 @@ nav {
 }
 
 .pitchers-image {
-    background-image: url(../images/site-images/pitchers-banner.webp);
+    background-image: url(https://t4.ftcdn.net/jpg/02/69/58/69/360_F_269586920_hB0eJdqxq3jYvUIul0O0RiyP9UJWsH7Q.jpg);
     margin: 50px 0 40px 0;
 }
 
@@ -461,7 +461,8 @@ nav {
 }
 
 #hero-logo {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
 
 @media only screen and (max-width: 879px) {
