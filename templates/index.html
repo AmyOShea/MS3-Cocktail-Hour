@@ -28,50 +28,16 @@
 
     <!-- Carousel -->
     <div class="carousel">
+        {% for category in categories %}
         <a class="carousel-item" href="{{ url_for('classics') }}">
             <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/classics-carousel.webp')}}" alt="classic decorated room">
-                <p class="orange-neon-text">Classics<br>Collection</p>
+                <img class="orange-neon-border" src="{{ category.carousel_img }}" alt="classic decorated room">
+                <p class="orange-neon-text">{{ category.category_name }}<br>Collection</p>
             </div>
         </a>
-        <a class="carousel-item" href="{{ url_for('elegant') }}">
-            <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/elegance-carousel.webp')}}" alt="diamond crown">
-                <p class="orange-neon-text">Elegance<br>Collection</p>
-            </div>
-        </a>
-        <a class="carousel-item" href="{{ url_for('fruity') }}">
-            <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/fruity-carousel.webp')}}" alt="fruity drink">
-                <p class="orange-neon-text">Fruity<br>Collection</p>
-            </div>
-        </a>
-        <a class="carousel-item" href="{{ url_for('hot_drinks') }}">
-            <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/hot-drinks-carousel.webp')}}" alt="cozy fireplace">
-                <p class="orange-neon-text">Hot Drinks<br>Collection</p>
-            </div>
-        </a>
-        <a class="carousel-item" href="{{ url_for('mocktails') }}">
-            <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/mocktails-carousel.webp')}}" alt="brown teddy bear">
-                <p class="orange-neon-text">Mocktails<br>Collection</p>
-            </div>
-        </a>
-        <a class="carousel-item" href="{{ url_for('pitchers') }}">
-            <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/pitchers-carousel.webp')}}" alt="cocktail pitcher">
-                <p class="orange-neon-text">Pitchers<br>Collection</p>
-            </div>
-        </a>
-        <a class="carousel-item" href="{{ url_for('shots') }}">
-            <div>
-                <img class="orange-neon-border" src="{{url_for ('static', filename='images/site-images/shots-carousel.webp')}}" alt="shot glasses">
-                <p class="orange-neon-text">Shots<br>Collection</p>
-            </div>
-        </a>
+        {% endfor %}
     </div>
-
+    
     <!-- Community section -->
     <div class="row home-section-intro center-align">
         <h2 class="green-neon-text home-section-heading">WE NEED  YOU</h2>
