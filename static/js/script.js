@@ -96,3 +96,8 @@ if (topButton !== null) {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 }
+
+//https://www.w3schools.com/jsref/met_his_back.asp
+function goBack() {
+  window.history.back();
+}

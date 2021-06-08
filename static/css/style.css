@@ -631,6 +631,15 @@ form {
     text-shadow: 0 0 10px #fe53ba;
 }
 
+#go-back-btn {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 1.3em;
+    margin: 10px 0 -20px 10px;
+    cursor: pointer;
+}
+
 /* FULL RECIPE */
 
 .full-recipe {
@@ -650,11 +659,10 @@ form {
     margin-top: 60px;
 }
 
-
 @media only screen and (max-width: 767px) {
     .full-recipe-name, .username-text {
         font-size: 12vw;
-        margin: 15px 0 5px 0;
+        margin: 40px 0 5px 0;
         overflow-wrap: wrap;
     }
 }
@@ -699,7 +707,7 @@ form {
     text-align: center;
 }
 
-.log-reg-text a:hover, .none-found a:hover {
+.log-reg-text a:hover, .none-found a:hover, #go-back-btn:hover {
     text-shadow: 0 0 3px #fff;
 }
 /* ACCOUNT PAGE */
