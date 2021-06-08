@@ -8,6 +8,7 @@
             <div class="welcome-text">
                 <h1 class="purple-neon-text" data-text="SHAKE UP SOME FUN">SHAKE UP SOME FUN</h1>
             </div>
+            <!-- Hero area -->
             <div class="col s12 l8 offset-l2">
                 <img id="hero-logo" src="{{url_for ('static', filename='images/site-images/hero-logo.webp')}}" alt="collection of glasses">
             </div>
@@ -31,13 +32,13 @@
         {% for category in categories %}
         <a class="carousel-item" href="{{ url_for(category.page_url) }}">
             <div>
-                <img class="orange-neon-border responsive-img" src="{{ category.carousel_img }}" alt="classic decorated room">
+                <img class="orange-neon-border" src="{{ category.carousel_img }}" alt="classic decorated room">
                 <p class="orange-neon-text">{{ category.category_name }}<br>Collection</p>
             </div>
         </a>
         {% endfor %}
     </div>
-    
+
     <!-- Community section -->
     <div class="row home-section-intro center-align">
         <h2 class="green-neon-text home-section-heading">WE NEED  YOU</h2>

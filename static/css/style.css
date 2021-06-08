@@ -13,6 +13,7 @@
         url(../css/fonts/NeonTubes2-Regular.woff) format("woff");
     font-weight: normal;
     font-style: normal;
+    font-display: swap
 }
 
 html {
@@ -315,11 +316,6 @@ nav {
 .carousel .carousel-item {
     height: 350px;
     width: 350px;
-}
-
-.carousel-item img {
-    height: 342px;
-    width: 342px;
 }
 
 .carousel-item p {
@@ -723,4 +719,17 @@ form {
 
 .error-container .btn {
     margin: 0;
+}
+
+
+/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+#toTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 120px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    background-color: transparent; /* Set a background color */
+    color: white; /* Text color */
+    font-size: 18px; /* Increase font size */
 }

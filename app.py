@@ -361,8 +361,6 @@ def shots():
 
 
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/
-
-
 @app.errorhandler(403)
 def forbidden(e):
     return render_template('403.html'), 403
