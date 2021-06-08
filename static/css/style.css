@@ -650,6 +650,15 @@ form {
     margin-top: 60px;
 }
 
+
+@media only screen and (max-width: 767px) {
+    .full-recipe-name, .username-text {
+        font-size: 12vw;
+        margin: 15px 0 5px 0;
+        overflow-wrap: wrap;
+    }
+}
+
 .full-recipe-img {
     width: 90%;
     border-radius: 10px;

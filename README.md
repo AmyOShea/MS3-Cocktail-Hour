@@ -234,4 +234,20 @@ Heroku needs to know which technologies are being used and any requirements, so 
 + Home Page wall background [image](https://images.unsplash.com/photo-1549930160-31d20fbcac9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80)
 + Default recipe URL [image](https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
 
+### Test Recipes
+
++ All test recipes that I added were collected from [BBC Good Food website](https://www.bbcgoodfood.com/):
+   + [Mojito](https://www.bbcgoodfood.com/recipes/mojito)
+   + [Espresso Martini](https://www.bbcgoodfood.com/recipes/espresso-martini)
+   + [Sangria](https://www.bbcgoodfood.com/recipes/sangria)
+   + [Sex on the Beach](https://www.bbcgoodfood.com/recipes/sex-beach-cocktail)
+   + [Vodka Martini](https://www.bbcgoodfood.com/recipes/vodka-martini)
+   + [Bloody Mary](https://www.bbcgoodfood.com/recipes/easy-bloody-mary)
+   + [Cosmopolitan](https://www.bbcgoodfood.com/recipes/cosmopolitan-cocktail)
+   + [Summer Punch](https://www.bbcgoodfood.com/recipes/wilhelminas-punch)
+   + [Strawberry Mojito](https://www.bbcgoodfood.com/recipes/strawberry-mojito)
+   + [Lemon Drizzle Shots](https://www.bbcgoodfood.com/recipes/lemon-drizzle-shots)
+   + [Diablo Grenadine](https://www.bbcgoodfood.com/recipes/diabolo-grenadine)
+   + [Hot Toddy](https://www.bbcgoodfood.com/recipes/hot-toddy)
++ All other recipes added by friends/family testers
 ## Acknowledgements
