@@ -15,10 +15,12 @@
             <div class="search-container">
                 <form action="{{ url_for('search') }}" method="post">
                     <p class="white-text center-align">Search our recipes by ingredient or keyword</p>
-                    <div class="input-field">
-                        <i class="fas fa-search prefix"></i>
-                        <input type="text" name="query" id="query" class="validate" required>
-                        <label for="query">Search</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-search prefix"></i>
+                            <input type="text" name="query" id="query" class="validate" required>
+                            <label for="query">Search</label>
+                        </div>
                     </div>
                     <!-- Search Buttons  -->
                     <div class="center-align">
@@ -66,7 +68,7 @@
                     {{ pagination.info }}
                 {% endif %}
             </div>
-            <button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+            <button onclick="topFunction()" id="toTopBtn" class="hide-on-large-only" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
         </div>
     </div>
 
