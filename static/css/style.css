@@ -721,15 +721,15 @@ form {
     margin: 0;
 }
 
-
 /* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
 #toTopBtn {
     display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 120px; /* Place the button at the bottom of the page */
-    right: 20px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    background-color: transparent; /* Set a background color */
-    color: white; /* Text color */
-    font-size: 18px; /* Increase font size */
+    position: fixed;
+    /* Bottom position to make button sit above footer */
+    bottom: 120px;
+    right: 20px;
+    z-index: 99; 
+    background-color: transparent;
+    color: white; 
+    font-size: 18px; 
 }
