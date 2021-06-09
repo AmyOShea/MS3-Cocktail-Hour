@@ -44,8 +44,12 @@
         <h2 class="green-neon-text home-section-heading">WE NEED  YOU</h2>
         <div class="home-section-text col s12 m8 l6 offset-m2 offset-l3">
             <p>What we love is people coming together and sharing ideas. And we'd love for you to share some of your all time favourite cocktails with the community!</p>
-            <p>Already a member? Sign in and show us what you've got!</p>
-            <p>Haven't joined us yet? WHAT ARE YOU WAITING FOR!?! Make and account, share some recipes and help us grow our collection!</p>
+            <div class="end-home-text">
+                <p>What are you waiting for?</p>
+                <p><a href="{{ url_for('register') }}"><strong>Sign Up</strong></a></p>
+                <p><a href="{{ url_for('login') }}"><strong>Sign In</strong></a></p>
+                <p><a href="{{ url_for('get_recipes') }}">Join us for a Cocktail<br><i class="fas fa-glass-martini-alt prefix"></i></a></p>
+            </div>
         </div>
     </div>    
 {% endblock %}

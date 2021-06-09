@@ -170,7 +170,7 @@ nav {
     top: 100% !important;
 }
 
-.dropdown-content li a, .sidenav li a, .flash-msg, .footer-links li a, .coll-intro, .pagination-page-info, .pagination li a, input, .log-reg-text a, .none-found a {
+.dropdown-content li a, .sidenav li a, .flash-msg, .footer-links li a, .coll-intro, .pagination-page-info, .pagination li a, input, .log-reg-text a, .none-found a, .end-home-text a {
     color: #fff;
 }
 
@@ -228,7 +228,7 @@ nav {
     padding: 0 20px;
 }
 
-.footer-links li a:hover {
+.footer-links li a:hover, .end-home-text a:hover {
     text-shadow: 0 0 4px #fff;
 }
 
@@ -488,6 +488,11 @@ nav {
 .home-section-text {
     font-size: 1.5em;
     text-align: justify;
+}
+.end-home-text {
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
 }
 
 /* FORM & INPUT */
