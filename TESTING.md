@@ -52,6 +52,18 @@ Add meta description
 ---
 ---
 ## Bugs and Fixes
+
+### **Carousel Text**
+
+![](static/images/README/bugs/.PNG)
+
+
+
+![](static/images/README/bugs/.PNG)
+
+
+
+---
 ### **Card Overlaying**
 
 ![card overlay bug](static/images/README/bugs/bug-01.PNG)
@@ -154,5 +166,60 @@ This was because I had not been dynamically adding a new ID to the newly created
 ![Input Field Dynamic ID bug](static/images/README/bugs/bug-10-code-fix.jpg)
 
 ---
+
+### **Unbalanced Tuple Unpacking**
+
+A pylint warning appeared when I added the pagination functionality:
+
+![Unbalanced Tuple Unpacking bug](static/images/README/bugs/bug-12.PNG)
+
+This was a non-issue as everything was working as it should, and the code worked fine.
+
+After a bit of research I learned that this is refered to as a 'false positive' and by adding the below comment, the warning would go away: 
+
+![Unbalanced Tuple Unpacking bug](static/images/README/bugs/bug-12-code-fix.PNG)
+
+---
+
+### **Scroll-To-Top TypeError**
+
+I added a button to redirect the user back to the top of the page when they had scrolled for a certain amount of pixels. But because the button isn't present on all pages, the JS script was looking for it, not finding it and then throwing the error:
+
+![Scroll-To-Top TypeError bug](static/images/README/bugs/bug-13.PNG)
+
+Wrapping the whole button functionality inside an if statement allowed the script to check if the button was on that page and either run the functions if it was, and ignore them if it wasn't.
+
+![Scroll-To-Top TypeError bug](static/images/README/bugs/bug-13-code-fix.PNG)
+
+---
+
+### **Heading Text Mobile Display**
+ On mobile display, a particularly long or multiple word heading 
+
+![Heading Text Mobile Display bug](static/images/README/bugs/bug-14.PNG)
+![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-02.PNG)
+
+
+Making the font responsive to the view width allowed for longer text to diplay properly without overflowing off the screen. I used a medie query targeted specifically at smaller screens so the desktop display didn't look oversized. 
+
+![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-code-fix.PNG)
+
+![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-fix-01.PNG)
+
+---
 ---
 ## Known Bugs
+
+### **URL & Username bug**
+
+When testing error pages, I was adding addition characters to the end of the URL in the acccount page, anything that was changed/edited was updating the username header on the page:
+
+![URL & Username bug](static/images/README/bugs/bug-11.PNG)
+
+I defined username as a variable in the acocunt section of the app.py file:
+
+![URL & Username bug](static/images/README/bugs/bug-11-code-fix.PNG)
+
+I retested and, while it solved that issue, adding the extra charcters didn't break the code. This is an issue that hasn't been resolved. 
+
+![URL & Username bug](static/images/README/bugs/bug-11-not-resolved.PNG)

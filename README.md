@@ -1,7 +1,7 @@
 # Cocktail Hour
 Cocktail Hour is a virtual recipe collection speifically designed for coctail recipes. 
 
-It is a community based experience that allows causal, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes. 
+It is a community based experience that allows casual, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes. 
 
 You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
 
@@ -22,8 +22,8 @@ You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
   + [Possible Future Features](#possible-future-features)
 + [Technologies Used](#technologies-used)
   + [Languages](#languages)
-  + [Frameworks](#frameworks)
-  + [Libraries](#libraries)
+  + [Frameworks and Libraries](#frameworks-and-libraries)
+  + [All Others](#all-others)
   + [Programmes and Ext Resources](#programmes-and-ext-resources)
 + [Testing](#testing)
 + [Deployment](#deployment)
@@ -58,7 +58,9 @@ In keeping with the bar theme, I dewcided to have a neon effect following throug
 
 ### Colour Scheme
 
-Because the overall theme is dark, I wanted to go with accent colours that would pop in comparison. I found the perfect colour scheme that would work with my idea, just with a couple of changes for contrast reasons.  
+Because the overall theme is dark, I wanted to go with accent colours that would pop in comparison. I found the perfect colour scheme in a [Shutterstock article](https://www.shutterstock.com/blog/neon-color-palettes)that would work with my idea, just with a couple of changes for contrast reasons.
+
+![colour scheme](static/images/README/colour-scheme.png)
 
 ### Typography
 
@@ -93,7 +95,6 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + Registered users can view their own added recipes.
 + Registered users can edit recipes that they have already added. 
 
-
 ## Possible Future Features
 + A rating system that allows users to rate each others recipes. 
   + This could lead to sorting buy top-rated recipes.
@@ -105,11 +106,32 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 
 ---
 ---
+
+# Database
+Below is the schema for my database:
+![database schema](static/images/README/db-schema.PNG)
++ Categories
+
+While the ```category_name``` key was planned ahead of time, I added the ```carousel_img``` and ```page_url``` keys later when I was experimenting with the carousel on the home page. I've documented this in the Bugs and Fixes section of the [testing.md](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md) file.
+The category_name key links to the Recipies THING
+
++ Recipes
+
+
++ Users
+
+
+
+---
+---
 # Technologies Used
 ## Languages
 + [HTML5](https://en.wikipedia.org/wiki/HTML5)
 + [CSS3](https://en.wikipedia.org/wiki/CSS)
++ [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 + [Python3](https://www.python.org/)
+
+## Frameworks and Libraries
 + [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 + [Flask-PyMongo](https://pypi.org/project/Flask-PyMongo/)
 + [Pip3](https://pip.pypa.io/en/stable/)
@@ -118,30 +140,32 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 + [Flask Paginate](https://pythonhosted.org/Flask-paginate/)
 + [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
 + [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
-+ [GitHub](https://github.com/) used to host repository.
-+ [GitPod](https://www.gitpod.io/) used to develop project and organise version control.
++ [Materialize](https://materializecss.com/)
++ [FontAwesome](https://fontawesome.com/)
++ [Google Fonts](https://fonts.google.com/) 
+
+## All Others
 + [Heroku](https://www.heroku.com/) used to deploy live site
 + [MongoDB](https://www.mongodb.com/) used to host database information.
-+ [favicon.io](https://favicon.io/) used to create a site favicon.
-+ [Google Fonts](https://fonts.google.com/) 
-+ [Autoprefixer](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
-+ [Transfonter](https://transfonter.org/) used to convert font from .tff to .woff and .woff2.
-+ [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance review.
-+ [PowerMapper](https://www.powermapper.com/) used to check compatibility with older browsers.
-+ [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
-+ [Materialize](https://materializecss.com/) for front end styling.
-+ [FontAwesome](https://fontawesome.com/)
++ [GitHub](https://github.com/) used to host repository.
++ [GitPod](https://www.gitpod.io/) used to develop project and organise version 
 + [Procreate](https://procreate.art/) used to design initial mock ups, tilable background, logo and other design accents. 
 + [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) used to cut and re-frame site images. 
 + [Balsamiq](https://balsamiq.com/) used to create wireframes.
 + [RandomKeygen](https://randomkeygen.com/) used to create a strong password for required  `<SECRET_KEY>`.
 + [CloudConvert](https://cloudconvert.com/) to convert all images to .webp format.
 + [Autoprefixer CSS](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
++ [Transfonter](https://transfonter.org/) used to convert font from .tff to .woff and .woff2.
++ [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance review.
++ [PowerMapper](https://www.powermapper.com/) used to check compatibility with older browsers.
++ [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
++ [Autoprefixer](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
++ [favicon.io](https://favicon.io/) used to create a site favicon.
 
 ---
 ---
 # Testing
-Due to the size of the testing section, I have created a separate document for it. You can find  it [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md). 
+Due to the size of the testing section, I have created a separate document for it. You can find it [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md). 
 
 ---
 ---
@@ -184,7 +208,6 @@ Heroku needs to know which technologies are being used and any requirements, so 
 + Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
 + Underneath, locate 'Manual Deploy'; choose the master branch and click 'Deploy Branch'
 + Once the app is built (it may take a few mminutes), click 'Open App' from the top of the page
-
 
 ## Forking the Repository
 + Log in to GitHub and locate the GitHub Repository

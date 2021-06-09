@@ -668,7 +668,6 @@ form {
     .full-recipe-name, .username-text {
         font-size: 12vw;
         margin: 40px 0 5px 0;
-        overflow-wrap: wrap;
     }
 }
 
