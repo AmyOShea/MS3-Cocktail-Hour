@@ -55,9 +55,10 @@
                                 <i class="fas fa-wine-bottle prefix"></i>
                                 <input id="ingredients" name="ingredients" type="text" value="{{ ingredient }}" class="validate" required>
                                 <label for="ingredients">Ingredient</label>
+                            </div>    
                         {% endfor %}
-                            <!-- New ingredient input added here -->
-                            <div class="new-ing"></div>
+                        <!-- New ingredient input added here -->
+                        <div class="new-ing">
                             <button type="button" class="btn add-ingredient">Add Ingredient</button>
                         </div>
                         <div class="tooltip-container">
@@ -71,9 +72,10 @@
                                 <i class="fas fa-list prefix"></i>
                                 <input id="method" name="method" type="text" value="{{ step }}" class="validate" required>
                                 <label for="method">Method</label>
+                            </div>    
                         {% endfor %}
-                            <!-- New method step added here -->
-                            <div class="new-step"></div>
+                        <!-- New method step added here -->
+                        <div class="new-step">
                             <button type="button" class="btn add-step">Add Step</button>
                         </div>
                         <div class="tooltip-container">
