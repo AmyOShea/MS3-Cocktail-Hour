@@ -18,7 +18,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-search prefix"></i>
-                            <input type="text" name="query" id="query" class="validate" required>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input type="text" name="query" id="query" class="validate" minlength="3" pattern=".*\S+.*" required>
                             <label for="query">Search</label>
                         </div>
                     </div>

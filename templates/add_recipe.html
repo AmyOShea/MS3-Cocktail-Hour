@@ -28,7 +28,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-cocktail prefix"></i>
-                            <input id="cocktail_name" name="cocktail_name" type="text" maxlength="30" class="validate" required>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space --> 
+                            <input id="cocktail_name" name="cocktail_name" type="text" class="validate" minlength="2" maxlength="32" pattern=".*\S+.*" required>
                             <label for="cocktail_name">Cocktail Name</label>
                         </div>
                     </div>
@@ -36,7 +37,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-star prefix"></i>
-                            <input id="main_ingredient" name="main_ingredient" type="text" class="validate" required>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input id="main_ingredient" name="main_ingredient" type="text" class="validate" minlength="3" maxlength="16" pattern=".*\S+.*" required>
                             <label for="main_ingredient">Main Ingredient</label>
                         </div>
                         <div class="tooltip-container">
@@ -47,7 +49,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-wine-bottle prefix"></i>
-                            <input id="ingredients" name="ingredients" type="text" class="validate" required>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input id="ingredients" name="ingredients" type="text" class="validate" minlength="3" pattern=".*\S+.*" required>
                             <label for="ingredients">Ingredient</label>
                             <!-- New ingredient input added here -->
                             <div class="new-ing"></div>
@@ -61,7 +64,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-list prefix"></i>
-                            <input id="method" name="method" type="text" class="validate" required>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input id="method" name="method" type="text" class="validate" minlength="5" pattern=".*\S+.*" required>
                             <label for="method">Method</label>
                             <!-- New method step added here -->
                             <div class="new-step"></div>

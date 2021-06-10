@@ -40,7 +40,7 @@ $(document).ready(function(){
             $(".new-ing").append(`
             <div class="input-field">
             <i class="fas fa-wine-bottle prefix"></i>
-            <input id="ingredients${ing}" name="ingredients" type="text" class="validate" required>
+            <input id="ingredients${ing}" name="ingredients" type="text" class="validate" minlength="5" pattern=".*\S+.*" required>
             <label for="ingredients${ing}">Ingredient</label>
             <button type="button" class="btn deleteIngredient">Delete</button></div>`);
     });
@@ -61,7 +61,7 @@ $(document).ready(function(){
             $(".new-step").append(`
             <div class="input-field">
             <i class="fas fa-list prefix"></i>
-            <input id="method${step}" name="method" type="text" class="validate" required>
+            <input id="method${step}" name="method" type="text" class="validate" minlength="5" pattern=".*\S+.*" required>
             <label for="method${step}">Method</label>
             <button type="button" class="btn deleteStep">Delete</button></div>`);
     });

@@ -12,14 +12,16 @@
                 <div>
                     <div class="input-field">
                         <i class="fas fa-user-plus prefix"></i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15"  class="validate" required>
+                        <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <!-- Password  -->
                 <div class="input-field">
                     <i class="fas fa-user-lock prefix"></i>
-                    <input id="password" name="password" type="password" minlength="5" maxlength="15"  class="validate" required>
+                    <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
                 <!-- Register btn  -->
