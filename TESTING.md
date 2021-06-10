@@ -207,6 +207,14 @@ Making the font responsive to the view width allowed for longer text to diplay p
 ![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-fix-01.PNG)
 
 ---
+
+### **Dynamic Input Pattern Attribute**
+
+When I added the ```pattern=".*\S+.*"``` attribute to the dynamically created input fields, they weren't rendering through to HTML correctly. It was rendering as ```pattern=".*S+.*"```, ommiting the backslash. 
+
+To counter this, I added an extra backslash: ```pattern=".*\\S+.*"``` and this solved the issue. 
+
+---
 ---
 ## Known Bugs
 
