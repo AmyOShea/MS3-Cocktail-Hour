@@ -55,13 +55,34 @@ Add meta description
 
 ### **Carousel Text**
 
-![](static/images/README/bugs/.PNG)
+I used the Materialize Carousel for the home page and wanted to have the information collection name text appear over the image. However, no matter what CSS I tried to manupulate it, the text remained below the image:
 
+![carousel bug](static/images/README/bugs/carousel-bug.PNG)
+![carousel bug](static/images/README/bugs/carousel-code.PNG)
 
+On their site, Materialize have another type of carousel that allows for this but I prefer the look of this - the 3d style rotation, in my opinion, looked a lot better for this project. 
 
-![](static/images/README/bugs/.PNG)
+I had to experiment ALOT with this but found that the below code worked great for this: 
 
+![carousel bug](static/images/README/bugs/carousel-code-fix-01.PNG)
 
+The above HTML with some CSS tricks helped place the text nicely over the image:
+
+![carousel bug](static/images/README/bugs/carousel-fix.PNG)
+
+Once I had the palacement figured, I wanted to experiment further and try to create the carousel dynamically for each drinks collection. While the image and text for each element was easy enough to work through, the anchor URL proved to be tricky. I tried a couple of things and ended up with varying results: 
+
+```<a class="carousel-item" href="{{ url_for(category.category_name) }}">```
++ This threw and error becuse the category name was capitalized
+
+```<a class="carousel-item" href="{{ url_for(category.category_name).lower() }}">```
++ Worked for some of the categories but a couple of them have more than one word titles so threw another error.
+
+In the end, I created a ```key:value``` pair in MongoDB: the key was called ```page_url``` and the value matched the name of the html page to be redirected to. I was able to pull that in the HTML code:
+
+![carousel bug](static/images/README/bugs/carousel-code-fix-02.PNG)
+
+I'm sure there is a much more refined way of handling this but the aboved worked well for me. 
 
 ---
 ### **Card Overlaying**

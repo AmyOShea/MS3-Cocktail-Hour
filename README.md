@@ -230,15 +230,25 @@ Heroku needs to know which technologies are being used and any requirements, so 
 # Credits
 ## Code
 
-+ This code for [materialze slider autoplay](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) was taken directly (also credited in in js file)
++ REGEX pattern for form input validation taken from this [Stack Overflow post](https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space).
 
-+ My own neon text css classes taken from [this article](https://css-tricks.com/how-to-create-neon-text-with-css/) and re-worked for my neon boxes (also credited in in css file)
++ The HTML back button was taken from this [W3Schools page](https://www.w3schools.com/jsref/met_his_back.asp).
 
-+ [This demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) was used to understand how to incorperate flask pagination into my pre existing code
++ I used [this Stack Overflow post](https://stackoverflow.com/questions/50394358/materializecss-vertically-offset-dropdown-menu-content/50395102) to adjust the placement of the nav bar dropdown.
 
-+ [This Stack Overflow post](https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616) helped me gain more of an understanding of pagination offset
++ This code for [materialze slider autoplay](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) was taken directly (also credited in in js file).
 
-+ [This Stack Overflow post](https://stackoverflow.com/questions/27980121/pylint-warning-possible-unbalanced-tuple-unpacking-with-sequence) helped with the Pylint warning that I was getting.
++ My own neon text css classes taken from [this article](https://css-tricks.com/how-to-create-neon-text-with-css/) and re-worked for my neon boxes (also credited in in css file).
+
++ [This demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) was used to understand how to incorperate flask pagination into my pre existing code.
+
++ [This Stack Overflow post](https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616) helped me gain more of an understanding of pagination offset.
+
++ [This Stack Overflow post](https://stackoverflow.com/questions/27980121/pylint-warning-possible-unbalanced-tuple-unpacking-with-sequence) helped with the Pylint warning that I was getting and provided the comment to override it.
+
++ I used the code in this [W3Schools post](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) to create the scroll-to-top button.
+
++ I took the JS code from this [Stack Overflow post](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) for the carousel autoplay functionality.
 
 
 ## Content
