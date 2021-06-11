@@ -488,7 +488,9 @@ nav {
     text-align: justify;
 }
 .end-home-text {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     margin-top: 50px;
 }
@@ -657,7 +659,8 @@ form {
     color: white; 
     font-size: 1.5em;
     padding: 3px 9px;
-    box-shadow: 0 0 4px #fff;
+    -webkit-box-shadow: 0 0 4px #fff;
+            box-shadow: 0 0 4px #fff;
  }
 
 /* FULL RECIPE */
