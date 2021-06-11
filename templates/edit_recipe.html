@@ -56,8 +56,8 @@
                             <div class="input-field col s12">
                                 <i class="fas fa-wine-bottle prefix"></i>
                                 <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
-                                <input id="ingredients" name="ingredients" type="text" value="{{ ingredient }}" class="validate"  minlength="3" pattern=".*\S+.*" required>
-                                <label for="ingredients">Ingredient</label>
+                                <input id="ingredients{{loop.index}}" name="ingredients{{loop.index}}" type="text" value="{{ ingredient }}" class="validate"  minlength="3" pattern=".*\S+.*" required>
+                                <label for="ingredients{{loop.index}}">Ingredient</label>
                             </div>    
                         {% endfor %}
                         <!-- New ingredient input added here -->
@@ -74,8 +74,8 @@
                             <div class="input-field col s12">
                                 <i class="fas fa-list prefix"></i>
                                 <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
-                                <input id="method" name="method" type="text" value="{{ step }}" class="validate" minlength="5" pattern=".*\S+.*" required>
-                                <label for="method">Method</label>
+                                <input id="method{{loop.index}}" name="method{{loop.index}}" type="text" value="{{ step }}" class="validate" minlength="5" pattern=".*\S+.*" required>
+                                <label for="method{{loop.index}}">Method</label>
                             </div>    
                         {% endfor %}
                         <!-- New method step added here -->
