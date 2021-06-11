@@ -6,13 +6,13 @@
             <h1 class="glass-container-header green-neon-text username-text">
                 {{ username }}
             </h1>
-            
             <h2 class="account-sub-heading center-align">My Recipes</h2>
             <div class="row">
                 <div class="center-align">
                     <a id="upload-btn" class="btn center-align" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus upload-icon prefix"></i> Upload Recipe</a>
                 </div>
                 {% for recipe in recipes %}
+                    <!--Displays only user-uploaded recipes -->
                     {% if session.user|lower == recipe.created_by|lower %}
                         <div class="card-container col s12 m6 l4 xl3">
                             <div class="card green-neon-border">
@@ -28,6 +28,7 @@
                                     <div class="card-cocktail-ing">
                                         {{ recipe.main_ingredient }}
                                     </div>
+                                    <!--edit/delete recipe buttons-->
                                     <div class="card-btn-container">
                                         <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
                                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn edit-btn card-btn">Edit</a>
@@ -36,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Delect recipe confirmation -->
                         <div class="modal green-neon-border" id="delete_recipe{{recipe._id}}">
                             <div class="modal-content">
                             <p>You are about to pemanantly delete this recipe</p>

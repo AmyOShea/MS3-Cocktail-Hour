@@ -73,10 +73,10 @@ There were two fonts that I was interested in for the site.
 ## Wireframes and Initial Design
 ### Wireframes
 All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
-+ All wireframes [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/assets/pre-work/README/MS3-initial-wireframes.pdf)
++ All wireframes [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/assets/pre-work/MS3-initial-wireframes.pdf)
 
 ### Design Mock Up
-+ All designs [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/assets/pre-work/README/MS3-initial-design.pdf)
++ All designs [here](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/assets/pre-work/MS3-initial-design.pdf)
 
 ---
 ---

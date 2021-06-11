@@ -37,8 +37,8 @@
           </ul>
           <ul class="right hide-on-med-and-down top-nav">
             <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-            <li><a class="dropdown-trigger" data-target="dropdown1">Collections <i id="nav-down-btn"
-                  class="fas fa-chevron-down"></i></a>
+            <li>
+              <a class="dropdown-trigger" data-target="dropdown1">Collections <i id="nav-down-btn" class="fas fa-chevron-down"></i></a>
             </li>
             {% if session.user %}
             <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
@@ -71,11 +71,13 @@
           </div>
         </li>
         {% if session.user %}
-        <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          <!--Only show buttons to logged in user-->
+          <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
-        <li><a href="{{ url_for('register') }}">Register</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
+          <!--Only show buttons to non-logged in user-->
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
         {% endif %}
       </ul>
     </header>
@@ -101,6 +103,7 @@
         <h1>FOLLOW US</h1>
         <div class="col s12">
           <ul class="footer-links">
+            <!--Social Media links-->
             <li><a href="https://www.facebook.com/" target="_blank" title="Facebook link" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
             <li><a href="https://www.instagram.com/" target="_blank" title="Instagram link" rel="noopener"><i class="fab fa-instagram"></i></a></li>
             <li><a href="https://www.twitter.com/" target="_blank" title="Twitter link" rel="noopener"><i class="fab fa-twitter"></i></a></li>
