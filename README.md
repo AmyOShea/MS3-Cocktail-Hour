@@ -44,12 +44,13 @@ You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
 + I want to be able to search for recipes that have a specific ingredient.
 + I want to have a varied range of cocktails.
 + I want to have a some cocktail suggestions when I'm not sure what to look for.
-+ I want to have the option to register and account if I want to come back at a later date. 
++ I want to have the option to register an account if I want to come back at a later date. 
 ### As a returning user: 
-+ I want be able to upload a recipe. 
-+ I want be able to add a recipe to the pre-determined collections.
-+ I want have ease of access to any recipes that I have already uploaded.
-+ I want be able to edit or delete any recipes that I have already uploaded.
++ I want to be able to log into my account.
++ I want to be able to upload a recipe. 
++ I want to be able to add a recipe to the pre-determined collections.
++ I want to have ease of access to any recipes that I have already uploaded.
++ I want to  be able to edit or delete any recipes that I have already uploaded.
 ## Design
 ### Overall Feel
 

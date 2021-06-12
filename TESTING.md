@@ -11,35 +11,207 @@
 ---
 ---
 ## Validator Testing
+### **HTML**
+
+ I checked all of the HTML pages using [W3C Markup Validation Service](https://validator.w3.org/)
+
+ Because the code is made up of Jinja templates, I had to check from the live site by right cliking each page, selecting View Page Source and running that generated code throught the validator.
+
+ All pages passed all checks. 
+
+### **CSS**
+
+I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/)
+
+Unfortunatly, it returned 3 errors:
+
+![css validator results](static/images/README/validator-css.PNG)
+
+All the errors were in relation to the ```backdrop-filter: blur``` property that it claims doesn't exist. However, accouring to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) this is a valid property. 
+
+There are some compatibilty issues with Firefox which I've documented in the [manual testing section](#manually-testing-functionality). 
+
+Other than that, any other warnings were related to the vendor prefixes. 
+
+### **JavaScript**
+
+I checked the script.js file using [JSHint](https://jshint.com/)
+
+The only issues coming back from JS Validator were two unused functions:
+
+![js validator results](static/images/README/validator-js.PNG)
+
+However, both of these functions are called throughout the site:
+
+![js validator results](static/images/README/validator-js-02.PNG)
+
+![js validator results](static/images/README/validator-js-03.PNG)
+
+### **Python**
+I checked the app.py file using [PEP8 online](http://pep8online.com/)
+
+The code passed all checks.
 
 ---
 ---
 ## Lighthouse Testing
 
+After getting the bulk of the site in place, I ran it through Chrome Lighthouse. The initial scores were a bit low:
+
+![initial lighthouse score](static/images/README/lighthouse-dscore-01.PNG)
+
+By the feed back given , I made a few changes to the code to raise the scores:
+
 ### **Performance**
 
-convrt all images to webp format
++ Convert all images to webp format
 
 ### **Accesibility**
 
-Footer h4 changed to h1
-Add alt tags to all images
-Add title to all links
-Place side nav header into li
++ Footer h4 changed to h1
++ Add alt tags to all images
++ Add title to all links
++ Place side nav header into li
 
 ### **Best Practices**
-Add ```rel="nopener"``` to all external links
++ Add ```rel="nopener"``` to all external links
 
 ### **SEO**
-Add meta description
++ Add meta description
+
+All of these changes helped bring the final score up nicely. While I would have like a higher performance score(preferably in the green) but overall, I'm happy with the progress. 
+
+![final lighthouse score](static/images/README/lighthouse-d-score-02.PNG)
 
 ---
 ---
 ## PowerMapper Compatibility
 
+I used [PowerMapper](https://www.powermapper.com/) to test cross-browser compitbility on other browsers that I don't have access to.
+
+![powermapper results](static/images/README/powermapper-01.PNG)
+
+According to their site, the ```backdrop-filter``` property had some browser compatibility issues:
+![powermapper results](static/images/README/powermapper-02.PNG)
+
+I manually checked all of the browsers specified(apart from Internet Explorer) and found that, apart from Firefox, the ```backdrop-filter``` property did work:
+
+![safari blur](static/images/README/safari-backdrop-blur.png)
+![ios blur](static/images/README/ios-backdrop-blur.png)
+
+Firefox definitely doesn't support the property so I manually tested it to make sure that, even without the blur filter, the site still looked okay and the text was legible
+
+![firefox blur](static/images/README/firefox-blur.png)
+![firefox blur](static/images/README/firefox-blur-02.png)
+![firefox blur](static/images/README/firefox-blur-03.PNG)
+
+While it would be great to have the blur included, I still think that the look of the site holds up on firefox and all text remails legible. 
+
 ---
 ---
 ## Testing From User Stories
+
+### As a casual user: 
++ *I want to be able to view recipes without having to register and account.*
+
+Even without being logged in, a user is able to browse through all the recipe cards, choose on and view the full recipe:
+
+![testing from user stories](static/images/README/Testing/testing-01.png)
+
+---
+
++ *I want to be able to search for specific recipes.*
++ *I want to be able to search for recipes that have a specific ingredient.*
+
+From the recipes page, the user can use the search bar for specifics:
+
+![testing from user stories](static/images/README/Testing/testing-02.png)
+
+The words searched will come from the cocktail name, main ingredient and full ingredients list. 
+
+If there were any results, the user will see just them:
+
+![testing from user stories](static/images/README/Testing/testing)
+
+If there were no matches, the user will be shown a message informing them:
+
+![testing from user stories](static/images/README/Testing/testin)
+
+The user can then use the use the clear button to revert back to seeing all recipes. 
+
+---
+
++ *I want to have a varied range of cocktails.*
+
+The recipes page gives the user the ability to browse through all of the recipes on the site, regardless of which collection it belongs to:
+
+![testing from user stories](static/images/README/Testing/testing-03.png)
+
+---
+
++ *I want to have a some cocktail suggestions when I'm not sure what to look for.*
+
+![testing from user stories](static/images/README/Testing/testing-04.png)
+
+---
+
++ *I want to have the option to register an account if I want to come back at a later date.*
+
+![testing from user stories](static/images/README/Testing/testing-05.png)
+
+---
+
+### As a returning user: 
++ *I want be able to log into my account.*
+
+![testing from user stories](static/images/README/Testing/testing-06.png)
+
+---
+
++ *I want be able to upload a recipe.*
+
+From their account page, the use will see the upload button towards the top of the page:
+
+![testing from user stories](static/images/README/Testing/testing-07.png)
+
+Once they have clicked it, they wil be rediredcted to the upload page:
+
+![testing from user stories](static/images/README/Testing/testing-08.png)
+
+---
+
++ *I want be able to add a recipe to the pre-determined collections.*
+
+Once the user has been directed to the upload page, the first option is to choose which catagories they would like their recipe to be added to:
+
+![testing from user stories](static/images/README/Testing/testing-09.png)
+
+---
+
++ *I want have ease of access to any recipes that I have already uploaded.*
+
+From their account page, the user will be able to view all recipes that they have uploaded:
+
+![testing from user stories](static/images/README/Testing/testing-10.png)
+
+---
+
++ *I want be able to edit or delete any recipes that I have already uploaded.*
+
+From the account page, a logged in user has access to all of their recipes. From there, the user can hover over any of the recipes and they are presented with the edit or delete options:
+
+![testing from user stories](static/images/README/Testing/testing-11.png)
+
+**EDIT:**
+if the user presses the edit button, the page reloads to the edit page which is a visual duplicaiton of the upload page. However, the input fields will be populated with their original input:
+![testing from user stories](static/images/README/Testing/testing-12.png)
+
+Once the user has made the necessary changes, they can save them at the bottom of the page. Alternaitly, they can cancel all changes they've made. Both buttons lead back to their account page:
+![testing from user stories](static/images/README/Testing/testing-13.png)
+
+**Delete:** if the user chooses the delete button, they will be presented with a model to either confirm or cancel the deletion: 
+
+![testing from user stories](static/images/README/Testing/testing-14.png)
 
 ---
 ---
@@ -252,3 +424,17 @@ I defined username as a variable in the acocunt section of the app.py file:
 I retested and, while it solved that issue, adding the extra charcters didn't break the code. This is an issue that hasn't been resolved. 
 
 ![URL & Username bug](static/images/README/bugs/bug-11-not-resolved.PNG)
+
+---
+
+### **Passive Event Handler**
+
+From the Chrome console there are issues being reported: 
+
+![URL & Username bug](static/images/README/bugs/bug-15.PNG)
+
+These are coming from the ```.side-nav``` and ```.carousel``` triggers. Based on the messgae itself, the issue seems to be coming from Materialize rather than the script.js file.
+
+![URL & Username bug](static/images/README/bugs/bug-15-02.PNG)
+
+However, I spent a lot of time looking into this and trying to add the ```passive: true``` that the helper documentation pointed to but to no avail. 

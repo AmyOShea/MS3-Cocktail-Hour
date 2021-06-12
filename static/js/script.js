@@ -16,6 +16,7 @@ $(document).ready(function(){
     $('.carousel').carousel({
         fullWidth: false
     });
+    $('.tooltipped').tooltip();
 
     // The below code was taken DIRECTLY from the below source
     // https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
@@ -26,10 +27,6 @@ $(document).ready(function(){
         setTimeout(autoplay, 3500);
     }
     // End of sourced code
-
-    $(document).ready(function(){
-        $('.tooltipped').tooltip();
-      });
 
     // Dynamically adding more ingredient inputs
     let ing = 1;
@@ -72,7 +69,6 @@ $(document).ready(function(){
     });
 });
 
-
 // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 const topButton = document.getElementById("toTopBtn");
 
@@ -96,7 +92,6 @@ function topFunction() {
 document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
 
 //https://www.w3schools.com/jsref/met_his_back.asp
 function goBack() {
