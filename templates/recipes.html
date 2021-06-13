@@ -59,7 +59,7 @@
                     {% endfor %}
                 <!-- If no results found  -->
                 {% else %}
-                    <p class="none-found center-align">No Results Found<br>Feel free to <strong><a href=" url_for('login') }}">log in to your account</a></strong> and add to the database!<br>And if you don't have an account, you can <strong><a href="{{ url_for('register') }}">register for one here!</a></strong></p>
+                    <p class="none-found center-align">No Results Found<br>Feel free to <strong><a href="{{ url_for('login') }}">log in to your account</a></strong> and add to the database!<br>And if you don't have an account, you can <strong><a href="{{ url_for('register') }}">register for one here!</a></strong></p>
                 {% endif %}
             </div>
             <!-- pagination  -->

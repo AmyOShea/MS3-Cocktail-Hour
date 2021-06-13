@@ -131,11 +131,11 @@ The words searched will come from the cocktail name, main ingredient and full in
 
 If there were any results, the user will see just them:
 
-![testing from user stories](static/images/README/Testing/testing)
+![testing from user stories](static/images/README/Testing/testing-02-a.png)
 
 If there were no matches, the user will be shown a message informing them:
 
-![testing from user stories](static/images/README/Testing/testin)
+![testing from user stories](static/images/README/Testing/testing-02-b.png)
 
 The user can then use the use the clear button to revert back to seeing all recipes. 
 
@@ -151,24 +151,38 @@ The recipes page gives the user the ability to browse through all of the recipes
 
 + *I want to have a some cocktail suggestions when I'm not sure what to look for.*
 
+On the home page, the carousel will give the user various collections to scroll through. Each image is a link to the appropriate collection page:
+
 ![testing from user stories](static/images/README/Testing/testing-04.png)
 
 ---
 
 + *I want to have the option to register an account if I want to come back at a later date.*
 
+From the navigation bar, the user can go to the registration page. From there, they can choose a username and password:
+
 ![testing from user stories](static/images/README/Testing/testing-05.png)
+
+ If their chosen username has already been taken, they will be informed and can choose another:
+
+ ![testing from user stories](static/images/README/Testing/testing-05-a.png)
 
 ---
 
 ### As a returning user: 
-+ *I want be able to log into my account.*
++ *I want to be able to log into my account.*
+
+As long as the user has been through the registration process, they can use the long in page from the navigation bar to access their account:
 
 ![testing from user stories](static/images/README/Testing/testing-06.png)
 
+If they use the wrong username or password, they will be informed and can retry:
+
+![testing from user stories](static/images/README/Testing/testing-06-a.png)
+
 ---
 
-+ *I want be able to upload a recipe.*
++ *I want to be able to upload a recipe.*
 
 From their account page, the use will see the upload button towards the top of the page:
 
@@ -180,7 +194,7 @@ Once they have clicked it, they wil be rediredcted to the upload page:
 
 ---
 
-+ *I want be able to add a recipe to the pre-determined collections.*
++ *I want to be able to add a recipe to the pre-determined collections.*
 
 Once the user has been directed to the upload page, the first option is to choose which catagories they would like their recipe to be added to:
 
@@ -188,7 +202,7 @@ Once the user has been directed to the upload page, the first option is to choos
 
 ---
 
-+ *I want have ease of access to any recipes that I have already uploaded.*
++ *I want to have ease of access to any recipes that I have already uploaded.*
 
 From their account page, the user will be able to view all recipes that they have uploaded:
 
@@ -196,7 +210,7 @@ From their account page, the user will be able to view all recipes that they hav
 
 ---
 
-+ *I want be able to edit or delete any recipes that I have already uploaded.*
++ *I want to be able to edit or delete any recipes that I have already uploaded.*
 
 From the account page, a logged in user has access to all of their recipes. From there, the user can hover over any of the recipes and they are presented with the edit or delete options:
 
@@ -204,9 +218,11 @@ From the account page, a logged in user has access to all of their recipes. From
 
 **EDIT:**
 if the user presses the edit button, the page reloads to the edit page which is a visual duplicaiton of the upload page. However, the input fields will be populated with their original input:
+
 ![testing from user stories](static/images/README/Testing/testing-12.png)
 
 Once the user has made the necessary changes, they can save them at the bottom of the page. Alternaitly, they can cancel all changes they've made. Both buttons lead back to their account page:
+
 ![testing from user stories](static/images/README/Testing/testing-13.png)
 
 **Delete:** if the user chooses the delete button, they will be presented with a model to either confirm or cancel the deletion: 
@@ -216,6 +232,206 @@ Once the user has made the necessary changes, they can save them at the bottom o
 ---
 ---
 ## Manually Testing Functionality
+### **base.html**
+
+| Element               | Action        | Expected Result| Pass/Fail  |
+|:-------------         |:------------- |:-----|:-----|
+| **NavBar**            |               |      |
+|Logo                   |Click|Redirect to home         |Pass|
+|Recipes Link           |Click|Redirect to all recipes  |Pass|
+|Collections Dropdown   |Click|Open collections dropdown|Pass|
+|Classics Link          |Click|Redirect to Classics page|Pass|
+|Elegance Link          |Click|Redirect to Elegance page|Pass|
+|Fruity Link            |Click|Redirect to Fruity page  |Pass|
+|Hot Drinks Link        |Click|Redirect to Hot Drinks page|Pass|
+|Mocktails Link         |Click|Redirect to Mocktails page|Pass|
+|Pitchers Link          |Click|Redirect to Pitchers page|Pass|
+|Shots Link             |Click|Redirect to Shots page|Pass|
+|Register Link          |Click|Redirect to register page|Pass|
+|Log In Link            |Click|Redirect to log in page  |Pass|
+| **SideNav**           |       |    |
+|Hamburger Icon         |Click|Open Sidenav             |Pass|
+|Recipes Link           |Click|Redirect to all recipes  |Pass|
+|Collections Dropdown   |Click|Open collections dropdown|Pass|
+|Classics Link          |Click|Redirect to Classics page|Pass|
+|Elegance Link          |Click|Redirect to Elegance page|Pass|
+|Fruity Link            |Click|Redirect to Fruity page  |Pass|
+|Hot Drinks Link        |Click|Redirect to Hot Drinks page|Pass|
+|Mocktails Link         |Click|Redirect to Mocktails page|Pass|
+|Pitchers Link          |Click|Redirect to Pitchers page|Pass|
+|Shots Link             |Click|Redirect to Shots page|Pass|
+|Register Link          |Click|Redirect to register page|Pass|
+|Log In Link            |Click|Redirect to log in page  |Pass|
+| **Footer**            |     |     |
+|Facebook Link          |Click|Open on external page    |Pass|
+|Instagram Link         |Click|Open on external page    |Pass|
+|Twitter Link           |Click|Open on external page    |Pass|
+|TikTok Link            |Click|Open on external page    |Pass|
+
+---
+### **index.html**
+| Element               | Action            | Expected Result           | Pass/Fail  |
+|:-------------         |:-------------     |:-----                     |:-----|
+| **Carousel**          |                   |                           |    |
+|Whole Carousel         |Horizontal scroll  |Scrolll through collections|Pass|
+|Classics Link          |Click              |Redirect to Classics page  |Pass|
+|Elegance Link          |Click              |Redirect to Elegance page  |Pass|
+|Fruity Link            |Click              |Redirect to Fruity page    |Pass|
+|Hot Drinks Link        |Click              |Redirect to Hot Drinks page|Pass|
+|Mocktails Link         |Click              |Redirect to Mocktails page |Pass|
+|Pitchers Link          |Click              |Redirect to Pitchers page  |Pass|
+|Shots Link             |Click              |Redirect to Shots page     |Pass|
+|Register Link          |Click              |Redirect to register page  |Pass|
+|Log In Link            |Click              |Redirect to log in page    |Pass|
+| **Inline Links**            |     |     |
+|Sign Up link           |Click|Redirect to Register Page    |Pass|
+|Sign In link           |Click|Redirect to Login page       |Pass|
+
+---
+
+### **account.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Upload Btn**         |                   |                                   |    |
+|Upload Button              |Click              |Redirect to recipe upload page     |Pass|
+| **Recipe Card**           |                   |                                   |    |
+|Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
+|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
+|Edit recipe btn            |Click              |Redirect to edit recipe page       |Pass|
+|Delete recipe btn          |Click              |Open delete confirmation modal     |Pass|
+|Delete modal - delete btn  |Click              |Delete selected recipe             |Pass|
+|                           |                   |Redirect to account page           |Pass|
+|                           |                   |'Recipe deleted' confirmation message  |Pass|
+|Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
+| **Pagination**            |                   |                                   |    |
+|<< btn                     |Hover/click        |Reveal 'previous' recipes          |Pass|
+|Pagination number          |Click              |Specific recipes page number       |Pass|
+|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+
+---
+### add_recipe.html
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**         |                   |                                   |    |
+|Choose Collection dropdown |Click              |Reveal collection options          |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
+|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
+|Add ingredient btn         |Click              |Generate new input field           |Pass|
+|Delete ingredient btn      |Click              |Delete new input field             |Pass|
+|Add method step btn        |Click              |Generate new method step field     |Pass|
+|Delete method step btn     |Click              |Delete new method step field       |Pass|
+|Add recipe btn(all fields correct)|Click       |Recipe uploads to database         |Pass|
+|                           |                   |Redirect to account page           |Pass|
+|                           |                   |"Recipe Uploaded!" confirmation message  |Pass|
+|Add recipe btn(some incorrect fields)|Click    |Page scrolls to incorrect fields   |Pass|
+
+---
+### **edit_recipe.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**         |                   |                                   |    |
+|All fields                 |On page open       |Pre-populated with previous inputs |Pass|
+|Choose Collection dropdown |Click              |Reveal collection options          |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
+|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
+|Add ingredient btn         |Click              |Generate new input field           |Pass|
+|Delete ingredient btn      |Click              |Delete new input field             |Pass|
+|Add method step btn        |Click              |Generate new method step field     |Pass|
+|Delete method step btn     |Click              |Delete new method step field       |Pass|
+|Update btn(all fields correct)|Click           |Recipe updates on database         |Pass|
+|                           |                   |Redirect to account page           |Pass|
+|                           |                   |"Recipe Edited!" confirmation message  |Pass|
+|Cancel btn                 |Click              |No changes made to recipe          |Pass|
+|                           |                   |Redirect to account page           |Pass|
+
+---
+### **full_recipe.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|Back to recipes btn        |Click              |Redirect to previous page          |Pass|
+|Recipe image               |On page open       |Recipe image displayed properly    |Pass|
+|Recipe ingredients list    |On page open       |Recipe ingredients list displayed properly |Pass|
+|Recipe method list         |On page open       |Recipe method list displayed properly  |Pass|
+
+---
+### **login.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Form**                   |Click              |Redirect to previous page          |Pass|
+|Username                   |Text input         |Text displayed to user             |Pass|
+|Password                   |Text input         |Password hidden to user            |Pass|
+|Submit btn (fields correct)|Click              |Redirect to account page           |Pass|
+|Submit btn (fields incorrect)|Click            |Reload log in page                 |Pass|
+|**Redirect Link**          ||||
+|'Register here' link       |Click              |Redirect to registration page      |Pass|
+
+---
+### **recipes.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Search**                 ||||
+|Text input                 |Text input         |Text displayed to user             |Pass|
+|Clear btn                  |Click              |Clear searches, show all recipes   |Pass|
+|Search btn (with results)  |Click              |Display matched to user            |Pass|
+|Search btn (no results)    |Click              |'No Results Found' message         |Pass|
+|**'No Results Found' links**||||
+|Account log in link        |Click              |Redirect to log in page            |Pass|
+|Register account link      |Click              |redirect to registration page      |Pass|
+| **Recipe Card**           |                   |                                   |    |
+|Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
+|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
+| **Pagination**            |                   |                                   |    |
+|<< btn                     |Hover/click        |Reveal 'previous' recipes          |Pass|
+|Pagination number          |Click              |Specific recipes page number       |Pass|
+|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+
+### **register.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|**Form**                   |Click              |Redirect to previous page          |Pass|
+|Username                   |Text input         |Text displayed to user             |Pass|
+|Password                   |Text input         |Password hidden to user            |Pass|
+|**Submit btn**||||
+|Fields correct             |Click              |New user added to database         |Pass|
+|                           |                   |Redirect to account page           |Pass|
+|Fields incorrect format    |Click              |Fields highlighted red, user prompted to change format |Pass|
+|Username already in use    |Click              |Reload register page, error message to user    |Pass|
+|**Redirect Link**          ||||
+|'Log in here' link         |Click              |Redirect to log in page            |Pass|
+
+---
+### **Collections pages**
+*All collections pages have identical functionality so all the below test apply to each colelciton page:*
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|Recipe Card                |On page load       |Only display recipes in that category|Pass|
+|Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
+|Full recipe btn            |Click              |Redirect to full recipe            |Pass|
+| **Pagination**            |                   |                                   |    |
+|<< btn                     |Hover/click        |Reveal 'previous' recipes          |Pass|
+|Pagination number          |Click              |Specific recipes page number       |Pass|
+|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+
+
+### **Error pages**
+
+*All error pages have identical functionality so all the below test apply to each error page:*
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+|Home btn                   |Click              |Redirect to home page              |Pass|
 
 ---
 ---
