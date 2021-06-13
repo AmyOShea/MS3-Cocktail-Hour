@@ -206,6 +206,22 @@ Heroku needs to know which technologies are being used and any requirements, so 
 + In the GitPod terminal, type ```echo web: python run.py > Procfile``` to create your procfile.
 + Push these files to your repository.
 
+### Environmentals File
+
+Create and env.py file using the following information:
+
+```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", " *unique secret key* ")
+os.environ.setdefault("MONGO_URI", " *unique uri from mongo.db * ")
+os.environ.setdefault("MONGO_DB", " *database name* ")
+```
+
+Because this contains sensitive information, this needs to be added to the '.gitignore' file. 
+
 ### Creating Heroku App
 + Log into Heroku
 + Select 'Create New App' from your dashboard
@@ -309,4 +325,8 @@ Heroku needs to know which technologies are being used and any requirements, so 
    + [Diablo Grenadine](https://www.bbcgoodfood.com/recipes/diabolo-grenadine)
    + [Hot Toddy](https://www.bbcgoodfood.com/recipes/hot-toddy)
 + All other recipes added by friends/family testers
+
 ## Acknowledgements
++ All the freinds who tested the site, even in its earliest stages.
++ Everyone in the CI Slack that offered answers, advice and just a bit of a chat when needed!
++ My mentor Antonio Rodriguez for  for his help at the different stages of the project.
