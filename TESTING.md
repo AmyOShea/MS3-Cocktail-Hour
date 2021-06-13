@@ -446,6 +446,28 @@ Once the user has made the necessary changes, they can save them at the bottom o
 ---
 ---
 ## Responsive Testing
+Through devices that I have at home/readily available to me, I was able to continuously test on:
+### Phone:
++ Samsung Galaxy S9
+  + Google Chrome
+  + Samsung Internet
++ Huawei Y7
+  + Google Chrome
++ iPhone 6
+  + Safari
+### Tablet
++ iPad Mini 7.9"
+  + Safari
++ iPad 9.7"
+  + Safari
+### Computer
+* Avita Pura 14" Laptop
+  * Google Chrome
+  * Microsoft Edge
+  * Opera
+  * Mozilla Firefox
+### Responsinator
++ When there were devices/browsers that I didn't have access to, I used [Responsinator](https://www.responsinator.com/) to make sure that the site was responsive.
 
 ---
 ---

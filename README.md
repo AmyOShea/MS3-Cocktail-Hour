@@ -4,6 +4,7 @@ Cocktail Hour is a virtual recipe collection speifically designed for coctail re
 It is a community based experience that allows casual, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes. 
 
 You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
+![Main site image](static/images/README/readme-main-img.png)
 
 ---
 ---
@@ -111,16 +112,41 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 # Database
 Below is the schema for my database:
 ![database schema](static/images/README/db-schema.PNG)
-+ Categories
+
+## Categories
+
+| Key                   |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|_id                    |ObjectId       |
+|category_name          |string         |used in *recipes* array
+|carousel_img           |string         |
+|page_url               |string         |
+
 
 While the ```category_name``` key was planned ahead of time, I added the ```carousel_img``` and ```page_url``` keys later when I was experimenting with the carousel on the home page. I've documented this in the Bugs and Fixes section of the [testing.md](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md) file.
-The category_name key links to the Recipies THING
+The category_name key links to the Recipies db.
 
-+ Recipes
+## Recipes
+
+| Key                   |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|_id                    |ObjectId       |
+|category_name          |array          |each collection chosen by user from *categories*
+|cocktail_name          |string         |
+|main_ingredient        |string         |
+|ingredients            |array          |individual ingredients input by user
+|method                 |array          |individual steps input by user
+|image_url              |string         |
+|created_by             |ObjectId       |object id taken from *users*
 
 
-+ Users
+## Users
 
+| User                  |Value type     |Desc           |
+|:-------------         |:------------- |:------------- |
+|_id                    |ObjectId       |used in *recipes*
+|username               |string         |
+|password               |string         |
 
 
 ---
@@ -160,6 +186,7 @@ The category_name key links to the Recipies THING
 + [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance review.
 + [PowerMapper](https://www.powermapper.com/) used to check compatibility with older browsers.
 + [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
++ [Am I Responsive](http://ami.responsivedesign.is/) used to generate README intro image.
 + [Autoprefixer](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
 + [favicon.io](https://favicon.io/) used to create a site favicon.
 
