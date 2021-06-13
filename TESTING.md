@@ -433,6 +433,10 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |>> btn                     |Click              |Reveal 'next' recipes              |Pass|
 | **Scroll to top btn**     |                   |                                   |    |
 |(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
+|**If nothing in collection**|                  |                                   |    |
+|User message               |On page load       |Message informs user that there's no recipes in colleciton|Pass|
+|Log in link                |On page load       |Redirect to log in page            |Pass|
+|Register link              |On page load       |Redirect to registration page      |Pass|
 
 ---
 ### **Error pages**

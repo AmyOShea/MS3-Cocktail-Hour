@@ -21,6 +21,7 @@ You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
 + [Features](#features)
   + [Current Features](#current-features)
   + [Possible Future Features](#possible-future-features)
++ [Database](#database)
 + [Technologies Used](#technologies-used)
   + [Languages](#languages)
   + [Frameworks and Libraries](#frameworks-and-libraries)
@@ -122,7 +123,6 @@ Below is the schema for my database:
 |carousel_img           |string         |
 |page_url               |string         |
 
-
 While the ```category_name``` key was planned ahead of time, I added the ```carousel_img``` and ```page_url``` keys later when I was experimenting with the carousel on the home page. I've documented this in the Bugs and Fixes section of the [testing.md](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md) file.
 The category_name key links to the Recipies db.
 
@@ -139,7 +139,6 @@ The category_name key links to the Recipies db.
 |image_url              |string         |
 |created_by             |ObjectId       |object id taken from *users*
 
-
 ## Users
 
 | User                  |Value type     |Desc           |
@@ -147,7 +146,6 @@ The category_name key links to the Recipies db.
 |_id                    |ObjectId       |used in *recipes*
 |username               |string         |
 |password               |string         |
-
 
 ---
 ---
