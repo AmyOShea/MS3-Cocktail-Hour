@@ -618,24 +618,6 @@ form {
     margin: 0 20px 0px 20px !important;
 }
 
-.scroll-to-btn {
-    position: relative;
-    top: -20vh;
-}
-
-@media only screen and (max-width: 500px){
-    .scroll-to-btn {
-        position: relative;
-        top: -25vh;
-    }
-}
-
-.scroll-to-btn a {
-    color: #fff;
-    font-size: 3em;
-    text-shadow: 0 0 10px #fe53ba;
-}
-
 #go-back-btn {
     color: #fff;
     background-color: transparent;

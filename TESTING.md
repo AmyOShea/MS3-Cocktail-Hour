@@ -283,9 +283,10 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |Shots Link             |Click              |Redirect to Shots page     |Pass|
 |Register Link          |Click              |Redirect to register page  |Pass|
 |Log In Link            |Click              |Redirect to log in page    |Pass|
-| **Inline Links**            |     |     |
-|Sign Up link           |Click|Redirect to Register Page    |Pass|
-|Sign In link           |Click|Redirect to Login page       |Pass|
+| **Inline Links**      |                   |                           |    |
+|Sign Up link           |Click              |Redirect to Register Page  |Pass|
+|Sign In link           |Click              |Redirect to Login page     |Pass|
+|'Join us...'           |Click              |Redirect to recipes page   |Pass|
 
 ---
 
@@ -293,7 +294,7 @@ Once the user has made the necessary changes, they can save them at the bottom o
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-| **Upload Btn**         |                   |                                   |    |
+| **Upload Btn**            |                   |                                   |    |
 |Upload Button              |Click              |Redirect to recipe upload page     |Pass|
 | **Recipe Card**           |                   |                                   |    |
 |Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
@@ -305,16 +306,18 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |                           |                   |'Recipe deleted' confirmation message  |Pass|
 |Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
 | **Pagination**            |                   |                                   |    |
-|<< btn                     |Hover/click        |Reveal 'previous' recipes          |Pass|
+|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
 |Pagination number          |Click              |Specific recipes page number       |Pass|
 |>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+| **Scroll to top btn**     |                   |                                   |    |
+|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
 
 ---
 ### add_recipe.html
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-| **Form**         |                   |                                   |    |
+| **Form**                  |                   |                                   |    |
 |Choose Collection dropdown |Click              |Reveal collection options          |Pass|
 |Text input fields          |Type into          |Text appears, line highlights green|Pass|
 |Text input fields          |Leave blank        |Line highlights red                |Pass|
@@ -334,7 +337,7 @@ Once the user has made the necessary changes, they can save them at the bottom o
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-| **Form**         |                   |                                   |    |
+| **Form**                  |                   |                                   |    |
 |All fields                 |On page open       |Pre-populated with previous inputs |Pass|
 |Choose Collection dropdown |Click              |Reveal collection options          |Pass|
 |Text input fields          |Type into          |Text appears, line highlights green|Pass|
@@ -348,6 +351,7 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |Update btn(all fields correct)|Click           |Recipe updates on database         |Pass|
 |                           |                   |Redirect to account page           |Pass|
 |                           |                   |"Recipe Edited!" confirmation message  |Pass|
+|Update btn(some incorrect fields)|Click        |Page scrolls to incorrect fields   |Pass|
 |Cancel btn                 |Click              |No changes made to recipe          |Pass|
 |                           |                   |Redirect to account page           |Pass|
 
@@ -371,7 +375,7 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |Password                   |Text input         |Password hidden to user            |Pass|
 |Submit btn (fields correct)|Click              |Redirect to account page           |Pass|
 |Submit btn (fields incorrect)|Click            |Reload log in page                 |Pass|
-|**Redirect Link**          ||||
+|**Redirect Link**          |                   |                                   |    |
 |'Register here' link       |Click              |Redirect to registration page      |Pass|
 
 ---
@@ -379,22 +383,26 @@ Once the user has made the necessary changes, they can save them at the bottom o
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
-|**Search**                 ||||
+|**Search**                 |                   |                                   |    |
 |Text input                 |Text input         |Text displayed to user             |Pass|
 |Clear btn                  |Click              |Clear searches, show all recipes   |Pass|
 |Search btn (with results)  |Click              |Display matched to user            |Pass|
 |Search btn (no results)    |Click              |'No Results Found' message         |Pass|
-|**'No Results Found' links**||||
+|**'No Results Found' links**|                  |                                   |    |
 |Account log in link        |Click              |Redirect to log in page            |Pass|
 |Register account link      |Click              |redirect to registration page      |Pass|
 | **Recipe Card**           |                   |                                   |    |
 |Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
 |Full recipe btn            |Click              |Redirect to full recipe            |Pass|
 | **Pagination**            |                   |                                   |    |
-|<< btn                     |Hover/click        |Reveal 'previous' recipes          |Pass|
+|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
 |Pagination number          |Click              |Specific recipes page number       |Pass|
 |>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+| **Scroll to top btn**     |                   |                                   |    |
+|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
 
+
+---
 ### **register.html**
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
@@ -402,7 +410,7 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |**Form**                   |Click              |Redirect to previous page          |Pass|
 |Username                   |Text input         |Text displayed to user             |Pass|
 |Password                   |Text input         |Password hidden to user            |Pass|
-|**Submit btn**||||
+|**Submit btn**             |                   |                                   |    |
 |Fields correct             |Click              |New user added to database         |Pass|
 |                           |                   |Redirect to account page           |Pass|
 |Fields incorrect format    |Click              |Fields highlighted red, user prompted to change format |Pass|
@@ -420,11 +428,13 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |Recipe Card                |Hover/click        |Reveal recipe action buttons       |Pass|
 |Full recipe btn            |Click              |Redirect to full recipe            |Pass|
 | **Pagination**            |                   |                                   |    |
-|<< btn                     |Hover/click        |Reveal 'previous' recipes          |Pass|
+|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
 |Pagination number          |Click              |Specific recipes page number       |Pass|
 |>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+| **Scroll to top btn**     |                   |                                   |    |
+|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
 
-
+---
 ### **Error pages**
 
 *All error pages have identical functionality so all the below test apply to each error page:*
