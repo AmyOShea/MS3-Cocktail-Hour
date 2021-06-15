@@ -34,8 +34,9 @@ def home():
 
 @app.route("/collection/<category_id>")
 def collection(category_id):
+    recipes = mongo.db.recipes.find()
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("collection.html", category=category)
+    return render_template("collection.html", category=category, recipes=recipes)
 
 
 @app.route("/get_recipes")
