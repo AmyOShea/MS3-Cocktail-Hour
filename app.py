@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 
 @app.context_processor
-def context_processor():
+def category_list():
     categories = list(mongo.db.categories.find())
     return dict(categories=categories)
 
@@ -28,15 +28,15 @@ def context_processor():
 @app.route("/")
 @app.route("/home")
 def home():
-    categories = mongo.db.categories.find()
-    return render_template("index.html", categories=categories)
+    return render_template("index.html")
 
 
 @app.route("/collection/<category_id>")
 def collection(category_id):
     recipes = mongo.db.recipes.find()
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("collection.html", category=category, recipes=recipes)
+    return render_template(
+        "collection.html", category=category, recipes=recipes)
 
 
 @app.route("/get_recipes")
@@ -192,8 +192,7 @@ def add_recipe():
         flash("Recipe Uploaded!")
         return redirect(url_for("account", username=session["user"]))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", categories=categories)
+    return render_template("add_recipe.html")
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -214,9 +213,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for("account", username=session["user"]))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe,
-                           categories=categories)
+    return render_template("edit_recipe.html", recipe=recipe)
 
 
 @app.route("/delete_recipe/<recipe_id>")
