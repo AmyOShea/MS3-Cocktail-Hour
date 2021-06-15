@@ -1,39 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <div class="row">
+        <div class="col s12 m8 offset-m2 collection-banner-image">
+            <div class="collection-container">
+                <img class="collection-img" src="{{ category.banner_img }}" alt="collection banner image">
+            </div>
+            <div class="collection-banner-name">
+                <h1 class="orange-neon-text">{{ category.category_name }}<br><span>Collection</span></h1>
+            </div>
+        </div>
+    </div>
 
-    <h1 class="orange-neon-text">{{ category.category_name }}<br><span class="abc">Collection</span></h1>
 
-    {% for recipe in recipes %}
-    {% for item in recipe.category_name %}
-    {% if item == category.category_name %}
 
-                        <!-- Recipe card  -->
-                        <div class="card-container col s12 m6 l4 xl3">
-                            <div class="card purple-neon-border">
-                                <div class="main-content">
-                                    <img src="{{ recipe.image_url }}" alt="cocktail recipe image">
-                                </div>
-                                <div class="overlay-content">
-                                    <div class="valign-wrapper name-wrapper">
-                                        <div class="card-cocktail-name">
-                                            {{ recipe.cocktail_name }}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="row">
+                {% for recipe in recipes %}
+                    <!-- Unpack category_name list in recipes db-->
+                    {% for item in recipe.category_name %}
+                        <!-- Match recipe category name to collection category name -->
+                        {% if item == category.category_name %}
+                            <!-- Recipe card  -->
+                            <div class="card-container col s12 m6 l4 xl3">
+                                <div class="card orange-neon-border">
+                                    <div class="main-content">
+                                        <img src="{{ recipe.image_url }}" alt="cocktail recipe image">
+                                    </div>
+                                    <div class="overlay-content">
+                                        <div class="valign-wrapper name-wrapper">
+                                            <div class="card-cocktail-name">
+                                                {{ recipe.cocktail_name }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-cocktail-ing">
-                                        {{ recipe.main_ingredient }}
-                                    </div>
-                                    <div class="card-btn-container">
-                                        <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                        <div class="card-cocktail-ing">
+                                            {{ recipe.main_ingredient }}
+                                        </div>
+                                        <div class="card-btn-container">
+                                            <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="card-recipe-btn card-btn">Full Recipe</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                    {% endif %}
+                        {% endif %}
                     {% endfor %}
-                    {% endfor %}
-
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
    
 

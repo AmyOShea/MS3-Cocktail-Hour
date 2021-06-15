@@ -351,51 +351,31 @@ nav {
 
 /* RECIPE PAGES */
 
+.collection-banner-image {
+    margin: 50px 0 40px 0;
+}
+
 .collection-container {
     height: 40vh;
+    width: 100%;
+    overflow: hidden;
 }
 
-.classics-image {
-    background-image: url(../images/site-images/classic-banner.webp);
-    margin: 50px 0 40px 0;
+.collection-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
 }
 
-.elegance-image {
-    background-image: url(../images/site-images/elegance-banner.webp);
-    margin: 50px 0 40px 0;
-}
-
-.fruity-image {
-    background-image: url(../images/site-images/fruity-banner.webp);
-    margin: 50px 0 40px 0;
-}
-
-.hot-drinks-image {
-    background-image: url(../images/site-images/hot-drinks-banner.webp);
-    margin: 50px 0 40px 0;
-}
-
-.mocktails-image {
-    background-image: url(../images/site-images/mocktails-banner.webp);
-    margin: 50px 0 40px 0;
-}
-
-.pitchers-image {
-    background-image: url(https://t4.ftcdn.net/jpg/02/69/58/69/360_F_269586920_hB0eJdqxq3jYvUIul0O0RiyP9UJWsH7Q.jpg);
-    margin: 50px 0 40px 0;
-}
-
-.shots-image {
-    background-image: url(../images/site-images/shots-banner.webp);
-    margin: 50px 0 40px 0;
+.collection-banner-name {
+    position: absolute;
+    margin-top: -40vh;
 }
 
 .all-cocktails-image {
     background-image: url(../images/site-images/all-cocktails-banner.webp);
     margin: 50px 0 40px 0;
-}
-
-.collection-banner-image {
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;

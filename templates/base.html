@@ -56,8 +56,8 @@
           <div class="collapsible-header">Collections <i class="fas fa-chevron-down nav-down-btn2"></i></div>
           <div class="collapsible-body">
             <ul>
-              {% for collection in collections %}
-                <li><a href="{{ url_for (collection.page_url) }}">{{ collection.category_name }}</a></li>
+              {% for category in categories %}
+                <li><a href="{{ url_for('collection', category_id=category._id) }}">{{ category.category_name }}</a></li>
               {% endfor %}
             </ul>
           </div>
