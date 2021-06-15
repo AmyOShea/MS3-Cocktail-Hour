@@ -27,8 +27,8 @@
             <!-- Trigger for side-nav -->
           <a href="#" data-target="mobile-demo" class="sidenav-trigger" title="navigation menu"><i class="fas fa-bars"></i></a>
           <ul id="dropdown1" class="dropdown-content">
-            {% for collection in collections %}
-              <li><a href="{{ url_for (collection.page_url) }}">{{ collection.category_name }}</a></li>
+            {% for category in categories %}
+              <li><a href="{{ url_for('collection', category_id=category._id) }}">{{ category.category_name }}</a></li>
             {% endfor %}
           </ul>
           <ul class="right hide-on-med-and-down top-nav">

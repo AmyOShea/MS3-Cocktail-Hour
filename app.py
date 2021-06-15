@@ -21,8 +21,8 @@ mongo = PyMongo(app)
 
 @app.context_processor
 def context_processor():
-    collections = list(mongo.db.categories.find())
-    return dict(collections=collections)
+    categories = list(mongo.db.categories.find())
+    return dict(categories=categories)
 
 
 @app.route("/")
@@ -30,6 +30,12 @@ def context_processor():
 def home():
     categories = mongo.db.categories.find()
     return render_template("index.html", categories=categories)
+
+
+@app.route("/collection/<category_id>")
+def collection(category_id):
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("collection.html", category=category)
 
 
 @app.route("/get_recipes")
@@ -218,7 +224,7 @@ def delete_recipe(recipe_id):
     flash("Recipe has been deleted successfully")
     return redirect(url_for("account", username=session["user"]))
 
-
+"""
 @app.route("/mocktails")
 def mocktails():
     # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
@@ -364,7 +370,7 @@ def shots():
                            page=page,
                            per_page=per_page,
                            pagination=pagination)
-
+"""
 
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/
 @app.errorhandler(403)
