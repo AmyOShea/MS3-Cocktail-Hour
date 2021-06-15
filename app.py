@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 
 @app.context_processor
 def context_processor():
-    collections = mongo.db.categories.find()
+    collections = list(mongo.db.categories.find())
     return dict(collections=collections)
 
 

@@ -27,13 +27,9 @@
             <!-- Trigger for side-nav -->
           <a href="#" data-target="mobile-demo" class="sidenav-trigger" title="navigation menu"><i class="fas fa-bars"></i></a>
           <ul id="dropdown1" class="dropdown-content">
-            <li><a href="{{ url_for('classics') }}">Classics</a></li>
-            <li><a href="{{ url_for('elegance') }}">Elegance</a></li>
-            <li><a href="{{ url_for('fruity') }}">Fruity</a></li>
-            <li><a href="{{ url_for('hot_drinks') }}">Hot Drinks</a></li>
-            <li><a href="{{ url_for('mocktails') }}">Mocktails</a></li>
-            <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
-            <li><a href="{{ url_for('shots') }}">Shots</a></li>
+            {% for collection in collections %}
+              <li><a href="{{ url_for (collection.page_url) }}">{{ collection.category_name }}</a></li>
+            {% endfor %}
           </ul>
           <ul class="right hide-on-med-and-down top-nav">
             <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
@@ -60,13 +56,9 @@
           <div class="collapsible-header">Collections <i class="fas fa-chevron-down nav-down-btn2"></i></div>
           <div class="collapsible-body">
             <ul>
-              <li><a href="{{ url_for('classics') }}">Classics</a></li>
-              <li><a href="{{ url_for('elegance') }}">Elegance</a></li>
-              <li><a href="{{ url_for('fruity') }}">Fruity</a></li>
-              <li><a href="{{ url_for('hot_drinks') }}">Hot Drinks</a></li>
-              <li><a href="{{ url_for('mocktails') }}">Mocktails</a></li>
-              <li><a href="{{ url_for('pitchers') }}">Pitchers</a></li>
-              <li><a href="{{ url_for('shots') }}">Shots</a></li>
+              {% for collection in collections %}
+                <li><a href="{{ url_for (collection.page_url) }}">{{ collection.category_name }}</a></li>
+              {% endfor %}
             </ul>
           </div>
         </li>
