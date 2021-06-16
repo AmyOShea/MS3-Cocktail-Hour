@@ -33,10 +33,25 @@ def home():
 
 @app.route("/collection/<category_id>")
 def collection(category_id):
-    recipes = mongo.db.recipes.find()
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template(
-        "collection.html", category=category, recipes=recipes)
+    # Only return recipes where recipe[category_name]
+    # matches category[category_name]
+    recipes = mongo.db.recipes.find(
+        {"category_name": category["category_name"]})
+    total = recipes.count()
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    return render_template("collections.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/get_recipes")

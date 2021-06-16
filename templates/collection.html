@@ -48,9 +48,20 @@
                     {% endfor %}
                 {% endfor %}
             </div>
+            <div class="pagination-container">
+                <!-- Pagination -->
+                {% if recipes.count() > 0 %}
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+                {% else %}
+                    <p class="none-found">We dont have anything in this collection<br>Feel free to <strong><a href="{{ url_for('login') }}">log in to your account</a></strong> and add to the collection!<br>And if you don't have an account, you can <strong><a href="{{ url_for('register') }}">register for one here!</a></strong></p>
+                {% endif %}
+            </div>
+            <!-- Scroll back to top button -->
+            <button onclick="topFunction()" id="toTopBtn" class="hide-on-large-only" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
         </div>
     </div>
 
-   
+
 
 {% endblock %}
