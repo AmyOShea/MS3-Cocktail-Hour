@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="glass-container-header">
+        <h1 class="green-neon-text">New Collection</h1>
+    </div>
+    <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3 glass-container">
+            <form method="POST" action="{{ url_for('add_collection') }}">
+                <div>
+                    <!-- Add Collection Name -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-folder-open prefix"></i>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space --> 
+                            <input id="category_name" name="category_name" type="text" class="validate" minlength="2" maxlength="15" pattern=".*\S+.*" required>
+                            <label for="category_name">Collection Name</label>
+                        </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="IMPORTANT: The name of the colleciton cannot be changed once you have decided">?</a>
+                        </div>
+                    </div>
+                    <!-- Add Collection Description -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-align-left prefix"></i>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input id="collection-description" name="collection-description" type="text" class="validate" minlength="50" pattern=".*\S+.*" required>
+                            <label for="collection-description">Collection Description</label>
+                        </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="This description will be featured on the collection page">?</a>
+                        </div>
+                    </div>
+                    <!-- Add Image for carousel on index.html -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-file-image prefix"></i>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input id="carousel_img" name="carousel_img" type="text" class="validate" minlength="3" pattern=".*\S+.*" required>
+                            <label for="carousel_img">Carousel Image</label>
+                        </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="This will be the image for the carousel on the home page<br>Make sure that it is an exact square and aim for around 350px by 350px">?</a>
+                        </div>
+                    </div>
+                    <!-- Add image for category page banner -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-image prefix"></i>
+                            <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
+                            <input id="banner_img" name="banner_img" type="text" class="validate" required>
+                            <label for="banner_img">banner_img</label>
+                        </div>
+                        <div class="tooltip-container">
+                            <a class="tooltipped" data-position="left" data-tooltip="This will be the image for the collection page. Aim for a 21:9 aspect ratio<br>You can find out more about aspect ratios with a quick Google search if you're unsure">?</a>
+                        </div>
+                    </div>
+
+
+
+                    
+
+
+
+                    <div>
+                        <button class="btn" type="submit">Add Collection!</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -318,6 +318,11 @@ nav {
     width: 350px;
 }
 
+.carousel-item img {
+    height: 350px;
+    width: 350px;
+}
+
 .carousel-item p {
     -webkit-transform: translate(20px, -150px);
         -ms-transform: translate(20px, -150px);

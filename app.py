@@ -48,7 +48,8 @@ def collection(category_id):
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
-    return render_template("collections.html", recipes=recipes_paginated,
+    return render_template("collection.html", recipes=recipes_paginated,
+                           category=category,
                            page=page,
                            per_page=per_page,
                            pagination=pagination)
@@ -243,6 +244,21 @@ def all_collections():
     collections = list(mongo.db.categories.find())
     return render_template("all_collections.html", collections=collections)
 
+
+@app.route("/add_collection", methods=["GET", "POST"])
+def add_collection():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name"),
+            "category_description": request.form.get("category_description"),
+            "carousel_img": request.form.get("carousel_img"),
+            "banner_img": request.form.get("banner_img")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Collection Added!")
+        return redirect(url_for("all_collections"))
+
+    return render_template("add_collection.html")
 
 
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/
