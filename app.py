@@ -238,6 +238,13 @@ def delete_recipe(recipe_id):
     return redirect(url_for("account", username=session["user"]))
 
 
+@app.route("/all_collections")
+def all_collections():
+    collections = list(mongo.db.categories.find())
+    return render_template("all_collections.html", collections=collections)
+
+
+
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/
 @app.errorhandler(403)
 def forbidden(e):

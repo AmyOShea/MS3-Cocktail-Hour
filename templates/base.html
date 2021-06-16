@@ -37,6 +37,9 @@
               <a class="dropdown-trigger" data-target="dropdown1">Collections <i id="nav-down-btn" class="fas fa-chevron-down"></i></a>
             </li>
             {% if session.user %}
+              {% if session.user|lower == "admin"|lower %}
+                <li><a href="{{ url_for('all_collections') }}">Manage Collections</a></li>
+              {% endif %}
             <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
@@ -64,6 +67,9 @@
         </li>
         {% if session.user %}
           <!--Only show buttons to logged in user-->
+          {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('all_collections') }}">Manage Collections</a></li>
+          {% endif %}
           <li><a href="{{ url_for('account', username=session['user']) }}">Account</a></li>
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
