@@ -10,7 +10,9 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
 
     // Delete recipe modal
-    $('.modal').modal();
+    $('.modal').modal({
+        dismissible: true
+    });
 
     // Home page carousel
     $('.carousel').carousel({

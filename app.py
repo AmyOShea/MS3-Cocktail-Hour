@@ -241,7 +241,13 @@ def delete_recipe(recipe_id):
 
 @app.route("/all_collections")
 def all_collections():
-    return render_template("all_collections.html")
+    user = mongo.db.users.find_one({"username": session["user"]})
+    # Only admin can access this page
+    if session['user'] == 'admin':
+        return render_template("all_collections.html", user=user)
+    else:
+        flash("You have to be an Admin to access this page")
+        return render_template("403.html")
 
 
 @app.route("/add_collection", methods=["GET", "POST"])

@@ -49,7 +49,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-image prefix"></i>
                             <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
-                            <input id="banner_img" name="banner_img" type="text" class="validate" required>
+                            <input id="banner_img" name="banner_img" type="text" class="validate" pattern=".*\S+.*" required>
                             <label for="banner_img">banner_img</label>
                         </div>
                         <div class="tooltip-container">

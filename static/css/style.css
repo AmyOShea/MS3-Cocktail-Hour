@@ -378,6 +378,13 @@ nav {
     margin-top: -40vh;
 }
 
+@media only screen and (max-width: 500px) {
+    .collection-banner-name h1 {
+        font-size: 12vw;
+        font-weight: 500;
+    }
+}
+
 .all-cocktails-image {
     background-image: url(../images/site-images/all-cocktails-banner.webp);
     margin: 50px 0 40px 0;

@@ -186,6 +186,7 @@ The category_name key links to the Recipies db.
 + [Am I Responsive](http://ami.responsivedesign.is/) used to generate README intro image.
 + [Autoprefixer](https://autoprefixer.github.io/) used to make CSS cross-browser compatible.
 + [favicon.io](https://favicon.io/) used to create a site favicon.
++ [Imgur](https://imgur.com/) used to host images.
 
 ---
 ---
