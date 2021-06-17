@@ -277,6 +277,13 @@ def edit_collection(category_id):
     return render_template("edit_collection.html", category=category)
 
 
+@app.route("/delete_collection/<category_id>")
+def delete_collection(category_id):
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Collection Deleted")
+    return redirect(url_for("all_collections"))
+
+
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/
 @app.errorhandler(403)
 def forbidden(e):

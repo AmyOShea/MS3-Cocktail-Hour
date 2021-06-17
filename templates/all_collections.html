@@ -27,21 +27,22 @@
                             <!--edit/delete collections buttons -->
                             <div class="card-btn-container">
                                 <a href="{{ url_for('edit_collection', category_id=category._id) }}" class="card-recipe-btn edit-btn card-btn">Edit</a>
-                                <a class="modal-trigger card-btn" href="##">Delete</a>
+                                <a class="modal-trigger card-btn" href="#delete_category{{category._id}}">Delete</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Delect recipe confirmation -->
-                <div class="modal green-neon-border" id="##">
+                <div class="modal green-neon-border" id="delete_category{{category._id}}">
                     <div class="modal-content">
-                    <p>You are about to pemanantly delete this recipe</p>
+                    <p>You are about to pemanantly delete this colleciton</p>
+                    <p>The recipes in this collection will still appear on the recipes page</p>
                     <p>Once you have deleted it, you cannot get it back</p>
                     <p>Are you sure that you wish to delete?</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="#" class="btn modal-close ">Cancel</a>
-                        <a href="##" class="btn delete-btn">Delete</a>
+                        <button class="btn modal-close ">Cancel</button>
+                        <a href="{{ url_for('delete_collection', category_id=category._id) }}" class="btn delete-btn">Delete</a>
                     </div>
                 </div>
             {% endfor %}
