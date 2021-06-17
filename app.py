@@ -241,8 +241,7 @@ def delete_recipe(recipe_id):
 
 @app.route("/all_collections")
 def all_collections():
-    collections = list(mongo.db.categories.find())
-    return render_template("all_collections.html", collections=collections)
+    return render_template("all_collections.html")
 
 
 @app.route("/add_collection", methods=["GET", "POST"])
@@ -259,6 +258,23 @@ def add_collection():
         return redirect(url_for("all_collections"))
 
     return render_template("add_collection.html")
+
+
+@app.route("/edit_collection/<category_id>", methods=["GET", "POST"])
+def edit_collection(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "category_description": request.form.get("category_description"),
+            "carousel_img": request.form.get("carousel_img"),
+            "banner_img": request.form.get("banner_img")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Collection Updated")
+        return redirect(url_for("all_collections"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_collection.html", category=category)
 
 
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/

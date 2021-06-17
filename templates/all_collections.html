@@ -11,22 +11,22 @@
             <div class="center-align">
                 <a id="upload-btn" class="btn center-align" href="{{ url_for('add_collection') }}"><i class="fas fa-plus upload-icon prefix"></i> Add Collection</a>
             </div>
-            {% for collection in collections %}
+            {% for category in categories %}
                 <!-- Recipe card  -->
                 <div class="card-container col s12 m6 l4 xl3">
                     <div class="card green-neon-border">
                         <div class="main-content">
-                            <img src="{{ collection.carousel_img }}" alt="################">
+                            <img src="{{ category.carousel_img }}" alt="################">
                         </div>
                         <div class="overlay-content">
                             <div class="valign-wrapper name-wrapper">
                                 <div class="card-cocktail-name">
-                                    {{ collection.category_name }}
+                                    {{ category.category_name }}
                                 </div>
                             </div>
                             <!--edit/delete collections buttons -->
                             <div class="card-btn-container">
-                                <a href="#" class="card-recipe-btn edit-btn card-btn">Edit</a>
+                                <a href="{{ url_for('edit_collection', category_id=category._id) }}" class="card-recipe-btn edit-btn card-btn">Edit</a>
                                 <a class="modal-trigger card-btn" href="##">Delete</a>
                             </div>
                         </div>
