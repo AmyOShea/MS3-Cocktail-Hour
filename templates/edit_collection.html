@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="glass-container-header">
-        <h1 class="green-neon-text">Edit Collection</h1>
+        <h1 class="green-neon-text manage-coll-header">Edit Collection</h1>
     </div>
     <div class="row">
         <div class="col s12 m8 offset-m2 l6 offset-l3 glass-container">
@@ -10,11 +10,11 @@
                 <div>
                     <!-- Edit Collection Name DISABLED-->
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 non-input">
                             <!-- REGEX pattern taken from https://stackoverflow.com/questions/13766015/is-it-possible-to-configure-a-required-field-to-ignore-white-space -->
                             <i class="fas fa-folder-open prefix"></i>
                             <!-- added 'readonly' attr so that the name cnnot be changed-->
-                            <input id="category_name" name="category_name" type="text" value="{{ category.category_name }}" readonly>
+                            <input id="category_name" name="category_name" type="text" class="non-input" value="{{ category.category_name }}" readonly>
                             <label for="category_name">Category Name (Cannot Edit)</label>
                         </div>
                     </div>              
@@ -55,8 +55,8 @@
                         </div>
                     </div>
                     <div>
-                        <button class="btn" type="submit">Edit Collection</button>
-                        <a class="btn" href="{{ url_for('all_collections') }}">Cancel</a>
+                        <button class="btn btn-margin" type="submit">Edit Collection</button>
+                        <a class="btn btn-margin" href="{{ url_for('all_collections') }}">Cancel</a>
                     </div>
                 </div>
             </form>

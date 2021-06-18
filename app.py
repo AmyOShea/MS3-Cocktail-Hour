@@ -244,7 +244,24 @@ def all_collections():
     user = mongo.db.users.find_one({"username": session["user"]})
     # Only admin can access this page
     if session['user'] == 'admin':
-        return render_template("all_collections.html", user=user)
+        # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+        # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+        # pylint: disable=unbalanced-tuple-unpacking
+        page, per_page, offset = get_page_args(
+            page_parameter='page', per_page_parameter='per_page',
+            offset_parameter='offset')
+        per_page = 12
+        offset = (page - 1) * per_page
+        colls = mongo.db.categories.find()
+        total = colls.count()
+        colls_paginated = colls[offset: offset + per_page]
+        pagination = Pagination(page=page, per_page=per_page,
+                                total=total, css_framework='materializecss')
+        return render_template("all_collections.html", user=user,
+                               colls=colls_paginated,
+                               page=page,
+                               per_page=per_page,
+                               pagination=pagination)
     else:
         flash("You have to be an Admin to access this page")
         return render_template("403.html")

@@ -518,6 +518,12 @@ form {
     text-shadow: 0 0 3px #fff;;
 }
 
+/*Make input area darker as user cannot edit */
+.non-input {
+    color: rgb(109, 109, 109);
+    font-style: italic;
+}
+
 .tooltip-container {
     text-align: right;
     margin-right: 12px;
@@ -554,6 +560,11 @@ form {
 }
 
 /* BUTTONS */ 
+
+.btn-margin {
+    margin: 10px 0;
+}
+
 .card-btn-container {
     max-width: 70%;
     text-align: center;
@@ -732,4 +743,12 @@ form {
 
 .error-container .btn {
     margin: 0;
+}
+
+/*MANAGE COLLECITON*/
+
+@media only screen and (max-width: 500px) {
+    .manage-coll-header {
+        font-size: 13vw;
+    }
 }
