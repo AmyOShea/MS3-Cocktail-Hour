@@ -19,88 +19,23 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Global variable that is available on base.html
 @app.context_processor
 def category_list():
     categories = list(mongo.db.categories.find())
     return dict(categories=categories)
 
 
+# Home page:
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("index.html")
 
 
-@app.route("/collection/<category_id>")
-def collection(category_id):
-    # pylint: disable=unbalanced-tuple-unpacking
-    page, per_page, offset = get_page_args(
-        page_parameter='page', per_page_parameter='per_page',
-        offset_parameter='offset')
-    per_page = 12
-    offset = (page - 1) * per_page
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    # Only return recipes where recipe[category_name]
-    # matches category[category_name]
-    recipes = mongo.db.recipes.find(
-        {"category_name": category["category_name"]})
-    total = recipes.count()
-    recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page,
-                            total=total, css_framework='materializecss')
-    return render_template("collection.html", recipes=recipes_paginated,
-                           category=category,
-                           page=page,
-                           per_page=per_page,
-                           pagination=pagination)
+# USER ACCOUNT:
 
-
-@app.route("/get_recipes")
-def get_recipes():
-    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
-    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
-    # pylint: disable=unbalanced-tuple-unpacking
-    page, per_page, offset = get_page_args(
-        page_parameter='page', per_page_parameter='per_page',
-        offset_parameter='offset')
-    per_page = 12
-    offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
-    recipes = mongo.db.recipes.find()
-    recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page,
-                            total=total, css_framework='materializecss')
-    return render_template("recipes.html", recipes=recipes_paginated,
-                           page=page,
-                           per_page=per_page,
-                           pagination=pagination)
-
-
-@app.route("/full_recipe/<recipe_id>")
-def full_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("full_recipe.html", recipe=recipe)
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    # pylint: disable=unbalanced-tuple-unpacking
-    page, per_page, offset = get_page_args(
-        page_parameter='page', per_page_parameter='per_page',
-        offset_parameter='offset')
-    per_page = 12
-    offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"$text": {"$search": query}}).count()
-    recipes = mongo.db.recipes.find({"$text": {"$search": query}})
-    recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(
-        page=page, per_page=per_page,
-        total=total, css_framework='materializecss')
-    return render_template("recipes.html", recipes=recipes_paginated,
-                           page=page, per_page=per_page, pagination=pagination)
-
-
+# Registation page:
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -191,6 +126,85 @@ def logout():
     return redirect(url_for("login"))
 
 
+# RECIPES DISPLAY PAGES:
+
+# All recipes page:
+@app.route("/get_recipes")
+def get_recipes():
+    # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+    # https://stackoverflow.com/questions/27992413/how-do-i-calculate-the-offsets-for-pagination/27992616
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
+    recipes = mongo.db.recipes.find()
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    return render_template("recipes.html", recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
+
+
+# Search function in recipes page
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find({"$text": {"$search": query}}).count()
+    recipes = mongo.db.recipes.find({"$text": {"$search": query}})
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(
+        page=page, per_page=per_page,
+        total=total, css_framework='materializecss')
+    return render_template("recipes.html", recipes=recipes_paginated,
+                           page=page, per_page=per_page, pagination=pagination)
+
+
+# Dynamically created collections pages:
+@app.route("/collection/<category_id>")
+def collection(category_id):
+    # pylint: disable=unbalanced-tuple-unpacking
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 12
+    offset = (page - 1) * per_page
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    """
+    Only return recipes where recipe[category_name]
+    matches category[category_name]
+    """
+    recipes = mongo.db.recipes.find(
+        {"category_name": category["category_name"]})
+    total = recipes.count()
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    return render_template("collection.html", recipes=recipes_paginated,
+                           category=category,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
+
+
+# Dynamically created full recipe page:
+@app.route("/full_recipe/<recipe_id>")
+def full_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("full_recipe.html", recipe=recipe)
+
+
+# Allow user to upload recipe to site:
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -211,6 +225,7 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
+# Allow user to edit recipe that they uploaded:
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -232,6 +247,7 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
+# Allow user to delete recipe:
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -239,6 +255,9 @@ def delete_recipe(recipe_id):
     return redirect(url_for("account", username=session["user"]))
 
 
+#  ADMIN COLLECTION MANAGEMENT PAGES:
+
+# Main page for admin to access all collections:
 @app.route("/all_collections")
 def all_collections():
     user = mongo.db.users.find_one({"username": session["user"]})
@@ -267,6 +286,7 @@ def all_collections():
         return render_template("403.html")
 
 
+# Allow admin to add new collection to db:
 @app.route("/add_collection", methods=["GET", "POST"])
 def add_collection():
     if request.method == "POST":
@@ -283,6 +303,7 @@ def add_collection():
     return render_template("add_collection.html")
 
 
+# Allow admin to edit collection(s) but recipes remain unaffected
 @app.route("/edit_collection/<category_id>", methods=["GET", "POST"])
 def edit_collection(category_id):
     if request.method == "POST":
@@ -300,12 +321,15 @@ def edit_collection(category_id):
     return render_template("edit_collection.html", category=category)
 
 
+# Allow admin to delete collection(s) but recipes will remain in database
 @app.route("/delete_collection/<category_id>")
 def delete_collection(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Collection Deleted")
     return redirect(url_for("all_collections"))
 
+
+# ERROR PAGES:
 
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/
 @app.errorhandler(403)
