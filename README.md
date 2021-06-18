@@ -15,6 +15,7 @@ You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
     + [Overall Feel](#overall-feel)
     + [Colour Scheme](#colour-scheme)
     + [Typography](#typography)
+    + [Imagery](#imagery)
   + [Wireframes and Initial Design](#wireframes-and-initial-design)
     + [Wireframes](#wireframes)
     + [Design Mock Up](#design-mock-up)
@@ -52,15 +53,21 @@ You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
 + I want to be able to add a recipe to the pre-determined collections.
 + I want to have ease of access to any recipes that I have already uploaded.
 + I want to  be able to edit or delete any recipes that I have already uploaded.
+### As the site owner/admin:
++ I want to be able to add new collections to the site.
++ I want the new collection to be added to the appropriate site areas.
++ I want to be able to edit the pre-existing collections.
++ I want to be able to delete any collections.
+ 
 ## Design
 ### Overall Feel
 
-For this poroject I wanted to have a dark feel to emulate a night-time setting. While there are some family-friendly recipes to choose from, the majority of the content will be more adult-themed so I feel that the bar-type setting was the way to go. 
+For this project I wanted to have a dark feel to emulate a night-time setting. While there are some family-friendly recipes to choose from, the majority of the content will be more adult-themed so I feel that the bar-type setting was the way to go. 
 In keeping with the bar theme, I dewcided to have a neon effect following throughout all pages. 
 
 ### Colour Scheme
 
-Because the overall theme is dark, I wanted to go with accent colours that would pop in comparison. I found the perfect colour scheme in a [Shutterstock article](https://www.shutterstock.com/blog/neon-color-palettes)that would work with my idea, just with a couple of changes for contrast reasons.
+Because the overall theme is dark, I wanted to go with accent colours that would pop in comparison. I found the perfect colour scheme in a [Shutterstock article](https://www.shutterstock.com/blog/neon-color-palettes) that would work with my idea, just with a couple of changes for contrast reasons.
 
 ![colour scheme](static/images/README/colour-scheme.png)
 
@@ -71,6 +78,14 @@ There were two fonts that I was interested in for the site.
 [Neon Tubes](https://befonts.com/neon-tubes-neon-light-font-free.html) by [guxjohn](https://befonts.com/author/guxjohn) fit perfectly with the neon light theme but is something to be used sparingly - I want to keep this just just headings and accents. I think too much of this would become tacky very quickly. 
 
 [Raleway](https://fonts.google.com/specimen/Raleway?preview.text_type=custom&preview.text=Collections&query=Raleway) is the chosen font for the majority of the text. In comparrison to Noeon Tubes, it is quite simple ansd offers a contrasting elegance. 
+
+### Imagery
+
+Imagery is an important part of the user experience. Any user that uploads recipes has to accompany it with an image. And when browsing the recipes and collections, this image is the main selling point of the recipe so it's the prominant feature of the recipe card. 
+
+Another visual element is the banners on the recipe and collections pages. One some of them, a cocktail image was best. But for others, a visual element that envoked a feeling was more appropriate. If this site were going into full prduction, the site owner/admin would be in charge of this. 
+
+Lastly is the neon effect. It ties into the nightlife theme so well and I decided to use it across all pages. I think doing this makes the site visually cohesive throughout.
 
 ## Wireframes and Initial Design
 ### Wireframes
@@ -84,33 +99,91 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 ---
 # Features
 ## Current Features
-+ Navigation menu displayed across all pages.
-+ Carousel displayed on home page for browsing the various 'Collections'. 
-+ All recipes accessible to users who don't want to make an account.
-+ Users can search for recipes based on either key words or ingredients.
-+ Users can create an account.
-+ Users can log into/sign out of their account.
-+ Registered users can upload their own recipes.
-+ Registered users add their own recipes to one or more 'Collections'.
-+ Registered users can add an image their own recipes via URL.
-+ Registered users who don't want to search for an image can use the default image URL.
-+ Registered users can view their own added recipes.
-+ Registered users can edit recipes that they have already added. 
+### **Navigation menu displayed across all pages**
+
+The navigation menu will help the user move easily across all pages. For the colelctions pages, there is a dropdown menu in which all of those pages are held. This stops the navigation from becoming too cluttered. 
+
+The navigation buttons update depending on whether a user is logged in, and whether that user is the admin:
+
+| Nav Link              |Not logged in  |Logged in as user|Logged in as admin
+|:-------------         |:------------- |:------------- |:------------- |
+|Logo(back to home)     |&#9989;        |&#9989;        |&#9989;
+|Recipes                |&#9989;        |&#9989;        |&#9989;
+|Collections            |&#9989;        |&#9989;        |&#9989;
+|Manage Collections     |&#10060;       |&#10060;       |&#9989;
+|Account                |&#10060;       |&#9989;        |&#9989;
+|Log Out                |&#10060;       |&#9989;        |&#9989;
+|Register               |&#9989;        |&#10060;       |&#10060;
+|Log In                 |&#9989;        |&#10060;       |&#10060;
+
+### **Carousel displayed on home page for browsing the various 'Collections'** 
+
+The carousel will allow the user to browse through the different recipe collections. This adds a more visual element rather than the simple text of the collections dropdown on the nav bar. All of the carousel images will link the user to the collection page of their choosing. 
+
+### **All recipes accessible to users who don't want to make an account**
+
+As someone who doesn't particularly like to sign up to websites that I don't plan on adding to but like to view, I wanted to make all of the recipes accessible to a casual viewer. The user can also browse through all of the collections without having to have an account. But in order to interact with the site, they Do have to have an account. Without one, the option to upload anything isn't available. 
+
+### **Users can search for recipes based on either key words or ingredients**
+
+Searching by ingredient is an important feature for any recipe website so that was something that I wanted to include. But people who are familiar with cocktails in general might be looking for a specific recipe based on name so this was also included in the search criteria. 
+
+### **Pagination on recipe pages**
+
+At the moment, the database is relatively small. But if this were site that was going into full producition, the recipes list would be much more extensive. As a result, the number of recipes displyedto the user could become overwhelming very quickly. I've limited to number of recipes to 12 per page - there's still a good amount displayed to the user without being too much. This will also help reduce loading times, especially on mobile devices. 
+
+### **Ease of access button**
+
+While the 12-per-page layout mentioned above is quite condensed on a laptop or computer screen, it still comes across as quite lengthy on small mobile devices. During manual testing, I found it tedious to have to keep scrolling back to the top. Because of this, I added a scroll-to-top button on any pages that display recipe. This will save endless scrolling for the user. 
+
+Another issue that I found was once I had selected a recipe to view in full, it felt like a bit of a dead end. I decided to add a 'Back to Recipes' button at the top of the page. It just redirects back to the previous page much like the back button but frorm a UX POV it feels less breakable!
+
+### **User account management**
+
+Anyone is able to make an account throught the 'Register' page. They have to choose a username and a password. Measures have been put in place so that the user cannot choose a username that is already taken and they cannot use just whitespace.
+
+Once their account is made, they will be able to log in an out when needed. 
+
+### **User recipe management**
+
+A registered user is able to upload recipes to the site. Once they have recipes that they have added, all recipe management can be done from their account page. This includes editing a deleting. I decided to keep these features exclusive to the account page rather than acessible on the recipes or collections pages. I like the uniformity of this. 
+
+  + **Uploading**: when uploading, there are form validations in place that the user needs to adhere to. The two most important are: 
+    + The user cannot leave any inputs blank
+    + The user cannot use just whitespace. 
+
+  + **Editing**: the user will have to go into the edit page through the recipe, make the necessary changes and confirm them at the bottom of the page. The user also has the option to cancel all changes. These steps assure that the user cannot do any of this by mistake. 
+
+  + **Deleting**: there is a confirmation modal in place to assure the user doesn't accidentally delete the recipe. 
+
+### **Recipe Images**
+
+When uploading a recipe, the user needs to add an image alongside the recipe information. This image will be used on both the recipe card and on the full recipe page. But because the image is added via a url, there are some people who wither don't was to go to the rounds of finding one, or they simply can't on their device. iOS doesn't allow the user to copy an image url in the same way most android do. Because of that I have added a placeholder image url that the user can use in place of their own. It's a stylish image that was found on [Unsplash](https://unsplash.com/) that looks good with the overall feel of the site. 
+
+### **Adding to collections**
+
+When uploading a recipe, the user is required to add their recipe to at least one collection. This allows the user to feel like they're adding to the community in a more thoughtful way. This also takes the responsilbility of curating the collections off the owerner/admin. 
+
+### **Admin 'Collections' management**
+
+Only the admin can manage the collections pages. This includes adding, editing and deleting. The site has been designed so that the admin only has to use the collections management page to create a new colelction at this will automatically be updated on the carousel, nav bar dropdown and the actual page will be created dynamically. Any edits or deletions to collections will also apply to those elements. 
 
 ## Possible Future Features
 + A rating system that allows users to rate each others recipes. 
-  + This could lead to sorting buy top-rated recipes.
+  + This could lead to sorting by top-rated recipes.
 + Ability to 'save' recipes to a users own account to refer back to.
 + Ability to upload a saved image to their recipe rather than relying on a URL.
 + Users ability to update username. 
 + Users ability to delete their account. 
   + This could allow the user to either leave their recipes on the site or delete them along with the account 
++ Admin controlled 'featured' recipes
 
 ---
 ---
 
 # Database
 Below is the schema for my database:
+
 ![database schema](static/images/README/db-schema.PNG)
 
 ## Categories
@@ -119,11 +192,10 @@ Below is the schema for my database:
 |:-------------         |:------------- |:------------- |
 |_id                    |ObjectId       |
 |category_name          |string         |used in *recipes* array
-|carousel_img           |string         |
-|page_url               |string         |
+|carousel_img           |string         |url for the carousel image
+|banner_img             |string         |url for the banner image
 
-While the ```category_name``` key was planned ahead of time, I added the ```carousel_img``` and ```page_url``` keys later when I was experimenting with the carousel on the home page. I've documented this in the Bugs and Fixes section of the [testing.md](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md) file.
-The category_name key links to the Recipies db.
+While the ```category_name``` key was planned ahead of time, I added the ```carousel_img``` and ```page_url``` keys later when I was experimenting with the carousel on the home page. The ```page_url``` has since been removed but I've documented this in the Bugs and Fixes section of the [testing.md](https://github.com/AmyOShea/MS3-Cocktail-Hour/blob/master/TESTING.md) file. The ```banner_img``` was also a later addition. 
 
 ## Recipes
 
@@ -144,7 +216,7 @@ The category_name key links to the Recipies db.
 |:-------------         |:------------- |:------------- |
 |_id                    |ObjectId       |used in *recipes*
 |username               |string         |
-|password               |string         |
+|password               |string         |hashed password for user security
 
 ---
 ---
@@ -204,6 +276,7 @@ This project was deployed through Heroku using the following steps:
 Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod: 
 + In the GitPod terminal, type ```pip3 freeze --local > requirements.txt``` to create your requirements file.
 + In the GitPod terminal, type ```echo web: python run.py > Procfile``` to create your procfile.
++ The Procfile needs to contain the followinf line: ```web: python app.py``` and make sure there is no additional blank line after it. 
 + Push these files to your repository.
 
 ### Environmentals File
@@ -267,6 +340,10 @@ Because this contains sensitive information, this needs to be added to the '.git
   + ```$ git clone https://github.com/AmyOShea/MS3-Cocktail-Hour```
 + Press Enter to create your local clone.
 
+**NB:** In order to work with a clone of this project, you will need to create the env.py file using your own variables and create a MongoDB database matching the one documented in the [Database section](#database) of this doc. 
+
+You will also need to install all of the packages listed in the requirements file you can use the following command in the terminal ```pip install -r requirements.txt``` which will do it for you. 
+
 ---
 ---
 # Credits
@@ -297,17 +374,36 @@ Because this contains sensitive information, this needs to be added to the '.git
 
 ### Images
 + Collections: 
-    + Classics Banner and Carousel [image](https://images.unsplash.com/photo-1601084638773-a25993f38fda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=966&q=80)
-    + Elegance Banner and Carousel [image](https://images.unsplash.com/photo-1524083615948-77168224375a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
-    + Fruity Banner and Carousel [image](https://images.pexels.com/photos/5947121/pexels-photo-5947121.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
-    + Hot Drinks Banner and Carousel [image](https://images.unsplash.com/photo-1521022969448-49639904ed7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)
-    + Mocktails Banner and Carousel [image](https://images.unsplash.com/photo-1548016193-b9381233058c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80)
-    + Pitchers Banner and Carousel [image](https://melbournecocktails.com/g-and-tea-gin-garden/)
-    + Shots Banner and Carousel [image](https://mk0foodfornetcoviwv0.kinstacdn.com/wp-content/uploads/Three-shots-of-vodka-on-a-black-slate-800x530.jpg)
+    + Classics Banner and Carousel [image](https://images.unsplash.com/photo-1601084638773-a25993f38fda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=966&q=80) from [Unsplash](https://unsplash.com/photos/Fs_pf0hubTU)
+    
+    
+    + Elegance Banner and Carousel [image](https://images.unsplash.com/photo-1524083615948-77168224375a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) from [Unsplash](https://unsplash.com/photos/JdntgyV5w0Q)
+    
+    
+    + Fruity Banner and Carousel [image](https://images.pexels.com/photos/5947121/pexels-photo-5947121.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) from [Pexels](https://www.pexels.com/zh-tw/photo/5947121/)
+    
+    
+    + Hot Drinks Banner and Carousel [image](https://images.unsplash.com/photo-1521022969448-49639904ed7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80) from [Unsplash](https://unsplash.com/photos/Zif9OPYfwdE)
+    
+    
+    + Mocktails Banner and Carousel [image](https://images.unsplash.com/photo-1548016193-b9381233058c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80) from [Unsplash](https://unsplash.com/photos/kBo2MFJz2QU)
+    
+    
+    + Pitchers Banner and Carousel [image](https://melbournecocktails.com/wp-content/uploads/GTea_cocktails_jug-1-1075x605.jpg) from [Melbourne Cocktails](https://melbournecocktails.com/g-and-tea-gin-garden/)
+    
+    
+    + Shots Banner and Carousel [image](https://mk0foodfornetcoviwv0.kinstacdn.com/wp-content/uploads/B53-800x550.jpg) from [Food For Net](https://foodfornet.com/fun-alcoholic-shots/)
+    
+    
+    + Experiment Banner and Carousel [image](https://images.unsplash.com/photo-1608989408460-75014171c099?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80) from [Unsplash](https://unsplash.com/photos/P8D0PIc2FwQ)
 
-+ All Cocktails banner [image](https://images.unsplash.com/photo-1605270012917-bf157c5a9541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80)
-+ Home Page wall background [image](https://images.unsplash.com/photo-1549930160-31d20fbcac9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80)
-+ Default recipe URL [image](https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)
++ All Cocktails banner [image](https://images.unsplash.com/photo-1605270012917-bf157c5a9541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80) from [Unsplash](https://unsplash.com/photos/QYWYnzvPTAQ)
+
+
++ Home Page wall background [image](https://images.unsplash.com/photo-1549930160-31d20fbcac9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80) from [Upsplash](https://unsplash.com/photos/FzTc9Itg_lk)
+
+
++ Default recipe URL [image](https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) from [Upsplash](https://unsplash.com/photos/8Zmm4NtXmdE)
 
 ### Test Recipes
 

@@ -230,6 +230,71 @@ Once the user has made the necessary changes, they can save them at the bottom o
 ![testing from user stories](static/images/README/Testing/testing-14.png)
 
 ---
+
+### As the site owner/admin:
++ *I want to be able to add new collections to the site.*
+
+The admin wil ke able to log into their account as every other user does. However, they will have the 'Manage Collecitons' link in the nav bar:
+
+![testing from user stories](static/images/README/Testing/testing-15.png)
+
+Once they're on the 'Manage Collections' page, they'll have access to the 'Add Collection' button:
+
+![testing from user stories](static/images/README/Testing/testing-16.png)
+
+Onec they click that, they'll be redirected to the upload page where they can fill in all of the collection information. The tool tips will give them information about the input elements:
+
+![testing from user stories](static/images/README/Testing/testing-17.png)
+
+Once all of the inputs have been filled in correctly, the user can use the 'Add Collection' button at the bottom of the page to add it to the database:
+
+![testing from user stories](static/images/README/Testing/testing-18.png)
+
+---
+
++ *I want the new collection to be added to the appropriate site areas.*
+
+The new collection is added to the nav bar (and side nav):
+
+![testing from user stories](static/images/README/Testing/testing-19.png)
+
+The new collection is added to the home page carousel:
+
+![testing from user stories](static/images/README/Testing/testing-20.png)
+
+The new collection has its own page created:
+
+![testing from user stories](static/images/README/Testing/testing-21.png)
+
+---
+
++ *I want to be able to edit the pre-existing collections.*
+
+From the 'Manage Collections' page, the admin can hover/click on whichever collection they wish to edit and click the 'Edit' button:
+
+![testing from user stories](static/images/README/Testing/testing-22.png)
+
+This will redirect them to the edit page where they can update whatever information they want. The only thing they can't update is the collection name:
+
+![testing from user stories](static/images/README/Testing/testing-23.png)
+
+Once the user has updated the information, they can access they buttons at the bottom of the form. If they click 'Edit Collection', the changed will be sent to the database and be updated across the site. They also have the option to 'Cancel' which will ignore any changes and redirect them to the 'Manage Collections' page:
+
+![testing from user stories](static/images/README/Testing/testing-24.png)
+
+---
+
++ *I want to be able to delete any collections.*
+
+From the 'Manage Collections' page, the admin can hover/click on whichever collection they wish to edit and click the 'Delete' button:
+
+![testing from user stories](static/images/README/Testing/testing-25.png)
+
+A modal will appear asking the admin to confirm that they want to delete the collection. They also have the option to 'Cancel' which will close the modal with no changes made:
+
+![testing from user stories](static/images/README/Testing/testing-26.png)
+
+---
 ---
 ## Manually Testing Functionality
 ### **base.html**
@@ -240,28 +305,34 @@ Once the user has made the necessary changes, they can save them at the bottom o
 |Logo                   |Click|Redirect to home         |Pass|
 |Recipes Link           |Click|Redirect to all recipes  |Pass|
 |Collections Dropdown   |Click|Open collections dropdown|Pass|
-|Classics Link          |Click|Redirect to Classics page|Pass|
-|Elegance Link          |Click|Redirect to Elegance page|Pass|
-|Fruity Link            |Click|Redirect to Fruity page  |Pass|
-|Hot Drinks Link        |Click|Redirect to Hot Drinks page|Pass|
-|Mocktails Link         |Click|Redirect to Mocktails page|Pass|
-|Pitchers Link          |Click|Redirect to Pitchers page|Pass|
-|Shots Link             |Click|Redirect to Shots page|Pass|
+|Collection page link   |Click|Redirect to collection page|Pass|
 |Register Link          |Click|Redirect to register page|Pass|
+|                       |     |(Not visible if user in session)  |Pass|
 |Log In Link            |Click|Redirect to log in page  |Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log Out Link           |Click|Log user out of account  |Pass|
+|                       |Click|Redirect to log in page  |Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|Account Link            |Click|Redirect to account page|Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|Manage Collections Link|Click|Redirect to manage collections page|Pass|
+|                       |     |(Only visible if admin in session) |Pass|
 | **SideNav**           |       |    |
 |Hamburger Icon         |Click|Open Sidenav             |Pass|
 |Recipes Link           |Click|Redirect to all recipes  |Pass|
 |Collections Dropdown   |Click|Open collections dropdown|Pass|
-|Classics Link          |Click|Redirect to Classics page|Pass|
-|Elegance Link          |Click|Redirect to Elegance page|Pass|
-|Fruity Link            |Click|Redirect to Fruity page  |Pass|
-|Hot Drinks Link        |Click|Redirect to Hot Drinks page|Pass|
-|Mocktails Link         |Click|Redirect to Mocktails page|Pass|
-|Pitchers Link          |Click|Redirect to Pitchers page|Pass|
-|Shots Link             |Click|Redirect to Shots page|Pass|
+|Collection page link   |Click|Redirect to collection page|Pass|
 |Register Link          |Click|Redirect to register page|Pass|
+|                       |     |(Not visible if user in session)  |Pass|
 |Log In Link            |Click|Redirect to log in page  |Pass|
+|                       |     |(Not visible if user in session)  |Pass|
+|Log Out Link           |Click|Log user out of account  |Pass|
+|                       |Click|Redirect to log in page  |Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|Account Link            |Click|Redirect to account page|Pass|
+|                       |     |(Only visible if user in session)  |Pass|
+|Manage Collections Link|Click|Redirect to manage collections page|Pass|
+|                       |     |(Only visible if admin in session) |Pass|
 | **Footer**            |     |     |
 |Facebook Link          |Click|Open on external page    |Pass|
 |Instagram Link         |Click|Open on external page    |Pass|
@@ -506,7 +577,7 @@ In the end, I created a ```key:value``` pair in MongoDB: the key was called ```p
 
 ![carousel bug](static/images/README/bugs/carousel-code-fix-02.PNG)
 
-I'm sure there is a much more refined way of handling this but the aboved worked well for me. 
+I have since changed how the collections pages are created - they are now dynamically created so the ```page_url``` is no longer needed.
 
 ---
 ### **Card Overlaying**
