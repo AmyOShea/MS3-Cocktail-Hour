@@ -19,6 +19,9 @@
         <div class="col s12 l4">
             <div class="small-glass-container">
                 <h2 class="center-align">Ingredients</h2>
+                <div class="main-ing">
+                    {{ recipe.main_ingredient }}
+                </div>
                 {% for ingredient in recipe.ingredients %}
                     <div>
                         <ul>

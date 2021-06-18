@@ -697,6 +697,13 @@ form {
     font-weight: 600;
 }
 
+.main-ing {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* MODAL */
 .modal, .modal-footer {
     background-color: #1e1e1e !important;
     color: #fff;

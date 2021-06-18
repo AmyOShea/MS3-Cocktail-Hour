@@ -306,6 +306,8 @@ A modal will appear asking the admin to confirm that they want to delete the col
 |Recipes Link           |Click|Redirect to all recipes  |Pass|
 |Collections Dropdown   |Click|Open collections dropdown|Pass|
 |Collection page link   |Click|Redirect to collection page|Pass|
+|Manage Collections link|Click|Redirect to all_collections page|Pass|
+|                       |     |(Only visible if admin in session)|Pass|
 |Register Link          |Click|Redirect to register page|Pass|
 |                       |     |(Not visible if user in session)  |Pass|
 |Log In Link            |Click|Redirect to log in page  |Pass|
@@ -322,6 +324,8 @@ A modal will appear asking the admin to confirm that they want to delete the col
 |Recipes Link           |Click|Redirect to all recipes  |Pass|
 |Collections Dropdown   |Click|Open collections dropdown|Pass|
 |Collection page link   |Click|Redirect to collection page|Pass|
+|Manage Collections link|Click|Redirect to all_collections page|Pass|
+|                       |     |(Only visible if admin in session)|Pass|
 |Register Link          |Click|Redirect to register page|Pass|
 |                       |     |(Not visible if user in session)  |Pass|
 |Log In Link            |Click|Redirect to log in page  |Pass|
@@ -508,6 +512,63 @@ A modal will appear asking the admin to confirm that they want to delete the col
 |User message               |On page load       |Message informs user that there's no recipes in colleciton|Pass|
 |Log in link                |On page load       |Redirect to log in page            |Pass|
 |Register link              |On page load       |Redirect to registration page      |Pass|
+
+---
+
+### **all_collections.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Upload Btn**            |                   |                                   |    |
+|Upload Button              |Click              |Redirect to collection upload page |Pass|
+| **Collection Card**       |                   |                                   |    |
+|Collection Card            |Hover/click        |Reveal recipe action buttons       |Pass|
+|Edit collection btn        |Click              |Redirect to edit collection page   |Pass|
+|Delete collection btn      |Click              |Open delete confirmation modal     |Pass|
+|Delete modal - delete btn  |Click              |Delete selected collection         |Pass|
+|                           |                   |Redirect to all_collections page   |Pass|
+|                           |                   |'Collection deleted' confirmation message|Pass|
+|Delete modal - cancel btn  |Click              |Close modal with no change made    |Pass|
+| **Pagination**            |                   |                                   |    |
+|<< btn                     |Click              |Reveal 'previous' recipes          |Pass|
+|Pagination number          |Click              |Specific recipes page number       |Pass|
+|>> btn                     |Click              |Reveal 'next' recipes              |Pass|
+| **Scroll to top btn**     |                   |                                   |    |
+|(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
+
+
+### add_collection.html
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
+|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
+|Add collection btn(all fields correct)|Click   |Collection uploads to database     |Pass|
+|                           |                   |Redirect to all_collections page   |Pass|
+|                           |                   |"New Collection Added!" confirmation message|Pass|
+|Add collection btn(some incorrect fields)|Click|Page scrolls to incorrect fields   |Pass|
+
+---
+### **edit_collection.html**
+
+| Element                   | Action            | Expected Result                   | Pass/Fail  |
+|:-------------             |:-------------     |:-----                             |:-----|
+| **Form**                  |                   |                                   |    |
+|All fields                 |On page open       |Pre-populated with previous inputs |Pass|
+|Collection name input field|On click           |User unable to edit                |Pass|
+|Text input fields          |Type into          |Text appears, line highlights green|Pass|
+|Text input fields          |Leave blank        |Line highlights red                |Pass|
+|Text input fields          |Just input whitespace  |Line highlights red            |Pass|
+|Tooltips                   |Hover/click        |Reveal notes/instructions          |Pass|
+|Update btn(all fields correct)|Click           |Collection updates in database     |Pass|
+|                           |                   |Redirect to all_collections page   |Pass|
+|                           |                   |"Collection Updated!" confirmation message  |Pass|
+|Update btn(some incorrect fields)|Click        |Page scrolls to incorrect fields   |Pass|
+|Cancel btn                 |Click              |No changes made to collection      |Pass|
+|                           |                   |Redirect to all_collections page   |Pass|
 
 ---
 ### **Error pages**
@@ -729,6 +790,36 @@ Making the font responsive to the view width allowed for longer text to diplay p
 When I added the ```pattern=".*\S+.*"``` attribute to the dynamically created input fields, they weren't rendering through to HTML correctly. It was rendering as ```pattern=".*S+.*"```, ommiting the backslash. 
 
 To counter this, I added an extra backslash: ```pattern=".*\\S+.*"``` and this solved the issue. 
+
+---
+
+### **Ingredients list issue**
+
+Not so much of a bug but an issues that needed to be addressed. I had friends upload recipes to test. One of the issues that came from this was them not adding to the fields following the instructions in the tool tips. 
+
+There's an input for the main ingredient which is diplayed on the recipe card but this also needs to be input under the ingredients list (preferably with measurements). It says this in the tooltips but I get that people don't always read them. 
+
+The issue was that while the main ingredient was seen on the recipe card, once you viewed the full recipe, that was omitted:
+
+![Ingredients list issue](static/images/README/bugs/bug-16.png)
+
+![Ingredients list issue](static/images/README/bugs/bug-16-02.PNG)
+
+To fix this, I added the ```main_ingredient``` to the recipe list. This worked well for recipes that had omitted it from the main ingredients list:
+
+![Ingredients list issue](static/images/README/bugs/bug-16-fix-01.PNG)
+
+But on a recipe that had all of the ingredients listed as per the instructions, it looked a bit strange for it to be listed twice: 
+
+![Ingredients list issue](static/images/README/bugs/bug-16-fix-02.PNG)
+
+To try to remedy the issues, I decided to meet somewhere in the middle - I enlarged the ```main_ingredient``` font and made it a little bolder: 
+
+![Ingredients list issue](static/images/README/bugs/bug-16-correct-01.PNG)
+
+![Ingredients list issue](static/images/README/bugs/bug-16-correct-02.PNG)
+
+This way it's included on the ingredients list but looks more like a featured ingredient that can be overlooked if that ingredient is listed elsewhere.
 
 ---
 ---
