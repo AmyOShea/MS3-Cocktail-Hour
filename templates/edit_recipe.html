@@ -4,7 +4,6 @@
     <div class="glass-container-header">
         <h1 class="green-neon-text">Edit Recipe</h1>
     </div>
-
     <div class="row">
         <div class="col s12 m8 offset-m2 l6 offset-l3 glass-container">
             <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
@@ -106,6 +105,5 @@
             </form>
         </div>
     </div>
-
 
 {% endblock %}

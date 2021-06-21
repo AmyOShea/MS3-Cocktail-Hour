@@ -15,7 +15,7 @@
 
  I checked all of the HTML pages using [W3C Markup Validation Service](https://validator.w3.org/)
 
- Because the code is made up of Jinja templates, I had to check from the live site by right cliking each page, selecting View Page Source and running that generated code throught the validator.
+ Because the code is made up of Jinja templates, I had to check from the live site by right clicking each page, selecting View Page Source and running that generated code through the validator.
 
  All pages passed all checks. 
 
@@ -23,13 +23,13 @@
 
 I checked the CSS file using [W3C CSS Markup Validation Service](https://jigsaw.w3.org/css-validator/)
 
-Unfortunatly, it returned 3 errors:
+Unfortunately, it returned 3 errors:
 
 ![css validator results](static/images/README/validator-css.PNG)
 
-All the errors were in relation to the ```backdrop-filter: blur``` property that it claims doesn't exist. However, accouring to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) this is a valid property. 
+All the errors were in relation to the ```backdrop-filter: blur``` property that it claims doesn't exist. However, according to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) this is a valid property. 
 
-There are some compatibilty issues with Firefox which I've documented in the [manual testing section](#manually-testing-functionality). 
+There are some compatbilty issues with Firefox which I've documented in the [manual testing section](#manually-testing-functionality). 
 
 Other than that, any other warnings were related to the vendor prefixes. 
 
@@ -66,7 +66,7 @@ By the feed back given , I made a few changes to the code to raise the scores:
 
 + Convert all images to webp format
 
-### **Accesibility**
+### **Accessibility**
 
 + Footer h4 changed to h1
 + Add alt tags to all images
@@ -87,7 +87,7 @@ All of these changes helped bring the final score up nicely. While I would have 
 ---
 ## PowerMapper Compatibility
 
-I used [PowerMapper](https://www.powermapper.com/) to test cross-browser compitbility on other browsers that I don't have access to.
+I used [PowerMapper](https://www.powermapper.com/) to test cross-browser compatbility on other browsers that I don't have access to.
 
 ![powermapper results](static/images/README/powermapper-01.PNG)
 
@@ -105,7 +105,7 @@ Firefox definitely doesn't support the property so I manually tested it to make 
 ![firefox blur](static/images/README/firefox-blur-02.png)
 ![firefox blur](static/images/README/firefox-blur-03.PNG)
 
-While it would be great to have the blur included, I still think that the look of the site holds up on firefox and all text remails legible. 
+While it would be great to have the blur included, I still think that the look of the site holds up on firefox and all text remains legible. 
 
 ---
 ---
@@ -114,7 +114,7 @@ While it would be great to have the blur included, I still think that the look o
 ### As a casual user: 
 + *I want to be able to view recipes without having to register and account.*
 
-Even without being logged in, a user is able to browse through all the recipe cards, choose on and view the full recipe:
+Even without being logged in, a user is able to browse through all the recipe cards, choose one and view the full recipe:
 
 ![testing from user stories](static/images/README/Testing/testing-01.png)
 
@@ -188,7 +188,7 @@ From their account page, the use will see the upload button towards the top of t
 
 ![testing from user stories](static/images/README/Testing/testing-07.png)
 
-Once they have clicked it, they wil be rediredcted to the upload page:
+Once they have clicked it, they will be redirected to the upload page:
 
 ![testing from user stories](static/images/README/Testing/testing-08.png)
 
@@ -196,7 +196,7 @@ Once they have clicked it, they wil be rediredcted to the upload page:
 
 + *I want to be able to add a recipe to the pre-determined collections.*
 
-Once the user has been directed to the upload page, the first option is to choose which catagories they would like their recipe to be added to:
+Once the user has been directed to the upload page, the first option is to choose which categories they would like their recipe to be added to:
 
 ![testing from user stories](static/images/README/Testing/testing-09.png)
 
@@ -217,15 +217,15 @@ From the account page, a logged in user has access to all of their recipes. From
 ![testing from user stories](static/images/README/Testing/testing-11.png)
 
 **EDIT:**
-if the user presses the edit button, the page reloads to the edit page which is a visual duplicaiton of the upload page. However, the input fields will be populated with their original input:
+if the user presses the edit button, the page reloads to the edit page which is a visual duplication of the upload page. However, the input fields will be populated with their original input:
 
 ![testing from user stories](static/images/README/Testing/testing-12.png)
 
-Once the user has made the necessary changes, they can save them at the bottom of the page. Alternaitly, they can cancel all changes they've made. Both buttons lead back to their account page:
+Once the user has made the necessary changes, they can save them at the bottom of the page. Alternatively, they can cancel all changes they've made. Both buttons lead back to their account page:
 
 ![testing from user stories](static/images/README/Testing/testing-13.png)
 
-**Delete:** if the user chooses the delete button, they will be presented with a model to either confirm or cancel the deletion: 
+**Delete:** if the user chooses the delete button, they will be presented with a modal to either confirm or cancel the deletion: 
 
 ![testing from user stories](static/images/README/Testing/testing-14.png)
 
@@ -234,7 +234,7 @@ Once the user has made the necessary changes, they can save them at the bottom o
 ### As the site owner/admin:
 + *I want to be able to add new collections to the site.*
 
-The admin wil ke able to log into their account as every other user does. However, they will have the 'Manage Collecitons' link in the nav bar:
+The admin will be able to log into their account as every other user does. However, they will have the 'Manage Collections' link in the nav bar:
 
 ![testing from user stories](static/images/README/Testing/testing-15.png)
 
@@ -242,7 +242,7 @@ Once they're on the 'Manage Collections' page, they'll have access to the 'Add C
 
 ![testing from user stories](static/images/README/Testing/testing-16.png)
 
-Onec they click that, they'll be redirected to the upload page where they can fill in all of the collection information. The tool tips will give them information about the input elements:
+Once they click that, they'll be redirected to the upload page where they can fill in all of the collection information. The tool tips will give them information about the input elements:
 
 ![testing from user stories](static/images/README/Testing/testing-17.png)
 
@@ -348,7 +348,7 @@ A modal will appear asking the admin to confirm that they want to delete the col
 | Element               | Action            | Expected Result           | Pass/Fail  |
 |:-------------         |:-------------     |:-----                     |:-----|
 | **Carousel**          |                   |                           |    |
-|Whole Carousel         |Horizontal scroll  |Scrolll through collections|Pass|
+|Whole Carousel         |Horizontal scroll  |Scroll through collections |Pass|
 |Classics Link          |Click              |Redirect to Classics page  |Pass|
 |Elegance Link          |Click              |Redirect to Elegance page  |Pass|
 |Fruity Link            |Click              |Redirect to Fruity page    |Pass|
@@ -495,7 +495,7 @@ A modal will appear asking the admin to confirm that they want to delete the col
 
 ---
 ### **Collections pages**
-*All collections pages have identical functionality so all the below test apply to each colelciton page:*
+*All collections pages have identical functionality so all the below test apply to each collection page:*
 
 | Element                   | Action            | Expected Result                   | Pass/Fail  |
 |:-------------             |:-------------     |:-----                             |:-----|
@@ -509,7 +509,7 @@ A modal will appear asking the admin to confirm that they want to delete the col
 | **Scroll to top btn**     |                   |                                   |    |
 |(Mobile only) btn          |Click              |Scroll to top of page              |Pass|
 |**If nothing in collection**|                  |                                   |    |
-|User message               |On page load       |Message informs user that there's no recipes in colleciton|Pass|
+|User message               |On page load       |Message informs user that there's no recipes in collection|Pass|
 |Log in link                |On page load       |Redirect to log in page            |Pass|
 |Register link              |On page load       |Redirect to registration page      |Pass|
 
@@ -611,7 +611,7 @@ Through devices that I have at home/readily available to me, I was able to conti
 
 ### **Carousel Text**
 
-I used the Materialize Carousel for the home page and wanted to have the information collection name text appear over the image. However, no matter what CSS I tried to manupulate it, the text remained below the image:
+I used the Materialize Carousel for the home page and wanted to have the information collection name text appear over the image. However, no matter what CSS I tried to manipulate it, the text remained below the image:
 
 ![carousel bug](static/images/README/bugs/carousel-bug.PNG)
 ![carousel bug](static/images/README/bugs/carousel-code.PNG)
@@ -626,10 +626,10 @@ The above HTML with some CSS tricks helped place the text nicely over the image:
 
 ![carousel bug](static/images/README/bugs/carousel-fix.PNG)
 
-Once I had the palacement figured, I wanted to experiment further and try to create the carousel dynamically for each drinks collection. While the image and text for each element was easy enough to work through, the anchor URL proved to be tricky. I tried a couple of things and ended up with varying results: 
+Once I had the placement figured, I wanted to experiment further and try to create the carousel dynamically for each drinks collection. While the image and text for each element was easy enough to work through, the anchor URL proved to be tricky. I tried a couple of things and ended up with varying results: 
 
 ```<a class="carousel-item" href="{{ url_for(category.category_name) }}">```
-+ This threw and error becuse the category name was capitalized
++ This threw and error because the category name was capitalized
 
 ```<a class="carousel-item" href="{{ url_for(category.category_name).lower() }}">```
 + Worked for some of the categories but a couple of them have more than one word titles so threw another error.
@@ -645,7 +645,7 @@ I have since changed how the collections pages are created - they are now dynami
 
 ![card overlay bug](static/images/README/bugs/bug-01.PNG)
 
-When initially putting together the card layout, I was having an isse where the reicpe card was layering on top of the previous one rather than generating it's own card
+When initially putting together the card layout, I was having an issue where the recipe card was layering on top of the previous one rather than generating it's own card
 
 ![card overlay bug](static/images/README/bugs/bug-01-code.PNG)
 
@@ -664,7 +664,7 @@ I followed the CI task manager project for the initial stages of this project. M
 
 ![TypeError](static/images/README/bugs/bug-02-code.PNG)
 
-I did a lot of research on this and while there were a few different fixes, the one that worked best for this project was to change the ```recipes``` variable from a list and use the ```count()``` fuction instead.
+I did a lot of research on this and while there were a few different fixes, the one that worked best for this project was to change the ```recipes``` variable from a list and use the ```count()``` function instead.
 
 ![TypeError](static/images/README/bugs/bug-02-code-fix-2.PNG)
 
@@ -674,12 +674,12 @@ I did a lot of research on this and while there were a few different fixes, the 
 
 ### **Side Nav Dropdown**
 
-When using the Materialize navigaiton bar dropdown, the side nav dropdown on mobile was covering the content below, rather than pushing the content down. 
+When using the Materialize navigation bar dropdown, the side nav dropdown on mobile was covering the content below, rather than pushing the content down. 
 
 ![Dropdown bug](static/images/README/bugs/bug-03.PNG)
 
 I believe this is expected behaviour but from a UX standpoint, I wasn't happy with this on mobile.
-As a result, I decided that it would be a better idea to use a Materialize collapsible on the side-nav instead. This allows the sub-menu to reposition all of the other elements rathen than them being covered. 
+As a result, I decided that it would be a better idea to use a Materialize collapsible on the side-nav instead. This allows the sub-menu to reposition all of the other elements rather than them being covered. 
 
 ---
 ### **Hover on Mobile**
@@ -693,7 +693,7 @@ I tried removing the ```inDuration``` and ```outDuration``` but it was still hap
 ---
 ### **Deleting from Modal**
 
-For defensive programming, I added a modla to the delete button for user confirmation. However, regardless of which recipe was selected to delete, it was always the first recipe on screen that would be deleted. 
+For defensive programming, I added a modal to the delete button for user confirmation. However, regardless of which recipe was selected to delete, it was always the first recipe on screen that would be deleted. 
 
 After talking to someone on slack who had experienced the same issue, I was informed that there needed to be a direct link between the modal and the element to be deleted. 
 
@@ -704,11 +704,11 @@ I updated the recipe-side modal href and the actual modal ID to target the speci
 ---
 ### **Selecting option on mobile**
 
-On mobile, the 'Choose Collection' option in both add and edit recipe wasn't working as it should. There was an issue with selecting the options - you would select 'Fruity', but 'Mocktails' would highlight, as if there had been an upwas shift in the selection area. 
+On mobile, the 'Choose Collection' option in both add and edit recipe wasn't working as it should. There was an issue with selecting the options - you would select 'Fruity', but 'Mocktails' would highlight, as if there had been an upwards shift in the selection area. 
 
 ![Selecting bug](static/images/README/bugs/bug-06-code.PNG) 
 
-Oringially the ```formSelect()```m function was placed above the ```dropdown()``` function, both of which were triggered by the 'Choose Collection' dropdown. I know that the order of code matters so I tried to reorder them.
+Originally the ```formSelect()```m function was placed above the ```dropdown()``` function, both of which were triggered by the 'Choose Collection' dropdown. I know that the order of code matters so I tried to reorder them.
 
 ![Selecting bug](static/images/README/bugs/bug-06-code-fix.PNG)  
 
@@ -716,20 +716,27 @@ This fixed the issue.
 
 ---
 
-### **Pagination in Catagories Pages**
+### **Pagination in Categories Pages**
 
-When visitn a specific collection of recipes, the correct recipes for that category were displating. Hoever, the pagination information was displaying the total number of recipes in the database. 
+When visiting a specific collection of recipes, the correct recipes for that category were displaying. However, the pagination information was displaying the total number of recipes in the database. 
 
 ![Pagination bug](static/images/README/bugs/bug-09.jpg)
 
 ![Pagination bug](static/images/README/bugs/bug-09-code.PNG)
 
-Becuse I hadn't specified the ```category_name``` in the ```find()``` function for the ```total``` variable, it was counting all recipes and then displaying this number as the total. 
+Because I hadn't specified the ```category_name``` in the ```find()``` function for the ```total``` variable, it was counting all recipes and then displaying this number as the total. 
 
 ![Pagination bug](static/images/README/bugs/bug-09-code-fix.PNG)
 
 Adding the ```category_name``` key and the correct value in the ```total``` variable fixed the issue.
 
+Since then, the code has been refactored but the theory remains the same:
+
+``` 
+recipes = mongo.db.recipes.find({"category_name": category["category_name"]})
+
+total = recipes.count()
+```
 ---
 
 ### **Input Field Dynamic ID**
@@ -752,7 +759,7 @@ A pylint warning appeared when I added the pagination functionality:
 
 This was a non-issue as everything was working as it should, and the code worked fine.
 
-After a bit of research I learned that this is refered to as a 'false positive' and by adding the below comment, the warning would go away: 
+After a bit of research I learned that this is referred to as a 'false positive' and by adding the below comment, the warning would go away: 
 
 ![Unbalanced Tuple Unpacking bug](static/images/README/bugs/bug-12-code-fix.PNG)
 
@@ -777,7 +784,7 @@ Wrapping the whole button functionality inside an if statement allowed the scrip
 ![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-02.PNG)
 
 
-Making the font responsive to the view width allowed for longer text to diplay properly without overflowing off the screen. I used a medie query targeted specifically at smaller screens so the desktop display didn't look oversized. 
+Making the font responsive to the view width allowed for longer text to display properly without overflowing off the screen. I used a media query targeted specifically at smaller screens so the desktop display didn't look oversized. 
 
 ![Heading Text Mobile Display bug](static/images/README/bugs/bug-14-code-fix.PNG)
 
@@ -787,7 +794,7 @@ Making the font responsive to the view width allowed for longer text to diplay p
 
 ### **Dynamic Input Pattern Attribute**
 
-When I added the ```pattern=".*\S+.*"``` attribute to the dynamically created input fields, they weren't rendering through to HTML correctly. It was rendering as ```pattern=".*S+.*"```, ommiting the backslash. 
+When I added the ```pattern=".*\S+.*"``` attribute to the dynamically created input fields, they weren't rendering through to HTML correctly. It was rendering as ```pattern=".*S+.*"```, omitting the backslash. 
 
 To counter this, I added an extra backslash: ```pattern=".*\\S+.*"``` and this solved the issue. 
 
@@ -797,7 +804,7 @@ To counter this, I added an extra backslash: ```pattern=".*\\S+.*"``` and this s
 
 Not so much of a bug but an issues that needed to be addressed. I had friends upload recipes to test. One of the issues that came from this was them not adding to the fields following the instructions in the tool tips. 
 
-There's an input for the main ingredient which is diplayed on the recipe card but this also needs to be input under the ingredients list (preferably with measurements). It says this in the tooltips but I get that people don't always read them. 
+There's an input for the main ingredient which is displayed on the recipe card but this also needs to be input under the ingredients list (preferably with measurements). It says this in the tooltips but I get that people don't always read them. 
 
 The issue was that while the main ingredient was seen on the recipe card, once you viewed the full recipe, that was omitted:
 
@@ -827,15 +834,15 @@ This way it's included on the ingredients list but looks more like a featured in
 
 ### **URL & Username bug**
 
-When testing error pages, I was adding addition characters to the end of the URL in the acccount page, anything that was changed/edited was updating the username header on the page:
+When testing error pages, I was adding addition characters to the end of the URL in the account page, anything that was changed/edited was updating the username header on the page:
 
 ![URL & Username bug](static/images/README/bugs/bug-11.PNG)
 
-I defined username as a variable in the acocunt section of the app.py file:
+I defined username as a variable in the account section of the app.py file:
 
 ![URL & Username bug](static/images/README/bugs/bug-11-code-fix.PNG)
 
-I retested and, while it solved that issue, adding the extra charcters didn't break the code. This is an issue that hasn't been resolved. 
+I retested and, while it solved that issue, adding the extra characters didn't break the code. This is an issue that hasn't been resolved. 
 
 ![URL & Username bug](static/images/README/bugs/bug-11-not-resolved.PNG)
 
@@ -847,7 +854,7 @@ From the Chrome console there are issues being reported:
 
 ![URL & Username bug](static/images/README/bugs/bug-15.PNG)
 
-These are coming from the ```.side-nav``` and ```.carousel``` triggers. Based on the messgae itself, the issue seems to be coming from Materialize rather than the script.js file.
+These are coming from the ```.side-nav``` and ```.carousel``` triggers. Based on the message itself, the issue seems to be coming from Materialize rather than the script.js file.
 
 ![URL & Username bug](static/images/README/bugs/bug-15-02.PNG)
 

@@ -1,5 +1,5 @@
 # Cocktail Hour
-Cocktail Hour is a virtual recipe collection speifically designed for coctail recipes. 
+Cocktail Hour is a virtual recipe collection specifically designed for cocktail recipes. 
 
 It is a community based experience that allows casual, one-time users to browse recipes, and allows returning users to create profiles and upload and manage recipes. 
 
@@ -63,7 +63,7 @@ You can find the live site [here](https://cocktail-hour-ms3.herokuapp.com/)
 ### Overall Feel
 
 For this project I wanted to have a dark feel to emulate a night-time setting. While there are some family-friendly recipes to choose from, the majority of the content will be more adult-themed so I feel that the bar-type setting was the way to go. 
-In keeping with the bar theme, I dewcided to have a neon effect following throughout all pages. 
+In keeping with the bar theme, I decided to have a neon effect following throughout all pages. 
 
 ### Colour Scheme
 
@@ -77,13 +77,13 @@ There were two fonts that I was interested in for the site.
 
 [Neon Tubes](https://befonts.com/neon-tubes-neon-light-font-free.html) by [guxjohn](https://befonts.com/author/guxjohn) fit perfectly with the neon light theme but is something to be used sparingly - I want to keep this just just headings and accents. I think too much of this would become tacky very quickly. 
 
-[Raleway](https://fonts.google.com/specimen/Raleway?preview.text_type=custom&preview.text=Collections&query=Raleway) is the chosen font for the majority of the text. In comparrison to Noeon Tubes, it is quite simple ansd offers a contrasting elegance. 
+[Raleway](https://fonts.google.com/specimen/Raleway?preview.text_type=custom&preview.text=Collections&query=Raleway) is the chosen font for the majority of the text. In comparison to Neon Tubes, it is quite simple and offers a contrasting elegance. 
 
 ### Imagery
 
-Imagery is an important part of the user experience. Any user that uploads recipes has to accompany it with an image. And when browsing the recipes and collections, this image is the main selling point of the recipe so it's the prominant feature of the recipe card. 
+Imagery is an important part of the user experience. Any user that uploads recipes has to accompany it with an image. And when browsing the recipes and collections, this image is the main selling point of the recipe so it's the prominent feature of the recipe card. 
 
-Another visual element is the banners on the recipe and collections pages. One some of them, a cocktail image was best. But for others, a visual element that envoked a feeling was more appropriate. If this site were going into full prduction, the site owner/admin would be in charge of this. 
+Another visual element is the banners on the recipe and collections pages. One some of them, a cocktail image was best. But for others, a visual element that evoked a feeling was more appropriate. If this site were going into full production, the site owner/admin would be in charge of this. 
 
 Lastly is the neon effect. It ties into the nightlife theme so well and I decided to use it across all pages. I think doing this makes the site visually cohesive throughout.
 
@@ -101,7 +101,7 @@ All Wireframes were designed for laptop/computer, iPad/tablet and phone display.
 ## Current Features
 ### **Navigation menu displayed across all pages**
 
-The navigation menu will help the user move easily across all pages. For the colelctions pages, there is a dropdown menu in which all of those pages are held. This stops the navigation from becoming too cluttered. 
+The navigation menu will help the user move easily across all pages. For the collections pages, there is a dropdown menu in which all of those pages are held. This stops the navigation from becoming too cluttered. 
 
 The navigation buttons update depending on whether a user is logged in, and whether that user is the admin:
 
@@ -130,23 +130,23 @@ Searching by ingredient is an important feature for any recipe website so that w
 
 ### **Pagination on recipe pages**
 
-At the moment, the database is relatively small. But if this were site that was going into full producition, the recipes list would be much more extensive. As a result, the number of recipes displyedto the user could become overwhelming very quickly. I've limited to number of recipes to 12 per page - there's still a good amount displayed to the user without being too much. This will also help reduce loading times, especially on mobile devices. 
+At the moment, the database is relatively small. But if this were site that was going into full production, the recipes list would be much more extensive. As a result, the number of recipes displyed to the user could become overwhelming very quickly. I've limited to number of recipes to 12 per page - there's still a good amount displayed to the user without being too much. This will also help reduce loading times, especially on mobile devices. 
 
 ### **Ease of access button**
 
 While the 12-per-page layout mentioned above is quite condensed on a laptop or computer screen, it still comes across as quite lengthy on small mobile devices. During manual testing, I found it tedious to have to keep scrolling back to the top. Because of this, I added a scroll-to-top button on any pages that display recipe. This will save endless scrolling for the user. 
 
-Another issue that I found was once I had selected a recipe to view in full, it felt like a bit of a dead end. I decided to add a 'Back to Recipes' button at the top of the page. It just redirects back to the previous page much like the back button but frorm a UX POV it feels less breakable!
+Another issue that I found was once I had selected a recipe to view in full, it felt like a bit of a dead end. I decided to add a 'Back to Recipes' button at the top of the page. It just redirects back to the previous page much like the back button but from a UX POV it feels less breakable!
 
 ### **User account management**
 
-Anyone is able to make an account throught the 'Register' page. They have to choose a username and a password. Measures have been put in place so that the user cannot choose a username that is already taken and they cannot use just whitespace.
+Anyone is able to make an account through the 'Register' page. They have to choose a username and a password. Measures have been put in place so that the user cannot choose a username that is already taken and they cannot use just whitespace.
 
 Once their account is made, they will be able to log in an out when needed. 
 
 ### **User recipe management**
 
-A registered user is able to upload recipes to the site. Once they have recipes that they have added, all recipe management can be done from their account page. This includes editing a deleting. I decided to keep these features exclusive to the account page rather than acessible on the recipes or collections pages. I like the uniformity of this. 
+A registered user is able to upload recipes to the site. Once they have recipes that they have added, all recipe management can be done from their account page. This includes editing a deleting. I decided to keep these features exclusive to the account page rather than accessible on the recipes or collections pages. I like the uniformity of this. 
 
   + **Uploading**: when uploading, there are form validations in place that the user needs to adhere to. The two most important are: 
     + The user cannot leave any inputs blank
@@ -162,11 +162,11 @@ When uploading a recipe, the user needs to add an image alongside the recipe inf
 
 ### **Adding to collections**
 
-When uploading a recipe, the user is required to add their recipe to at least one collection. This allows the user to feel like they're adding to the community in a more thoughtful way. This also takes the responsilbility of curating the collections off the owerner/admin. 
+When uploading a recipe, the user is required to add their recipe to at least one collection. This allows the user to feel like they're adding to the community in a more thoughtful way. This also takes the responsibility of curating the collections off the owner/admin. 
 
 ### **Admin 'Collections' management**
 
-Only the admin can manage the collections pages. This includes adding, editing and deleting. The site has been designed so that the admin only has to use the collections management page to create a new colelction at this will automatically be updated on the carousel, nav bar dropdown and the actual page will be created dynamically. Any edits or deletions to collections will also apply to those elements. 
+Only the admin can manage the collections pages. This includes adding, editing and deleting. The site has been designed so that the admin only has to use the collections management page to create a new collection at this will automatically be updated on the carousel, nav bar dropdown and the actual page will be created dynamically. Any edits or deletions to collections will also apply to those elements. 
 
 ## Possible Future Features
 + A rating system that allows users to rate each others recipes. 
@@ -275,8 +275,8 @@ This project was deployed through Heroku using the following steps:
 ### Requirements and Procfile
 Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod: 
 + In the GitPod terminal, type ```pip3 freeze --local > requirements.txt``` to create your requirements file.
-+ In the GitPod terminal, type ```echo web: python run.py > Procfile``` to create your procfile.
-+ The Procfile needs to contain the followinf line: ```web: python app.py``` and make sure there is no additional blank line after it. 
++ In the GitPod terminal, type ```echo web: python run.py > Procfile``` to create your Procfile.
++ The Procfile needs to contain the following line: ```web: python app.py``` and make sure there is no additional blank line after it. 
 + Push these files to your repository.
 
 ### Environmentals File
@@ -299,14 +299,14 @@ Because this contains sensitive information, this needs to be added to the '.git
 + Log into Heroku
 + Select 'Create New App' from your dashboard
 + Choose an app name (if there has been an app made with that name, you will be informed and will need to choose an alternative)
-+ Select the appropiate region based on your location
++ Select the appropriate region based on your location
 + Click 'Create App'
 ### Connecting to GitHub
 + From the dashboard, click the 'Deploy' tab towards the top of the screen
 + From here, locate 'Deployment Method' and choose 'GitHub'
-+ From the search bar newly appeared, locate your respository by name
++ From the search bar newly appeared, locate your repository by name
 + When you have located the correct repository, click 'Connect'
-+ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuation. We'll come back to this
++ DO NOT CLICK 'ENABLE AUTOMATIC DEPLOYMENT': This can cause unexpected errors before configuration. We'll come back to this
 + Click the 'Settings' tab towards the top of the page
 + Locate the 'Config Vars' and click 'Reveal Config Vars'
 + Use the following keys and values which must match the key/value pairs in your env.py file:
@@ -322,7 +322,7 @@ Because this contains sensitive information, this needs to be added to the '.git
 
 + Go back to the 'Deploy' tab and you can now click 'Enable Automatic Deployment'
 + Underneath, locate 'Manual Deploy'; choose the master branch and click 'Deploy Branch'
-+ Once the app is built (it may take a few mminutes), click 'Open App' from the top of the page
++ Once the app is built (it may take a few minutes), click 'Open App' from the top of the page
 
 ## Forking the Repository
 + Log in to GitHub and locate the GitHub Repository
@@ -355,7 +355,7 @@ You will also need to install all of the packages listed in the requirements fil
 
 + I used [this Stack Overflow post](https://stackoverflow.com/questions/50394358/materializecss-vertically-offset-dropdown-menu-content/50395102) to adjust the placement of the nav bar dropdown.
 
-+ This code for [materialze slider autoplay](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) was taken directly (also credited in in js file).
++ This code for [materialize slider autoplay](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) was taken directly (also credited in in js file).
 
 + My own neon text css classes taken from [this article](https://css-tricks.com/how-to-create-neon-text-with-css/) and re-worked for my neon boxes (also credited in in css file).
 
@@ -400,10 +400,10 @@ You will also need to install all of the packages listed in the requirements fil
 + All Cocktails banner [image](https://images.unsplash.com/photo-1605270012917-bf157c5a9541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80) from [Unsplash](https://unsplash.com/photos/QYWYnzvPTAQ)
 
 
-+ Home Page wall background [image](https://images.unsplash.com/photo-1549930160-31d20fbcac9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80) from [Upsplash](https://unsplash.com/photos/FzTc9Itg_lk)
++ Home Page wall background [image](https://images.unsplash.com/photo-1549930160-31d20fbcac9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80) from [Unsplash](https://unsplash.com/photos/FzTc9Itg_lk)
 
 
-+ Default recipe URL [image](https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) from [Upsplash](https://unsplash.com/photos/8Zmm4NtXmdE)
++ Default recipe URL [image](https://images.unsplash.com/photo-1570869937455-a347fba0a41b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) from [Unsplash](https://unsplash.com/photos/8Zmm4NtXmdE)
 
 ### Test Recipes
 
@@ -423,6 +423,6 @@ You will also need to install all of the packages listed in the requirements fil
 + All other recipes added by friends/family testers
 
 ## Acknowledgements
-+ All the freinds who tested the site, even in its earliest stages.
++ All the friends who tested the site, even in its earliest stages.
 + Everyone in the CI Slack that offered answers, advice and just a bit of a chat when needed!
 + My mentor Antonio Rodriguez for  for his help at the different stages of the project.
